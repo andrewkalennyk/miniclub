@@ -2,7 +2,6 @@
 
 @section('main')
     @include('home.partials.navbar')
-    <!-- END nav -->
 
     <div class="hero-wrap ftco-degree-bg" style="background-image: url('/images/bg_mini.jpg');"
          data-stellar-background-ratio="0.5">
@@ -21,7 +20,7 @@
                                 <span class="ion-ios-arrow-round-down"></span>
                             </div>
                             <div class="heading-title ml-5">
-                                <span>Швидкий шлях нас знайти</span>
+                                <span style="font-size: 18px">Швидкий шлях нас знайти</span>
                             </div>
                         </a>
                     </div>

@@ -6,7 +6,7 @@
                     @include('home.partials.events.form')
                     <div class="col-md-8 d-flex align-items-center">
                         <div class="services-wrap rounded-right w-100">
-                            <h3 class="heading-section mb-4">Наші соц мережі</h3>
+                            <h3 class="heading-section mb-4">Наші соціальні мережі</h3>
                             <div class="row d-flex mb-4">
                                 @include('home.partials.socials.instagram')
                                 @include('home.partials.socials.telegram')

@@ -30,10 +30,12 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="27">0</strong>
-                        <span>Людей влазить</span>
+                        <span>Людей вміщює</span>
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="row">
             <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">

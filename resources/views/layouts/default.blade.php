@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="[lang]" prefix="og: http://ogp.me/ns#">
 <head>
-    <title>Carbook - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Mini Cooper Club</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

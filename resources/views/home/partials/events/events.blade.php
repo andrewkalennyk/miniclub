@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 heading-section text-center ftco-animate mb-5">
-                <span class="subheading">not normal</span>
+                <span class="subheading font-weight-bold">not normal</span>
                 <h2 class="mb-2">Наші зустрічі</h2>
             </div>
         </div>
@@ -12,11 +12,13 @@
                     @foreach($events as $event)
                         <div class="item">
                             <div class="car-wrap rounded ftco-animate">
-                                <div class="img rounded d-flex align-items-end"
-                                     style="background-image: url({{$event->getImgPath(300, 220)}});">
-                                </div>
+                                <a href="{{$event->getUrl()}}">
+                                    <div class="img rounded d-flex align-items-end"
+                                         style="background-image: url({{$event->getImgPath(300, 220)}});">
+                                    </div>
+                                </a>
                                 <div class="text">
-                                    <h2 class="mb-0"><a href="#">{{$event->title}}</a></h2>
+                                    <h2 class="mb-0"><a href="{{$event->getUrl()}}">{{$event->title}}</a></h2>
                                     <div class="d-flex mb-3">
                                         <span class="cat"></span>
                                         <p class="price ml-auto">{{$event->getDate()}} </p>

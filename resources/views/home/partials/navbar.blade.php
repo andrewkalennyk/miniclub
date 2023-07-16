@@ -11,20 +11,17 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                {{--<li class="nav-item active">
-                    <a href="index.html" class="nav-link">Home</a>
-                </li>--}}
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to" data-scroll="event-link-block">Клуб</a>
+                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="event-link-block">Клуб</a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to" data-scroll="events-block">Зустрічі</a>
+                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="events-block">Зустрічі</a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to" data-scroll="shops-block">СТО</a>
+                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="shops-block">Автосервіси</a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to" data-scroll="stickers-block">Наліпки</a>
+                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="stickers-block">Наліпки</a>
                 </li>
             </ul>
         </div>
