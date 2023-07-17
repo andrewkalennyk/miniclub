@@ -3,7 +3,7 @@
         <h2>Пропозиції та побажання</h2>
         <div class="form-group">
             <label for="" class="label">Ім'я (При бажанні)</label>
-            <input type="text" name="social_name" class="form-control" placeholder="Нік соц мережі...">
+            <input type="text" name="social_name" class="form-control" placeholder="Нік соціальної мережі...">
         </div>
         <div class="form-group">
             <label for="" class="label">Пропозиції</label>

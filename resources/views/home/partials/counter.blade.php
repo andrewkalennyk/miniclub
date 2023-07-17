@@ -6,7 +6,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="3">0</strong>
-                        <span>Роки  <br>Клубу</span>
+                        <span>Роки  <br> клубу</span>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="3">0</strong>
-                        <span>Двері</span>
+                        <span>True <br> дверцят</span>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="27">0</strong>
-                        <span>Людей вміщює</span>
+                        <span>Людей <br> вміщює</span>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="1500">0</strong>
-                        <span><br>Участників(ць)</span>
+                        <span>Участників(ць)</span>
                     </div>
                 </div>
             </div>
