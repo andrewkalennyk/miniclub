@@ -5,15 +5,15 @@
             <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
-                        <strong class="number" data-number="3">0</strong>
-                        <span>Роки  <br> клубу</span>
+                        <strong class="number" data-number="{{$clubYears}}">0</strong>
+                        <span>Років  <br> клубу</span>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
                 <div class="block-18">
                     <div class="text d-flex align-items-center">
-                        <strong class="number" data-number="6">0</strong>
+                        <strong class="number" data-number="{{$clubs->count()}}">0</strong>
                         <span>Регіональних <br>клубів</span>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="1500">0</strong>
-                        <span>Участників(ць)</span>
+                        <span>Участників</span>
                     </div>
                 </div>
             </div>
