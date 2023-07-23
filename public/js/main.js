@@ -104,6 +104,27 @@ AOS.init({
                 }
             }
         });
+        $('.carousel-local-club').owlCarousel({
+            loop: true,
+            items: 5,
+            infinite:true,
+            nav: false,
+            autoplayTimeout:4000,
+            startPosition: 0,
+            autoplay: false,
+            navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        });
 
     };
     carousel();
@@ -352,4 +373,8 @@ AOS.init({
 
 
 })(jQuery);
+
+$(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
 

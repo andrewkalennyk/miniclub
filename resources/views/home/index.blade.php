@@ -31,6 +31,8 @@
 
     @include('home.partials.events.event-form-links')
 
+    @includeWhen($clubs->count(), 'home.partials.clubs')
+
     @include('home.partials.events.events')
 
     @include('home.partials.shops')

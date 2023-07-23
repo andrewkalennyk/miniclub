@@ -24,6 +24,18 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Города',
+                'icon'  => 'building',
+                'link'  => '/cities',
+            ],
+
+            [
+                'title' => 'Локальные клубы',
+                'icon'  => 'users',
+                'link'  => '/local_clubs',
+            ],
+
+            [
                 'title' => 'Предложения',
                 'icon'  => 'bolt',
                 'link'  => '/proposition',

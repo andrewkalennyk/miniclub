@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\LocalClub;
 use Vis\Builder\TreeController;
 
 class HomeController extends TreeController
@@ -15,7 +16,8 @@ class HomeController extends TreeController
         $page = $this->node;
 
         $events = Event::active()->orderEventDate()->take(5)->get();
+        $clubs = LocalClub::with('city')->active()->get();
 
-        return view('home.index', compact('page','events'));
+        return view('home.index', compact('page','events', 'clubs'));
     }
 }

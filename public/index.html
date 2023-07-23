@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Клуб Mini Cooper</title>
+    <!-- Подключение Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Подключение Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .list-group-item {
+            background-color: #fff;
+            border: none;
+        }
+
+        .list-group-item a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .list-group-item a i {
+            margin-right: 10px;
+        }
+
+        .list-group-item a:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Стили для карточек */
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-body {
+            padding: 15px;
+        }
+
+        .card-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .card-text {
+            font-size: 16px;
+            color: #666;
+        }
+
+        /* Улучшенные стили для кнопок */
+        .btn {
+            background-color: #007bff;
+            border-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Улучшенные стили для блоков */
+        .block {
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .block-title {
+            font-size: 28px;
+            font-weight: bold;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .block-text {
+            font-size: 18px;
+            color: #666;
+            text-align: center;
+        }
+
+        /* Улучшенные стили для иконок */
+        .icon {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+<div class="container mt-4">
+    <h1>Клуб Mini Cooper</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="block">
+                <h3 class="block-title">Клубы Mini Cooper</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-map-marker-alt"></i> Киев</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-map-marker-alt"></i> Одесса</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-map-marker-alt"></i> Днепр</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-map-marker-alt"></i> Львов</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-map-marker-alt"></i> Ивано-Франковск</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-map-marker-alt"></i> Черновцы</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Добавьте другие города клубов Mini Cooper здесь -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="block">
+                <h3 class="block-title">Детейлинг студии</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-wrench"></i> Детейлинг студия "Глянец"</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-wrench"></i> Детейлинг студия "Чистота"</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-wrench"></i> Детейлинг студия "Мини Детейл"</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Добавьте другие детейлинг студии здесь -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="block">
+                <h3 class="block-title">Автостанции</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-gas-pump"></i> Автозаправка "МиниТопливо"</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-gas-pump"></i> Автозаправка "Топливо+"</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Добавьте другие автостанции здесь -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="block">
+                <h3 class="block-title">Ключи для Mini</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-key"></i> Ключи "Smart Mini Key"</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-key"></i> Ключи "Keyless Mini Remote"</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Добавьте другие компании, предлагающие ключи для Mini здесь -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="block">
+                <h3 class="block-title">Ремонт коробки</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-cogs"></i> Сервис "Коробка+" (ремонт АКПП)</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Добавьте другие компании, предлагающие ремонт коробки здесь -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="block">
+                <h3 class="block-title">Покраска</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-paint-roller"></i> Сервис "ColorMax" (покраска кузова)</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Добавьте другие компании, предлагающие услуги по покраске здесь -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="block">
+                <h3 class="block-title">Ремонт дисков</h3>
+                <div class="list-group">
+                    <a href="#" class="list-group-item">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title"><i class="icon fas fa-wrench"></i> СТО "Диски+" (ремонт дисков)</h5>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- Добавьте другие СТО, предлагающие ремонт дисков здесь -->
+                </div>
+            </div>
+        </div>
+        <!-- Добавьте другие блоки с ссылками здесь -->
+    </div>
+</div>
+
+<!-- Подключение Bootstrap 4 JS и зависимостей для корректной работы компонентов -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
