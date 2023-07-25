@@ -372,13 +372,13 @@ AOS.init({
         $(this).ekkoLightbox();
     });
 
-    document.addEventListener("DOMContentLoaded", function () {
+    /*document.addEventListener("DOMContentLoaded", function () {
         var languageDropdown = document.getElementById("languageDropdown");
         languageDropdown.addEventListener("touchstart", function (e) {
             e.preventDefault();
             $(this).dropdown("toggle");
         });
-    });
+    });*/
 
 
 })(jQuery);
