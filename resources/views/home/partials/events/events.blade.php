@@ -14,7 +14,7 @@
                             <div class="car-wrap rounded ftco-animate">
                                 <a href="{{$event->getUrl()}}">
                                     <div class="img rounded d-flex align-items-end"
-                                         style="background-image: url({{$event->getImgPath(300, 220)}});">
+                                         style="background-image: url({{$event->picture}});">
                                     </div>
                                 </a>
                                 <div class="text">
