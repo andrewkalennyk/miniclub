@@ -64,7 +64,7 @@ AOS.init({
 
     var carousel = function () {
         $('.carousel-car').owlCarousel({
-            center: true,
+            center: false,
             loop: true,
             autoplay: true,
             items: 1,
