@@ -13,7 +13,7 @@ class Event extends BaseModel
 
     public function scopeOrderEventDate($query)
     {
-        return $query->orderBy('event_date', 'asc');
+        return $query->orderBy('event_date', 'desc');
     }
 
     public function getDate()
