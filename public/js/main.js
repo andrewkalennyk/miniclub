@@ -70,6 +70,7 @@ AOS.init({
             items: 1,
             margin: 30,
             stagePadding: 0,
+            startPosition: 0,
             nav: false,
             navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
             responsive: {
@@ -369,6 +370,14 @@ AOS.init({
         window.console.log('aa');
         event.preventDefault();
         $(this).ekkoLightbox();
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var languageDropdown = document.getElementById("languageDropdown");
+        languageDropdown.addEventListener("touchstart", function (e) {
+            e.preventDefault();
+            $(this).dropdown("toggle");
+        });
     });
 
 
