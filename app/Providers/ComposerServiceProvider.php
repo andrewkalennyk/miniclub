@@ -14,7 +14,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        View::composer('partials.header', 'App\Http\ViewComposers\HeaderComposer');
+        View::composer('home.partials.navbar', 'App\Http\ViewComposers\NavbarComposer');
         View::composer('partials.footer', 'App\Http\ViewComposers\FooterComposer');
         View::composer('partials.breadcrumbs', 'App\Http\ViewComposers\BreadcrumbsComposer');
     }

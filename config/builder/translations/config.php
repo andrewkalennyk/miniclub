@@ -3,11 +3,6 @@
 
 return [
     'languages' => [
-        'ru' => [
-            'caption' => 'ru',
-            'postfix' => '',
-            'placeholder' => 'Текст на русском',
-        ],
         'uk' => [
             'caption' => 'ua',
             'postfix' => '_ua',

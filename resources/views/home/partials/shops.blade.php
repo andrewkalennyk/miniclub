@@ -3,7 +3,7 @@
         <div class="row justify-content-center mb-5">
             <div class="col-md-7 text-center heading-section ftco-animate">
                 <span class="subheading font-weight-bold">not normal</span>
-                <h2 class="mb-3">Перевірені Автосервіси</h2>
+                <h2 class="mb-3">{{__t('Перевірені Автосервіси')}}</h2>
             </div>
         </div>
         <div class="row">

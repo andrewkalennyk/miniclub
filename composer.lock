@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c670551bf6f1e198e591cab823c08ff7",
+    "content-hash": "6655745cdf6fa8ff4338e92e3a39af9e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -6335,6 +6335,50 @@
             "time": "2023-02-18T01:49:34+00:00"
         },
         {
+            "name": "vis/artur_image_storage_l5",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arturishe21/image_storage_l5.git",
+                "reference": "034ddedbd813659116876829f8925f573d267130"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arturishe21/image_storage_l5/zipball/034ddedbd813659116876829f8925f573d267130",
+                "reference": "034ddedbd813659116876829f8925f573d267130",
+                "shasum": ""
+            },
+            "require": {
+                "vis/curl_client_l5": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vis\\ImageStorage\\": "src/"
+                },
+                "classmap": [
+                    "src/Models",
+                    "src/Http/Controllers",
+                    "src/Migrations"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "vis",
+                    "email": "artur@vis-design.com"
+                }
+            ],
+            "description": "Image storage for L5",
+            "support": {
+                "source": "https://github.com/arturishe21/image_storage_l5/tree/2.0.3"
+            },
+            "time": "2021-01-11T09:22:40+00:00"
+        },
+        {
             "name": "vis/builder_lara_5",
             "version": "2.2.21",
             "source": {
@@ -6403,6 +6447,96 @@
                 "source": "https://github.com/arturishe21/builder_lara_5/tree/2.2.21"
             },
             "time": "2020-10-19T12:09:33+00:00"
+        },
+        {
+            "name": "vis/curl_client_l5",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KHlushchenko/curl_client_l5.git",
+                "reference": "dab7a6fd8adb9eeabe4f65d00d395627f02e816d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KHlushchenko/curl_client_l5/zipball/dab7a6fd8adb9eeabe4f65d00d395627f02e816d",
+                "reference": "dab7a6fd8adb9eeabe4f65d00d395627f02e816d",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Vis\\CurlClient\\": "src/"
+                },
+                "classmap": [
+                    "src/Models"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "K.Gluschenko",
+                    "email": "k.gluschenko@vis-design.com"
+                }
+            ],
+            "description": "PHP cUrl extension wrapper",
+            "support": {
+                "issues": "https://github.com/KHlushchenko/curl_client_l5/issues",
+                "source": "https://github.com/KHlushchenko/curl_client_l5/tree/master"
+            },
+            "time": "2017-05-08T18:26:38+00:00"
+        },
+        {
+            "name": "vis/translations_l5",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arturishe21/translations_l5.git",
+                "reference": "4c817b8cefb3a5f2f700f7413b49acd2608a8acf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arturishe21/translations_l5/zipball/4c817b8cefb3a5f2f700f7413b49acd2608a8acf",
+                "reference": "4c817b8cefb3a5f2f700f7413b49acd2608a8acf",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Vis\\Translations\\TranslationServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vis\\Translations\\": "src/"
+                },
+                "classmap": [
+                    "src/Models",
+                    "src/Console",
+                    "src/Http/Controllers",
+                    "src/Migrations"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "vis",
+                    "email": "artur@vis-design.com"
+                }
+            ],
+            "description": "Translations for L5",
+            "support": {
+                "issues": "https://github.com/arturishe21/translations_l5/issues",
+                "source": "https://github.com/arturishe21/translations_l5/tree/2.1.1"
+            },
+            "time": "2021-01-28T13:56:28+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

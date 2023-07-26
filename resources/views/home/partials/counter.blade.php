@@ -6,7 +6,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="{{$clubYears}}">0</strong>
-                        <span>Років  <br> клубу</span>
+                        <span>{{__t('Років')}}  <br> {{__t('клубу')}}</span>
                     </div>
                 </div>
             </div>
@@ -14,7 +14,7 @@
                 <div class="block-18">
                     <div class="text d-flex align-items-center">
                         <strong class="number" data-number="{{$clubs->count()}}">0</strong>
-                        <span>Регіональних <br>клубів</span>
+                        <span>{{__t('Регіональних')}} <br>{{__t('клубів')}}</span>
                     </div>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="3">0</strong>
-                        <span>True <br> дверцят</span>
+                        <span>True <br> {{__t('дверцят')}}</span>
                     </div>
                 </div>
             </div>
@@ -30,7 +30,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="27">0</strong>
-                        <span>Людей <br> вміщює</span>
+                        <span>{{__t('Людей')}} <br> {{__t('вміщює')}}</span>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
                         <strong class="number" data-number="1500">0</strong>
-                        <span>Участників</span>
+                        <span>{{__t('Участників')}}</span>
                     </div>
                 </div>
             </div>

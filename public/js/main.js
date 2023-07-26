@@ -360,6 +360,7 @@ AOS.init({
         e.preventDefault();
         let target = $(this).data('scroll');
         if (target) {
+            window.console.log($("."+ target).offset().top);
             $([document.documentElement, document.body]).animate({
                 scrollTop: $("."+ target).offset().top - $(".ftco_navbar").outerHeight()
             }, 1000);
@@ -367,7 +368,6 @@ AOS.init({
     });
 
     $(document).on("click", '[data-toggle="lightbox"]', function(event) {
-        window.console.log('aa');
         event.preventDefault();
         $(this).ekkoLightbox();
     });

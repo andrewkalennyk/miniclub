@@ -60,7 +60,11 @@ class Admin extends AdminBase
                     ],
                 ],
             ],
-
+            [
+                'title' => 'Переводы',
+                'icon'  => 'language',
+                'link'  => '/translations/phrases',
+            ],
             [
                 'title' => 'Упр. пользователями',
                 'icon'  => 'user',

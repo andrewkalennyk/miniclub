@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
 
-class HeaderComposer
+class NavbarComposer
 {
     private $locales = [
         'ua' => 'Ua',

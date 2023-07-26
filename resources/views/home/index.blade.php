@@ -11,7 +11,7 @@
                 <div class="col-lg-8 ftco-animate">
                     <div class="text w-100 text-center mb-md-5 pb-md-5">
                         <h1 class="mb-4">MINI CLUB UKRAINE 🇺🇦</h1>
-                        <p style="font-size: 18px;">Вас вітає автомобільний Клуб MINI Україна</p>
+                        <p style="font-size: 18px;">{{__t('Вас вітає автомобільний Клуб MINI Україна')}}</p>
                         <a href=""
                            class="icon-wrap d-flex align-items-center mt-4 justify-content-center scroll-to"
                             data-scroll="event-link-block"
@@ -20,7 +20,7 @@
                                 <span class="ion-ios-arrow-round-down"></span>
                             </div>
                             <div class="heading-title ml-5">
-                                <span style="font-size: 18px">Швидкий шлях нас знайти</span>
+                                <span style="font-size: 18px">{{__t('Швидкий шлях нас знайти')}}</span>
                             </div>
                         </a>
                     </div>

@@ -1,9 +1,8 @@
 <?php
 
 return [
-    'language_default' => 'ru',
+    'language_default' => 'uk',
     'languages' => [
-        'ru' => 'Русский',
         'uk' => 'Український',
         'en' => 'English',
     ],
