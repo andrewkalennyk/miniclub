@@ -18,7 +18,7 @@
                                     </div>
                                 </a>
                                 <div class="text">
-                                    <h2 class="mb-0"><a href="{{$event->getUrl()}}">{{$event->title}}</a></h2>
+                                    <h2 class="mb-0"><a href="{{$event->getUrl()}}">{{$event->t('title')}}</a></h2>
                                     <div class="d-flex mb-3">
                                         <span class="cat"></span>
                                         <p class="price ml-auto">{{$event->getDate()}} </p>

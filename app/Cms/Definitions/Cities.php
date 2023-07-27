@@ -18,7 +18,7 @@ class Cities extends Resource
     {
         return [
             Id::make('#', 'id')->sortable(),
-            Text::make('Название', 'title'),
+            Text::make('Название', 'title')->language(),
         ];
     }
 

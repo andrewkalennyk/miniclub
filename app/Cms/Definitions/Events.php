@@ -18,8 +18,9 @@ class Events extends Resource
     {
         return [
             Id::make('#', 'id')->sortable(),
-            Text::make('Название', 'title'),
-            Froala::make('Описание', 'description')->onlyForm(),
+            Text::make('Название', 'title')->language(),
+            Froala::make('Описание', 'description')->nullable('...')
+                ->default(null)->language()->onlyForm(),
             Image::make('Превью', 'picture'),
             MultiImage::make('Картинки доп', 'additional_pictures')->onlyForm(),
             Checkbox::make('Активность', 'is_active')->filter(),

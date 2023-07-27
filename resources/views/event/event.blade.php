@@ -19,11 +19,11 @@
                 <div class="col-md-9 ftco-animate pb-5">
                     <p class="breadcrumbs">
                         <span class="mr-2">
-                            <a href="{{asset('/')}}">Головна <i class="ion-ios-arrow-forward"></i></a>
+                            <a href="{{asset('/')}}">{{__t('Головна')}} <i class="ion-ios-arrow-forward"></i></a>
                         </span>
                        {{-- <span>{{$page->title}} <i class="ion-ios-arrow-forward"></i></span>--}}
                     </p>
-                    <h1 class="mb-3 bread">{{$page->title}}</h1>
+                    <h1 class="mb-3 bread">{{$page->t('title')}}</h1>
                 </div>
             </div>
         </div>

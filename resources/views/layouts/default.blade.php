@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="/css/flaticon.css">
     <link rel="stylesheet" href="/css/icomoon.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/lang.css">
     @yield('additional_styles')
     @yield('seo_tags')
 </head>
@@ -68,6 +69,7 @@
 <script src="/js/jquery.timepicker.min.js"></script>
 <script src="/js/scrollax.min.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/lang.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>

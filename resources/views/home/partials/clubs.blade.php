@@ -19,7 +19,7 @@
                                 <img src="{{$club->getImgPath(640,640)}}" class="card-img img-cover rounded-circle shadow" alt="">
                             </div>
                             <div class="text w-100">
-                                <h3 class="heading mb-2">{{$club->city->title}}</h3>
+                                <h3 class="heading mb-2">{{$club->city->t('title')}}</h3>
                                 <p></p>
                             </div>
                         </a>
