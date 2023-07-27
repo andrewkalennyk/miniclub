@@ -23,7 +23,20 @@
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="stickers-block">{{__t('Наліпки')}}</a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ucfirst(app()->getLocale())}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach($langs as $slug => $title)
+                            @if($slug !== app()->getLocale() )
+                                <a class="dropdown-item" href="{{geturl(request()->fullUrl(), $slug)}}">{{ucfirst($title)}}</a>
+                            @endif
+                        @endforeach
+                    </div>
+                </li>
             </ul>
         </div>
+
     </div>
 </nav>
