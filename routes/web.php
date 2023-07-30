@@ -11,6 +11,8 @@ Route::group(
     function () {
         Route::get('/podii/{slug}-{id}', 'EventController@showPage')->name('event');
 
+        Route::get('/servisi/{slug}-{id}', 'ServiceController@showService')->name('service');
+
         Route::post('/propose', 'FormController@doPropose')->name('propose');
     }
 );

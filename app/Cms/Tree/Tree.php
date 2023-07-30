@@ -2,7 +2,7 @@
 
 namespace App\Cms\Tree;
 
-use App\Cms\Tree\Templates\Contacts;
+use App\Cms\Tree\Templates\Services;
 use App\Cms\Tree\Templates\Node;
 use Vis\Builder\Definitions\BaseTree;
 
@@ -12,7 +12,7 @@ class Tree extends BaseTree
     {
         return [
             'main' => Node::class,
-            'contacts' => Contacts::class
+            'services' => Services::class
         ];
     }
 }

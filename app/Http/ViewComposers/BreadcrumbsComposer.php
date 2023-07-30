@@ -2,6 +2,9 @@
 
 namespace App\Http\ViewComposers;
 
+use App\Http\Breadcrumbs;
+use App\Models\Service;
+use App\Models\Tree;
 use Illuminate\View\View;
 
 class BreadcrumbsComposer
@@ -14,15 +17,21 @@ class BreadcrumbsComposer
 
         $page = $view->getData()['page'];
 
-        //if node
-        if (get_class($page) == 'Tree' || get_class($page) == 'NewsTree') {
-            $breadcrumbs = new \Breadcrumbs($page);
-        } else {
-            $node = $page->getNode();
-            $breadcrumbs = new \Breadcrumbs($node);
-            $breadcrumbs->add($page->getUrl(), $page->title);
+        switch (get_class($page)) {
+            case Tree::class:
+                $breadcrumbs = new Breadcrumbs($page);
+                break;
+            case Service::class:
+                $breadcrumbs = new Breadcrumbs($view->getData()['treePage']);
+                $breadcrumbs->add($page->getUrl(), $page->title);
+                break;
+            default:
+                $node = $page->getNode();
+                $breadcrumbs = new Breadcrumbs($node);
+                $breadcrumbs->add($page->getUrl(), $page->title);
+                break;
         }
 
-        $view->with(compact('breadcrumbs'));
+        $view->with(compact('breadcrumbs','page'));
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Event;
+use App\Models\Service;
 use App\Observers\SlugObserver;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Event::observe(SlugObserver::class);
+        Service::observe(SlugObserver::class);
     }
 }

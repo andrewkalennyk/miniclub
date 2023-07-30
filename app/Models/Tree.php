@@ -20,6 +20,11 @@ class Tree extends TreeBuilder
         return $query->where('is_active', '1');
     }
 
+    public function scopeSlug($query, $slug)
+    {
+        return $query->where('slug', $slug);
+    }
+
     // end scopeActive
 
     /*

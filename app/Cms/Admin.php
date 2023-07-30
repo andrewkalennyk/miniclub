@@ -42,6 +42,34 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Cервіси',
+                'icon'  => 'car',
+                'link'  => '/proposition',
+                'submenu' => [
+                    [
+                        'title' => 'Тип',
+                        'link'  => '/service_types',
+                    ],
+                    [
+                        'title' => 'Особливості',
+                        'link'  => '/service_features',
+                    ],
+                    [
+                        'title' => 'Cервіс',
+                        'link'  => '/services',
+                    ],
+                    [
+                        'title' => 'Користувачі',
+                        'link'  => '/review_users',
+                    ],
+                    [
+                        'title' => 'Відгуки',
+                        'link'  => '/service_reviews',
+                    ],
+                ],
+            ],
+
+            [
                 'title' => 'Настройки',
                 'icon'  => 'cog',
                 'link'  => '/settings_block',

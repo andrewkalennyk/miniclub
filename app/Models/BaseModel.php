@@ -45,6 +45,16 @@ class BaseModel extends Model
         $this->fillable = $params;
     }
 
+    public static function scopeSlug($query, string $slug)
+    {
+        return $query->where('slug', $slug);
+    }
+
+    public static function scopeId($query, int $id)
+    {
+        return $query->where('id', $id);
+    }
+
     public static function boot()
     {
         parent::boot();
@@ -87,18 +97,18 @@ class BaseModel extends Model
     public function getMonth($date)
     {
         $month = [
-            '1'  => 'Си',
-            '2'  => 'Февраля',
-            '3'  => 'Марта',
-            '4'  => 'Апреля',
-            '5'  => 'Мая',
-            '6'  => 'Июня',
-            '7'  => 'Июля',
-            '8'  => 'Августа',
-            '9'  => 'Сентября',
-            '10' => 'Октября',
-            '11' => 'Ноября',
-            '12' => 'Декабря',
+            '1'  => 'Січень',
+            '2'  => 'Лютий',
+            '3'  => 'Березень',
+            '4'  => 'Квітень',
+            '5'  => 'Травень',
+            '6'  => 'Червень',
+            '7'  => 'Липень',
+            '8'  => 'Серпень',
+            '9'  => 'Вересень',
+            '10' => 'Жовтень',
+            '11' => 'Листопад',
+            '12' => 'Грудень',
         ];
 
         return  __($month[date('n', strtotime($date))]);

@@ -8835,7 +8835,9 @@ h1, h2, h3, h4, h5,
         .pills .rating-wrap .star span i {
           color: #1089ff; }
         .pills .rating-wrap .star span:first-child {
-          width: 62%; }
+          width: 42%; }
+        .pills .rating-wrap .star span {
+            width: 20%; }
         .pills .rating-wrap .star span:last-child {
           width: 32%; }
 

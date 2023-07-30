@@ -47,7 +47,7 @@
 <body>
 
 <div id="content_page">
-    @include('partials.navbar')
+    @include('home.partials.navbar')
     @yield('main')
 
     @include('partials.footer')

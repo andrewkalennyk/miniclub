@@ -1,7 +1,7 @@
-@extends('layouts.default')
+@extends('layouts.main')
 
 @section('main')
-    @include('home.partials.navbar')
+
 
     <div class="hero-wrap ftco-degree-bg" style="background-image: url('/images/bg_mini.jpg');"
          data-stellar-background-ratio="0.5">
