@@ -62,4 +62,22 @@ class Service extends BaseModel
         return "({$percentage}%)";
     }
 
+    public function getExpertImageDecision(): string
+    {
+        return match ($this->expert_decision) {
+            'like' => '/images/o-like.png',
+            'dislike' => '/images/o-dislike.png',
+            default => '',
+        };
+    }
+
+    public function getExpertImageTitle(): string
+    {
+        return match ($this->expert_decision) {
+            'like' => __t('Непогано'),
+            'dislike' => __t('Щось не дуже'),
+            default => '',
+        };
+    }
+
 }

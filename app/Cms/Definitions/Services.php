@@ -5,7 +5,15 @@ namespace App\Cms\Definitions;
 use App\Models\Service;
 use App\Models\ServiceType;
 use Vis\Builder\Services\Actions;
-use Vis\Builder\Fields\{Checkbox, Foreign, Id, Image, ManyToMany, ManyToManyMultiSelect, Relations\Options, Text};
+use Vis\Builder\Fields\{Checkbox,
+    Foreign,
+    Id,
+    Image,
+    ManyToMany,
+    ManyToManyMultiSelect,
+    Relations\Options,
+    Select,
+    Text};
 use Vis\Builder\Definitions\Resource;
 
 class Services extends Resource
@@ -37,10 +45,19 @@ class Services extends Resource
                 Checkbox::make('Активность', 'is_active')->filter(),
             ],
             'Контактна Інформація' => [
-                Text::make('Адреса', 'address')->onlyForm(),
+                Text::make('Адреса', 'address')->language()->onlyForm(),
                 Text::make('Сторінка сервісу', 'site_url')->onlyForm(),
                 Text::make('Телефон', 'number')->onlyForm(),
                 Text::make('Контактна людина', 'contact_person')->onlyForm(),
+                Text::make('Маршрут', 'google_url')->onlyForm(),
+                Select::make('Думка експерта', 'expert_decision')
+                ->options(
+                    [
+                        null => 'Виберіть рішення',
+                        'like' => 'Непогано',
+                        'dislike' => 'Щось не дуже',
+                    ]
+                )->onlyForm(),
             ],
             'Медіа' => [
                 Image::make('Лого', 'logo')->onlyForm(),
