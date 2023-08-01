@@ -1,29 +1,30 @@
-<div class="col-md-4 service @if(empty($open)) d-none @endif" data-type="{{$service->service_type->type}}">
-    <div class="car-wrap rounded ftco-animate">
-        <div class="img rounded d-flex align-items-end" style="background-image: url({{$service->logo}});">
-        </div>
-        <div class="text">
-            <h2 class="mb-0">
-                <a href="#">{{$service->t('title')}}</a>
-            </h2>
-            <div class="d-flex mb-3">
-                <span class="cat">{{__t('Місто')}}</span>
-                <p class="price ml-auto">{{$service->city->t('title')}}</p>
+<div class="col-md-4 col-sm-6 col-xs-12 mb-3 align-items-stretch service @if(empty($open)) d-none @endif" data-type="{{$service->service_type->type}}">
+    <div class="card rounded ftco-animate border-0 shadow-sm h-100">
+        <a href="{{$service->getUrl()}}">
+            <img src="{{$service->logo}}" class="card-img-top" alt="...">
+        </a>
+        <div class="card-body">
+            <a href="{{$service->getUrl()}}">
+                <h5 class="card-title">{{$service->t('title')}}</h5>
+            </a>
+            <div class="card-text d-flex">
+                <span class="text-left">{{__t('Місто')}}</span>
+                <p class="ml-auto text-right text-primary">{{$service->city->t('title')}}</p>
             </div>
-            <div class="d-flex mb-3">
-                <span class="cat">{{__t('Адреса')}}</span>
-                <p class="price ml-auto">{{$service->address}}</p>
+            <div class="card-text d-flex">
+                <span class="text-left">{{__t('Адреса')}}</span>
+                <p class="ml-auto text-right text-primary">{{$service->address}}</p>
             </div>
-            <div class="d-flex mb-3">
-                <span class="cat">{{__t('Телефон')}}</span>
-                <p class="price ml-auto">{{$service->number}}</p>
+            <div class="card-text d-flex">
+                <span class="text-left">{{__t('Телефон')}}</span>
+                <p class="ml-auto text-right text-primary">{{$service->number}}</p>
             </div>
-            <p class="d-flex mb-0 d-block justify-content-end">
+            <div class="card-text d-flex justify-content-lg-end">
                 @if($service->site_url)
-                    <a href="{{$service->site_url}}" target="_blank" class="btn btn-primary py-2 mr-1 ">{{__t('Сайт Сервісу')}}</a>
+                    <a href="{{$service->site_url}}" target="_blank" class="btn btn-primary py-2 mr-1 w-50">{{__t('Сайт Сервісу')}}</a>
                 @endif
-                <a href="{{$service->getUrl()}}" class="btn btn-secondary py-2 ml-1 justify-content-end">{{__t('Детальніше')}}</a>
-            </p>
+                <a href="{{$service->getUrl()}}" class="btn btn-secondary py-2 ml-1 w-50">{{__t('Детальніше')}}</a>
+            </div>
         </div>
     </div>
 </div>
