@@ -11,7 +11,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="car-details">
-                        <div class="img rounded" style="background-image: url({{$page->logo}});"></div>
+                        <img src="{{$page->logo}}" class="mx-auto d-block img-fluid" alt="Responsive image">
                         <div class="text text-center">
                             <span class="subheading">{{$page->service_type->t('title')}}</span>
                             <h2>{{$page->t('title')}}</h2>
