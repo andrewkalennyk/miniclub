@@ -53,7 +53,12 @@ class Service extends BaseModel
 
     public function getReviewPercentage(int $currMark): string
     {
+        if ($this->reviews->count() == 0) {
+            return "(0%)";
+        }
+
         $percentage = $currMark / $this->reviews->count() * 100;
+
         return "({$percentage}%)";
     }
 
