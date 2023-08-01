@@ -17,7 +17,7 @@
             </div>
             <div class="card-text d-flex">
                 <span class="text-left">{{__t('Телефон')}}</span>
-                <p class="ml-auto text-right text-primary">{!! $service->number !!}}</p>
+                <p class="ml-auto text-right text-primary">{!! $service->number !!}</p>
             </div>
             <div class="card-text d-flex justify-content-lg-end">
                 @if($service->site_url)
