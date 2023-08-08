@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Tree;
+use Illuminate\Support\Facades\Request;
 use Vis\Builder\TreeController;
 
 class EventController extends TreeController
@@ -23,8 +25,10 @@ class EventController extends TreeController
     {
         $page = Event::active()->slug($slug)->id($id)->firstOrFail();
 
+        $treePage = Tree::where('template', 'events')->active()->first();
+
         $pictures = $page->getOtherImg()->chunk(3);
 
-        return view('event.event', compact('page', 'pictures'));
+        return view('event.event', compact('page', 'pictures','treePage'));
     }
 }

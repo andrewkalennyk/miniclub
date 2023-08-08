@@ -18,6 +18,8 @@ class NavbarComposer
         $langs = $this->locales;
         $thisLang = $this->locales[App::getLocale()];
 
-        $view->with(compact('langs', 'thisLang'));
+        $menuItems = Tree::active()->isMenu()->get();
+
+        $view->with(compact('langs', 'thisLang','menuItems'));
     }
 }

@@ -1,7 +1,6 @@
 @extends('layouts.default')
 
 @section('additional_styles')
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.min.css" rel="stylesheet" />
 @stop
 
@@ -11,22 +10,8 @@
 
 @section('main')
 
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{$page->picture}}');"
-             data-stellar-background-ratio="0.5">
-        <div class="overlay"></div>
-        <div class="container">
-            <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-start">
-                <div class="col-md-9 ftco-animate pb-5">
-                    <p class="breadcrumbs">
-                        <span class="mr-2">
-                            <a href="{{asset('/')}}">{{__t('Головна')}} <i class="ion-ios-arrow-forward"></i></a>
-                        </span>
-                       {{-- <span>{{$page->title}} <i class="ion-ios-arrow-forward"></i></span>--}}
-                    </p>
-                    <h1 class="mb-3 bread">{{$page->t('title')}}</h1>
-                </div>
-            </div>
-        </div>
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{$page->picture}}');" data-stellar-background-ratio="0.5">
+        @include('partials.breadcrumbs')
     </section>
 
     <section class="ftco-section ftco-degree-bg">

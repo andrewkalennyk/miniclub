@@ -11,18 +11,13 @@
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav ml-auto">
-                {{--<li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="event-link-block">{{__t('Клуб')}}</a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="events-block">{{__t('Зустрічі')}}</a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="shops-block">{{__t('Автосервіси')}}</a>
-                </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="stickers-block">{{__t('Наліпки')}}</a>
-                </li>--}}
+                @if($menuItems->count())
+                    @foreach($menuItems as $item)
+                        <li class="nav-item">
+                            <a href="{{$item->getUrl()}}" class="nav-link font-weight-bold">{{$item->t('title')}}</a>
+                        </li>
+                    @endforeach
+                @endif
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ucfirst(app()->getLocale())}}

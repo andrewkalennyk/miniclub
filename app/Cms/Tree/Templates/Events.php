@@ -21,6 +21,7 @@ class Events extends Node
                 Text::make('Url', 'slug'),
                 Image::make('Картинка', 'picture'),
                 Checkbox::make('Активно' ,'is_active'),
+                Checkbox::make('Показувати у меню' ,'is_show_in_menu'),
             ],
             'SEO' => [
                 Text::make('Seo title', 'seo_title'),

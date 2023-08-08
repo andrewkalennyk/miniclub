@@ -22,6 +22,7 @@ class Node extends ResourceTree
                 Image::make('Картинка', 'picture'),
                 MultiImage::make('Дополнительные картинки', 'additional_pictures'),
                 Checkbox::make('Активно' ,'is_active'),
+                Checkbox::make('Показувати у меню' ,'is_show_in_menu'),
             ],
             'SEO' => [
                 Text::make('Seo title', 'seo_title'),
