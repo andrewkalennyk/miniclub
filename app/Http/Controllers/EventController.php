@@ -7,6 +7,15 @@ use Vis\Builder\TreeController;
 
 class EventController extends TreeController
 {
+    public function showEvents()
+    {
+        $page = $this->node;
+
+        $events = Event::active()->orderEventDate()->paginate(9);
+
+        return view('event.all', compact('page', 'events'));
+    }
+
     /*
      * show index page site
      */

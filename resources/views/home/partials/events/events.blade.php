@@ -1,4 +1,4 @@
-<section class="ftco-section ftco-no-pt bg-light events-block">
+<section class="ftco-section bg-light events-block">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 heading-section text-center ftco-animate mb-5">
@@ -33,5 +33,10 @@
                 </div>
             </div>
         </div>
+        @if(!empty($allEventPage))
+            <div class="row justify-content-lg-end justify-content-sm-center">
+                <a href="{{$allEventPage->getUrl()}}">{{__t('Всі події')}}</a>
+            </div>
+        @endif
     </div>
 </section>
