@@ -10,23 +10,22 @@
             <div class="col-md-12">
                 <div class="carousel-car owl-carousel">
                     @foreach($events as $event)
-                        <div class="item">
-                            <div class="car-wrap rounded ftco-animate">
+                        <div class="card rounded ftco-animate border-0 shadow-sm h-100">
+                            <a href="{{$event->getUrl()}}">
+                                <img src="{{$event->picture}}" class="card-img-top card-img-top-20" alt="...">
+                            </a>
+                            <div class="card-body pb-0">
                                 <a href="{{$event->getUrl()}}">
-                                    <div class="img rounded d-flex align-items-end"
-                                         style="background-image: url({{$event->picture}});">
-                                    </div>
+                                    <h5 class="card-title font-weight-normal">{{$event->t('title')}}</h5>
                                 </a>
-                                <div class="text">
-                                    <h2 class="mb-0"><a href="{{$event->getUrl()}}">{{$event->t('title')}}</a></h2>
-                                    <div class="d-flex mb-3">
-                                        <span class="cat"></span>
-                                        <p class="price ml-auto">{{$event->getDate()}} </p>
-                                    </div>
-                                    <p class="d-flex mb-0 d-block">
-                                        <a href="{{$event->getUrl()}}" class="btn btn-secondary py-2 ml-1">{{__t('Деталі')}}</a>
-                                    </p>
+                                <div class="d-flex">
+                                    <span class="cat"></span>
+                                    <p class="price ml-auto font-weight-bold text-primary">{{$event->getDate()}} </p>
                                 </div>
+                            </div>
+
+                            <div class="d-flex mb-3 ml-3 mr-2">
+                                <a href="{{$event->getUrl()}}" class="card-link btn btn-secondary py-2 w-50">{{__t('Деталі')}}</a>
                             </div>
                         </div>
                     @endforeach

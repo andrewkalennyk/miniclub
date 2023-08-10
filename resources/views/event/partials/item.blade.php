@@ -1,7 +1,7 @@
 <div class="col-md-4 col-sm-6 col-xs-12 mb-3 align-items-stretch">
     <div class="card rounded ftco-animate border-0 shadow-sm h-100">
         <a href="{{$event->getUrl()}}">
-            <img src="{{$event->picture}}" class="card-img-top" alt="...">
+            <img src="{{$event->picture}}" class="card-img-top card-img-top-20" alt="...">
         </a>
         <div class="card-body pb-0">
             <a href="{{$event->getUrl()}}">
