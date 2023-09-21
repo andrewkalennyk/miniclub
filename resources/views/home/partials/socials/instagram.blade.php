@@ -1,4 +1,4 @@
-<div class="col-md-6 d-flex align-self-stretch ftco-animate">
+<div class="col-md-6 col-sm-12 d-flex align-self-stretch ftco-animate">
     <div class="services w-100 text-center">
         <div class="d-flex align-items-center justify-content-center">
             <a href="https://www.instagram.com/miniclubukraine/" target="_blank">
@@ -8,6 +8,7 @@
         <div class="text w-100">
             <a href="https://www.instagram.com/miniclubukraine/" target="_blank">
                 <h3 class="heading mb-2">Instagram</h3>
+                <p class="text-dark">@miniclubukraine</p>
             </a>
         </div>
     </div>
