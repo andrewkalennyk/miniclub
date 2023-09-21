@@ -23,7 +23,7 @@ class LocalClubs extends Resource
                 ->nullable('...')
                 ->default(null),
             Image::make('Превью', 'picture'),
-            Text::make('url', 'Url'),
+            Text::make('Url', 'url'),
             Text::make('Відповідальний', 'responsible'),
             Checkbox::make('Активность', 'is_active')->filter(),
         ];
