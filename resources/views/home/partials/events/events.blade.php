@@ -7,7 +7,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 col-sm-12">
                 <div class="carousel-car owl-carousel">
                     @foreach($events as $event)
                         <div class="card rounded ftco-animate border-0 shadow-sm h-100">

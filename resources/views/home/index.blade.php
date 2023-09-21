@@ -33,8 +33,7 @@
 
     @include('home.partials.events.events')
 
-    @include('home.partials.shops')
-   {{-- @includeWhen($services->count(), 'home.partials.services')--}}
+    @includeWhen($services->count(), 'home.partials.services')
 
     {{--@include('home.partials.stickers')--}}
 

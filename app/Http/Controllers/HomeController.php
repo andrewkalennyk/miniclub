@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use App\Models\LocalClub;
+use App\Models\Service;
 use App\Models\Tree;
 use Vis\Builder\TreeController;
 use Carbon\Carbon;
@@ -24,6 +25,8 @@ class HomeController extends TreeController
 
         $clubYears = (Carbon::now())->diffInYears(Carbon::create('2018'));
 
-        return view('home.index', compact('page','events', 'clubs', 'clubYears', 'allEventPage'));
+        $services = Service::active()->isMain()->take(4)->get()->shuffle();
+
+        return view('home.index', compact('page','events', 'clubs', 'clubYears', 'allEventPage', 'services'));
     }
 }

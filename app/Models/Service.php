@@ -34,6 +34,11 @@ class Service extends BaseModel
         return $query->where('service_type_id', $typeId);
     }
 
+    public function scopeIsMain($query)
+    {
+        return $query->where('is_show_main', 1);
+    }
+
     public function getUrl()
     {
         return route('service', [$this->slug, $this->id]);
