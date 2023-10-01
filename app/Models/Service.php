@@ -85,4 +85,8 @@ class Service extends BaseModel
         };
     }
 
+    public function getMark()
+    {
+        return $this->mark ?: 0;
+    }
 }

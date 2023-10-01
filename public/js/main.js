@@ -111,8 +111,8 @@ AOS.init({
             infinite:true,
             nav: false,
             autoplayTimeout:4000,
-            startPosition: 1,
-            autoplay: false,
+            startPosition: 0,
+            autoplay: true,
             navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
             responsive: {
                 0: {

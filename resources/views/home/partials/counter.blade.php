@@ -39,7 +39,7 @@
             <div class="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
                 <div class="block-18">
                     <div class="text text-border d-flex align-items-center">
-                        <strong class="number" data-number="1500">0</strong>
+                        <strong class="number" data-number="{{$members}}">0</strong>
                         <span>{{__t('Участників')}}</span>
                     </div>
                 </div>

@@ -33,7 +33,7 @@
             </div>
         </div>
         @if(!empty($allEventPage))
-            <div class="row justify-content-lg-end justify-content-sm-center">
+            <div class="row mt-2 mr-lg-1 justify-content-lg-end justify-content-md-end justify-content-sm-center justify-content-center">
                 <a href="{{$allEventPage->getUrl()}}">{{__t('Всі події')}}</a>
             </div>
         @endif

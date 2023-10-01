@@ -25,6 +25,10 @@ class HomeController extends TreeController
 
         $clubYears = (Carbon::now())->diffInYears(Carbon::create('2018'));
 
+        preg_match_all('#(.*?) members, (.*?) online#', file_get_contents('https://t.me/miniclubua'), $matches);
+
+        $members = (int) filter_var($matches[1][0], FILTER_SANITIZE_NUMBER_INT);
+
         $services = Service::active()->isMain()->take(4)->get()->shuffle();
 
         return view('home.index', compact('page','events', 'clubs', 'clubYears', 'allEventPage', 'services'));

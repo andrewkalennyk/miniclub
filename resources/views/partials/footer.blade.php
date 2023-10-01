@@ -9,7 +9,7 @@
                         Official hashtag #miniclubua</p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="https://t.me/miniclubua"><span class="icon-telegram"></span></a></li>
-                        <li class="ftco-animate"><a href="https://www.facebook.com/miniclubua"><span class="icon-facebook"></span></a></li>
+                        {{--<li class="ftco-animate"><a href="https://www.facebook.com/miniclubua"><span class="icon-facebook"></span></a></li>--}}
                         <li class="ftco-animate"><a href="https://www.instagram.com/miniclubukraine/"><span class="icon-instagram"></span></a></li>
                     </ul>
                 </div>
