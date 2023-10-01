@@ -20,7 +20,7 @@ class ServiceController extends TreeController
 
         $types = ServiceType::active()->get();
 
-        $services = Service::active()->with(['city', 'service_type', 'reviews'])->get();
+        $services = Service::active()->orderBy('mark','desc')->with(['city', 'service_type', 'reviews'])->get();
 
         return view('service.catalog', compact('page','types', 'services'));
     }
