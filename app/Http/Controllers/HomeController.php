@@ -29,8 +29,16 @@ class HomeController extends TreeController
 
         $members = (int) filter_var($matches[1][0], FILTER_SANITIZE_NUMBER_INT);
 
-        $services = Service::active()->isMain()->take(4)->get()->shuffle();
+        $services = Service::active()->type(1)->take(4)->orderBy('mark', 'desc')->get();
 
-        return view('home.index', compact('page','events', 'clubs', 'clubYears', 'allEventPage', 'services'));
+        return view('home.index', compact(
+            'page',
+            'events',
+            'clubs',
+            'clubYears',
+            'allEventPage',
+            'services',
+            'members'
+        ));
     }
 }
