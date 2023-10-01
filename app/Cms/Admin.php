@@ -70,6 +70,12 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'FAQ',
+                'icon'  => 'question-circle',
+                'link'  => '/faq',
+            ],
+
+            [
                 'title' => 'Настройки',
                 'icon'  => 'cog',
                 'link'  => '/settings_block',

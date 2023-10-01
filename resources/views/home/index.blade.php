@@ -35,7 +35,7 @@
 
     @includeWhen($services->count(), 'home.partials.services')
 
-    {{--@include('home.partials.stickers')--}}
+    @include('home.partials.faq')
 
     @include('home.partials.counter')
 

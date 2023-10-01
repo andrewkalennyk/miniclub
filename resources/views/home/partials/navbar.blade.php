@@ -20,9 +20,11 @@
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="shops-block">{{__t('Автосервіси')}}</a>
                 </li>
-                <li class="nav-item">
-                    <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="stickers-block">{{__t('Наліпки')}}</a>
-                </li>
+                @if(!empty($faqItems))
+                    <li class="nav-item">
+                        <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="faq-block">FAQ</a>
+                    </li>
+                @endif
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{ucfirst(app()->getLocale())}}

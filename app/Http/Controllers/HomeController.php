@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Faq;
 use App\Models\LocalClub;
 use App\Models\Service;
 use App\Models\Tree;
@@ -22,6 +23,7 @@ class HomeController extends TreeController
         $clubs = LocalClub::with('city')->active()->get();
 
         $allEventPage = Tree::where('template','events')->first();
+        $allServicesPage = Tree::where('template','services')->first();
 
         $clubYears = (Carbon::now())->diffInYears(Carbon::create('2018'));
 
@@ -31,14 +33,18 @@ class HomeController extends TreeController
 
         $services = Service::active()->type(1)->take(4)->orderBy('mark', 'desc')->get();
 
+        $faqItems = Faq::active()->take(10)->get();
+
         return view('home.index', compact(
             'page',
             'events',
             'clubs',
             'clubYears',
             'allEventPage',
+            'allServicesPage',
             'services',
-            'members'
+            'members',
+            'faqItems'
         ));
     }
 }
