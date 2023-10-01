@@ -4,8 +4,11 @@
             <img src="{{$service->logo}}" class="card-img-top" alt="...">
         </a>
         <div class="card-body flex-column">
-            <a href="{{$service->getUrl()}}">
+            <a href="{{$service->getUrl()}}" class="d-flex">
                 <h5 class="card-title">{{$service->t('title')}}</h5>
+                @if($mark = $service->getMark())
+                    <span class="ml-auto text-right">{{$mark}} <i class="ion-ios-star"></i></span>
+                @endif
             </a>
             <p class="card-text d-flex">
                 <span class="text-left">{{__t('Місто')}}</span>
