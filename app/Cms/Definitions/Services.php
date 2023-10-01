@@ -43,6 +43,7 @@ class Services extends Resource
                     (new Options('service_features'))->orderBy('priority')->keyField('title')
                 ),
                 Checkbox::make('Активность', 'is_active')->filter(),
+                Checkbox::make('На головній', 'is_show_main')->filter(),
             ],
             'Контактна Інформація' => [
                 Text::make('Адреса', 'address')->language()->onlyForm(),
@@ -50,8 +51,7 @@ class Services extends Resource
                 Text::make('Телефон', 'number')->onlyForm(),
                 Text::make('Контактна людина', 'contact_person')->onlyForm(),
                 Text::make('Маршрут', 'google_url')->onlyForm(),
-                Select::make('Думка експерта', 'expert_decision')
-                ->options(
+                Select::make('Думка експерта', 'expert_decision')->options(
                     [
                         null => 'Виберіть рішення',
                         'like' => 'Непогано',
