@@ -1,3 +1,6 @@
+<?php
+/** @var $review \App\Models\ServiceReview **/
+?>
 <h3 class="head">{{__t('Відгуків: ')}} {{$page->reviews->count()}}</h3>
 @if ($page->reviews->count())
     @foreach($page->reviews as $review)
@@ -18,7 +21,13 @@
                         <a href="#" class="reply"><i class="icon-forward"></i></a>
                     </span>--}}
                 </p>
-                {!! $review->comment !!}
+                {!! $review->getComment() !!}
+
+                @if($review->isHugeComment())
+                    <p>
+                        <a href="{{$review->getUrl()}}" type="button" class="btn btn-info">Детальніше</a>
+                    </p>
+                @endif
             </div>
         </div>
     @endforeach

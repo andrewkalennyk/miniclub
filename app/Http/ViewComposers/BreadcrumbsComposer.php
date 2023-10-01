@@ -5,6 +5,7 @@ namespace App\Http\ViewComposers;
 use App\Http\Breadcrumbs;
 use App\Models\Event;
 use App\Models\Service;
+use App\Models\ServiceReview;
 use App\Models\Tree;
 use Illuminate\View\View;
 
@@ -25,6 +26,11 @@ class BreadcrumbsComposer
             case Service::class:
             case Event::class:
                 $breadcrumbs = new Breadcrumbs($view->getData()['treePage']);
+                $breadcrumbs->add($page->getUrl(), $page->title);
+                break;
+            case ServiceReview::class:
+                $breadcrumbs = new Breadcrumbs($view->getData()['treePage']);
+                $breadcrumbs->add($page->service->getUrl(), $page->service->title);
                 $breadcrumbs->add($page->getUrl(), $page->title);
                 break;
             default:
