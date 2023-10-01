@@ -2,7 +2,7 @@
 
 @section('main')
 
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/images/review-image.jpeg');"
+    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/images/review-image.webp');"
              data-stellar-background-ratio="0.5">
         @include('partials.breadcrumbs')
     </section>
