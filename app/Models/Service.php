@@ -82,13 +82,6 @@ class Service extends BaseModel
 
     public function getMark()
     {
-        $marks = $this->reviews->pluck('mark');
-
-        if ($marks->count()) {
-            return $marks->sum() / $marks->count();
-        }
-
-        return 0;
+        return $this->mark ?: 0;
     }
-
 }

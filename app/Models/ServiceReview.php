@@ -28,6 +28,11 @@ class ServiceReview extends BaseModel
         });
     }
 
+    public function scopeServiceId($query, int $id)
+    {
+        return $query->where('service_id', $id);
+    }
+
     public function getReviewerPicture(): string
     {
         return $this->review_user->picture ?: '';
