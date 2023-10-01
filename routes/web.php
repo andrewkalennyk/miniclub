@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Service;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -14,5 +15,13 @@ Route::group(
         Route::get('/servisi/{slug}-{id}', 'ServiceController@showService')->name('service');
 
         Route::post('/propose', 'FormController@doPropose')->name('propose');
+
+        Route::get('/test', function () {
+            $services = Service::active()->limit(5)->get()->map(function ($service) {
+                return $service->title;
+            })->implode("/\/");
+
+            dd($services);
+        });
     }
 );
