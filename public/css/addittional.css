@@ -7,7 +7,7 @@
     }
 }
 
-.card-img-top .embed-responsive {
+.embed-responsive .card-img-top {
     object-fit: cover;
     min-height: 350px;
 }

@@ -1,7 +1,7 @@
 <div class="col-md-4 col-sm-6 col-xs-12 mb-3 align-items-stretch service @if(empty($open)) d-none @endif" data-type="{{$service->service_type->type}}">
     <div class="card rounded ftco-animate border-0 shadow-sm h-100">
-        <a href="{{$service->getUrl()}}">
-            <img src="{{$service->logo}}" class="card-img-top embed-responsive-item" alt="...">
+        <a href="{{$service->getUrl()}}" class="embed-responsive">
+            <img src="{{$service->logo}}" class="card-img-top" alt="...">
         </a>
         <div class="card-body flex-column">
             <a href="{{$service->getUrl()}}" class="d-flex">
