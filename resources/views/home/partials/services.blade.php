@@ -23,5 +23,10 @@
                 </div>
             @endforeach
         </div>
+        @if($allServicesPage)
+            <div class="row mt-2 mr-lg-1 justify-content-lg-end justify-content-md-end justify-content-sm-center justify-content-center">
+                <a href="{{$allServicesPage->getUrl()}}">{{__t('Всі Сервіси')}}</a>
+            </div>
+        @endif
     </div>
 </section>
