@@ -6,3 +6,7 @@
         height: 60vw;
     }
 }
+
+.embed-responsive .card-img-top {
+    object-fit: cover;
+}
