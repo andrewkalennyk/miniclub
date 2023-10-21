@@ -12,9 +12,10 @@
                 <p class="price ml-auto font-weight-bold text-primary">{{$event->getDate()}} </p>
             </div>
         </div>
-
-        <div class="d-flex mb-3 ml-3 mr-2">
-            <a href="{{$event->getUrl()}}" class="card-link btn btn-secondary py-2 w-50">{{__t('Деталі')}}</a>
-        </div>
+        @if($event->showUrl())
+            <div class="d-flex mb-3 ml-3 mr-2">
+                <a href="{{$event->getUrl()}}" class="card-link btn btn-secondary py-2 w-50">{{__t('Деталі')}}</a>
+            </div>
+        @endif
     </div>
 </div>

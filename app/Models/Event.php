@@ -77,4 +77,14 @@ class Event extends BaseModel
     {
         return route('event', [$this->slug, $this->id]);
     }
+
+    public function getOtherImgCount(): int
+    {
+        return $this->getOtherImg()->count() ?? 0;
+    }
+
+    public function showUrl(): bool
+    {
+        return $this->getOtherImgCount() > 5 ;
+    }
 }
