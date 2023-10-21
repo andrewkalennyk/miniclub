@@ -51,7 +51,7 @@ class LocalClub extends BaseModel
         return !empty($this->url);
     }
 
-    public function getUrl(): string
+    public function getUrl(): string|null
     {
         return $this->url;
     }
