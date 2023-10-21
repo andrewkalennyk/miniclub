@@ -1,3 +1,4 @@
+<?php /* @var  $event \App\Models\Event */?>
 <section class="ftco-section bg-light events-block">
     <div class="container">
         <div class="row justify-content-center">
@@ -12,7 +13,7 @@
                     @foreach($events as $event)
                         <div class="card rounded ftco-animate border-0 shadow-sm h-100">
                             <a href="{{$event->getUrl()}}">
-                                <img src="{{$event->getImgPath('330', '340')}}" class="card-img-top card-img-top-20" alt="...">
+                                <img src="{{$event->picture}}" class="card-img-top card-img-top-20" alt="...">
                             </a>
                             <div class="card-body pb-0">
                                 <a href="{{$event->getUrl()}}">
