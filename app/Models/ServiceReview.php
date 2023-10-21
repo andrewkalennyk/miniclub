@@ -4,6 +4,41 @@ namespace App\Models;
 
 use App\Models\Traits\OtherImageTrait;
 
+/**
+ * App\Models\ServiceReview
+ *
+ * @property int $id
+ * @property int $review_user_id
+ * @property int $service_id
+ * @property int $mark
+ * @property string|null $comment
+ * @property string|null $pictures
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\ReviewUser $review_user
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Venturecraft\Revisionable\Revision> $revisionHistory
+ * @property-read int|null $revision_history_count
+ * @property-read \App\Models\Service $service
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel active()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel id(int $id)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel orderPriority()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel pageInfo($slug, $id)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview query()
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview serviceHas(string $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview serviceId(int $id)
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel slug(string $slug)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview whereComment($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview whereMark($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview wherePictures($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview whereReviewUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview whereServiceId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ServiceReview whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class ServiceReview extends BaseModel
 {
     use OtherImageTrait;

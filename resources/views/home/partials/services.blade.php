@@ -1,3 +1,5 @@
+<?php /* @var $service \App\Models\Service */?>
+
 <section class="ftco-section shops-block">
     <div class="container">
         <div class="row justify-content-center mb-5">
@@ -12,7 +14,7 @@
                     <div class="services services-2 w-100 text-center">
                         <a href="{{$service->getUrl()}}">
                             <div class="icon d-flex align-items-center justify-content-center">
-                                <img src="{{$service->logo}}" class="card-img-top img-cover rounded-circle" alt="">
+                                <img src="{{$service->getImgPath('150', '155', ['image_title' => 'logo'])}}" class="card-img-top img-cover rounded-circle" alt="">
                             </div>
                             <div class="text w-100">
                                 <h3 class="heading mb-2">{{$service->t('title')}}</h3>

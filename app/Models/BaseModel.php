@@ -7,6 +7,21 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Str;
 
+/**
+ * App\Models\BaseModel
+ *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Venturecraft\Revisionable\Revision> $revisionHistory
+ * @property-read int|null $revision_history_count
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel active()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel id(int $id)
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel orderPriority()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel pageInfo($slug, $id)
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel query()
+ * @method static \Illuminate\Database\Eloquent\Builder|BaseModel slug(string $slug)
+ * @mixin \Eloquent
+ */
 class BaseModel extends Model
 {
     use \Vis\Builder\Helpers\Traits\TranslateTrait,

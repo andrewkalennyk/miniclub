@@ -32,7 +32,9 @@
                                     <a class="nav-link active" id="feature-tab" data-toggle="pill" href="#pills-feature" role="tab" aria-controls="pills-feature" aria-expanded="true">{{__t('Особливості')}}</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">{{__t('Відгуки')}}</a>
+                                    <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">
+                                        {{__t('Відгуки')}} <span class="icon-chat"></span> {{$page->reviews->count()}}
+                                    </a>
                                 </li>
                             </ul>
                         </div>
