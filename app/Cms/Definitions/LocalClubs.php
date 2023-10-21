@@ -21,7 +21,8 @@ class LocalClubs extends Resource
             Foreign::make('Місто', 'city_id')
                 ->options((new Options('city'))->keyField('title'))
                 ->nullable('...')
-                ->default(null),
+                ->default(null)
+                ->sortable(),
             Image::make('Превью', 'picture'),
             Text::make('Url', 'url')->onlyForm(),
             /*Text::make('Відповідальний', 'responsible'),*/

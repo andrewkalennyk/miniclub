@@ -1,3 +1,6 @@
+<?php /* @var $club \App\Models\LocalClub */?>
+
+
 <section class="ftco-section clubs-block">
     <div class="container">
         <div class="row justify-content-center mb-5">
@@ -8,15 +11,13 @@
         </div>
         <div class="row carousel-local-club owl-carousel">
             @foreach($clubs as $club)
-                <div class="services services-2 w-100 text-center">
-                    <div class="icon d-flex align-items-center justify-content-center">
-                        <img src="{{$club->getImgPath(640,640)}}" class="card-img img-cover rounded-circle shadow" alt="">
-                    </div>
-                    <div class="text w-100">
-                        <h3 class="heading mb-2">{{$club->city->t('title')}}</h3>
-                        <p></p>
-                    </div>
-                </div>
+                @if($club->hasUrl())
+                    <a href="{{$club->getUrl()}}">
+                        @include('home.partials.club.club')
+                    </a>
+                @else
+                    @include('home.partials.club.club')
+                @endif
             @endforeach
         </div>
     </div>

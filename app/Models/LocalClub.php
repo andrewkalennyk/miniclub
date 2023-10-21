@@ -46,6 +46,16 @@ class LocalClub extends BaseModel
         return $this->belongsTo(City::class, 'city_id');
     }
 
+    public function hasUrl(): bool
+    {
+        return !empty($this->url);
+    }
+
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
+
     public function getExtraUrl()
     {
         if ($this->url) {
