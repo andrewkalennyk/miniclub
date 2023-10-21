@@ -12,7 +12,7 @@
         <div class="row carousel-local-club owl-carousel">
             @foreach($clubs as $club)
                 @if($club->hasUrl())
-                    <a href="{{$club->getUrl()}}">
+                    <a href="{{$club->getUrl()}}" target="_blank">
                         @include('home.partials.club.club')
                     </a>
                 @else
