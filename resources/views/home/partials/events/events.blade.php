@@ -11,7 +11,7 @@
             <div class="col-md-12 col-sm-12">
                 <div class="carousel-car owl-carousel">
                     @foreach($events as $event)
-                        <div class="card rounded ftco-animate border-0 shadow-sm h-100">
+                        <div class="card rounded ftco-animate border-0 shadow-sm event-card">
                             <a href="{{$event->getUrl()}}">
                                 <img src="{{$event->picture}}" class="card-img-top card-img-top-20" alt="...">
                             </a>
@@ -41,3 +41,5 @@
         @endif
     </div>
 </section>
+
+

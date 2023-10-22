@@ -66,7 +66,7 @@ AOS.init({
         $('.carousel-car').owlCarousel({
             center: false,
             loop: true,
-            autoplay: true,
+            autoplay: 2000,
             items: 1,
             margin: 30,
             stagePadding: 0,
@@ -372,13 +372,15 @@ AOS.init({
         $(this).ekkoLightbox();
     });
 
-    /*document.addEventListener("DOMContentLoaded", function () {
-        var languageDropdown = document.getElementById("languageDropdown");
-        languageDropdown.addEventListener("touchstart", function (e) {
-            e.preventDefault();
-            $(this).dropdown("toggle");
-        });
-    });*/
+
+    var commonCards = $('.event-card');
+    // Find the maximum height among all "common-card" elements
+    var maxHeight = Math.max.apply(null, commonCards.map(function () {
+        return $(this).height();
+    }).get());
+
+    // Set the same height for all "common-card" elements
+    commonCards.height(maxHeight);
 
 
 })(jQuery);
