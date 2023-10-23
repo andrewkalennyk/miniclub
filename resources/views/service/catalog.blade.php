@@ -23,14 +23,24 @@
                                 <a class="nav-link btn @if($loop->first) btn-secondary @endif"  data-type="{{$type->type}}" href="#">{{$type->t('title')}}</a>
                             </li>
                         @endforeach
+                        @if($cities->count())
+                            <li class="nav-item">
+                                <select class="custom-select" style="color: rgba(0, 0, 0, 0.4) !important;">
+                                    <option selected>{{__t('Місто')}}</option>
+                                    @foreach($cities as $city)
+                                        <option value="{{$city->id}}">{{$city->t('title')}}</option>
+                                    @endforeach
+                                </select>
+                            </li>
+                        @endif
                     </ul>
                 </div>
             @endif
-
             <div class="row">
                 @foreach($services as $service)
                     @include('service.partials.service-item')
                 @endforeach
+
             </div>
         </div>
     </section>

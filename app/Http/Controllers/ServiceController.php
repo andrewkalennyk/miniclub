@@ -7,6 +7,7 @@ use App\Models\ServiceType;
 use App\Models\Tree;
 use http\Url;
 use Illuminate\Support\Facades\Request;
+use Illuminate\View\View;
 use Vis\Builder\TreeController;
 
 class ServiceController extends TreeController
@@ -14,7 +15,7 @@ class ServiceController extends TreeController
     /*
      * show index page site
      */
-    public function showPage()
+    public function showPage(): View
     {
         $page = $this->node;
 
@@ -25,10 +26,12 @@ class ServiceController extends TreeController
             ->with(['city', 'service_type', 'reviews'])
             ->get();
 
-        return view('service.catalog', compact('page','types', 'services'));
+        $cities = $services->pluck('city', 'city.id');
+
+        return view('service.catalog', compact('page','types', 'services', 'cities'));
     }
 
-    public function showService($slug, $id)
+    public function showService($slug, $id): View
     {
         $treePage = Tree::slug(Request::segment(count(Request::segments())-1))->active()->first();
 
