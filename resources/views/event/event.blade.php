@@ -21,8 +21,8 @@
                     @foreach($pictures as $chunk)
                         <div class="row mb-3">
                             @foreach($chunk as $pictureUrl)
-                                <a href="{{asset($pictureUrl)}}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
-                                    <img src="{{asset($pictureUrl)}}" class="img-fluid rounded">
+                                <a href="{{asset($pictureUrl)}}" data-toggle="lightbox" data-gallery="gallery" class="col-md-4 ">
+                                    <img src="{{asset($pictureUrl)}}" class="img-fluid rounded ftco-animate">
                                 </a>
                             @endforeach
                         </div>
