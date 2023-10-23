@@ -19,7 +19,7 @@ class HomeController extends TreeController
     {
         $page = $this->node;
 
-        $events = Event::active()->orderEventDate()->take(5)->get();
+        $events = Event::active()->orderEventDate()->take(10)->get();
         $clubs = LocalClub::with('city')->active()->get();
 
         $allEventPage = Tree::where('template','events')->first();
