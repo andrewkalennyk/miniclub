@@ -46,12 +46,13 @@
                     <div class="bd-example bd-example-tabs">
                         <div class="d-flex justify-content-center">
                             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-
+                                @if($page->service_features->count())
+                                    <li class="nav-item">
+                                        <a class="nav-link active" id="feature-tab" data-toggle="pill" href="#pills-feature" role="tab" aria-controls="pills-feature" aria-expanded="true">{{__t('Особливості')}}</a>
+                                    </li>
+                                @endif
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="feature-tab" data-toggle="pill" href="#pills-feature" role="tab" aria-controls="pills-feature" aria-expanded="true">{{__t('Особливості')}}</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">
+                                    <a class="nav-link {{$page->service_features->count() == 0 ? 'active' : ''}}" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">
                                         {{__t('Відгуки')}} <span class="icon-chat"></span> {{$page->reviews->count()}}
                                     </a>
                                 </li>
@@ -64,12 +65,14 @@
                         </div>
 
                         <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-feature" role="tabpanel" aria-labelledby="pills-description-tab">
-                                @include('service.partials.features', ['features' => $page->service_features->chunk(5)])
+                            @if($page->service_features->count())
+                                <div class="tab-pane fade show active" id="pills-feature" role="tabpanel" aria-labelledby="pills-description-tab">
+                                    @include('service.partials.features', ['features' => $page->service_features->chunk(5)])
 
-                            </div>
+                                </div>
+                            @endif
 
-                            <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                            <div class="tab-pane fade {{$page->service_features->count() == 0 ? 'show active' : ''}}" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
                                 <div class="row">
                                     <div class="col-md-7">
                                         @include('service.partials.reviews')
