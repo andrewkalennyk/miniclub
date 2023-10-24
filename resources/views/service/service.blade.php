@@ -1,5 +1,24 @@
 @extends('layouts.default')
 
+@section('additional_scripts')
+    <script src="/js/jquery-rates.js"></script>
+
+    <script>
+        $('document').ready(function () {
+            $('#rating').rates({
+                shadeColor:'rates-green',
+            });
+        })
+    </script>
+
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/form.js"></script>
+@stop
+
+@section('additional_styles')
+    <link rel="stylesheet" href="/css/rates.css" />
+@stop
+
 @section('main')
 
     <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{$treePage->picture}}');" data-stellar-background-ratio="0.5">
@@ -36,6 +55,11 @@
                                         {{__t('Відгуки')}} <span class="icon-chat"></span> {{$page->reviews->count()}}
                                     </a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="pill-review-tab" data-toggle="pill" href="#pill-review" role="tab" aria-controls="pill-review" aria-expanded="true">
+                                        {{__t('Залиш Відгук')}} <span class="icon-order"></span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
 
@@ -52,6 +76,38 @@
                                     </div>
                                     <div class="col-md-5">
                                         @include('service.partials.review_statistics')
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="pill-review" role="tabpanel" aria-labelledby="pill-review-tab">
+                                <div class="row">
+                                    <div class="col-md-7">
+                                        <form data-action="{{route('review-form')}}"
+                                              method="POST"
+                                              name="rating-form"
+                                              id="rating-form"
+                                              class="bg-light p-5 contact-form"
+                                        >
+                                            {{csrf_field()}}
+                                            <input type="hidden" name="service_id" value="{{$page->id}}">
+                                            <div class="form-group">
+                                                <div id="rating"></div>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="social_name" class="form-control" placeholder="{{__t('Нік в телеграмі')}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="name" class="form-control" placeholder='{{__t("Ім'я")}}'>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="{{__t("Опишіть будь ласка свій досвід відвідування.")}}"></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="{{__t('Відправити')}}" class="btn btn-primary py-3 px-5">
+                                            </div>
+                                            <div class="alert alert-success d-none" role="alert"></div>
+                                            <div class="alert alert-warning d-none" role="alert"></div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
