@@ -14,12 +14,19 @@
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="event-link-block">{{__t('Клуб')}}</a>
                 </li>
-                <li class="nav-item">
+                @if($menuItems->count())
+                    @foreach($menuItems as $item)
+                        <li class="nav-item">
+                            <a href="{{$item->getUrl()}}" class="nav-link font-weight-bold">{{$item->t('title')}}</a>
+                        </li>
+                    @endforeach
+                @endif
+                {{--<li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="events-block">{{__t('Зустрічі')}}</a>
                 </li>
                 <li class="nav-item">
                     <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="shops-block">{{__t('Автосервіси')}}</a>
-                </li>
+                </li>--}}
                 @if(!empty($faqItems))
                     <li class="nav-item">
                         <a href="javascript:void(0)" class="nav-link scroll-to font-weight-bold" data-scroll="faq-block">FAQ</a>
