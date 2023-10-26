@@ -13,8 +13,8 @@
                             {{--<p><a href="#" class="btn btn-primary py-3 px-4">Reserve Your Perfect Car</a></p>--}}
                         </div>
                     </div>
-                    <div class="col-md-6 d-flex align-items-center ">
-                        <div class="rounded-right w-100 d-flex justify-content-center align-content-center">
+                    <div class="col-md-6 d-flex justify-content-center align-items-center">
+                        <div class="rounded-right w-100 d-flex justify-content-center align-items-center">
                             <img src="/images/logo-uk.jpg" class="card-img img-cover rounded-circle shadow w-50 h-50" alt="">
                         </div>
                     </div>
