@@ -16,8 +16,18 @@
     <section class="ftco-section bg-light pt-3">
         <div class="container">
             @if($types->count())
-                <div class="row mb-2">
+                <div class="row mb-2 pl-3 pr-3">
                     <ul class="nav nav-pills nav-fill flex-column flex-sm-row">
+                        @if($cities->count())
+                            <li class="nav-item">
+                                <select name="city_filter" class="custom-select" style="color: rgba(0, 0, 0, 0.4) !important;">
+                                    <option selected>{{__t('Місто')}}</option>
+                                    @foreach($cities as $city)
+                                        <option value="{{$city->id}}">{{$city->t('title')}}</option>
+                                    @endforeach
+                                </select>
+                            </li>
+                        @endif
                         @foreach($types as $type)
                             <li class="nav-item">
                                 <a class="nav-link btn @if($loop->first) btn-secondary @endif"  data-type="{{$type->type}}" href="#">{{$type->t('title')}}</a>
@@ -26,11 +36,11 @@
                     </ul>
                 </div>
             @endif
-
             <div class="row">
                 @foreach($services as $service)
                     @include('service.partials.service-item')
                 @endforeach
+
             </div>
         </div>
     </section>
