@@ -4,6 +4,7 @@ let Form = {
 
     init: function () {
         Form.proposeForm();
+        Form.ratingForm();
     },
 
     proposeForm: function () {
@@ -37,6 +38,52 @@ let Form = {
 
                             setTimeout(function() {
                                 $('#modalResponse').modal('hide');
+                            }, 2000);
+                        }
+                    },
+                    error: function (error) {
+                        var errors = error.responseJSON.errors;
+                        var errorMessage = '';
+                        $.each(errors, function (key, value) {
+                            errorMessage += value + '<br>';
+                        });
+
+                    }
+                });
+            }
+        });
+    },
+
+    ratingForm: function () {
+        $('form[name="rating-form"]').validate({
+            rules : {
+                social_name : { required : true },
+                name : { required : true },
+                message : { required : true },
+            },
+            errorPlacement : function(error, element) {},
+            submitHandler: function(form) {
+                jQuery.ajax({
+                    data: $(form).serializeArray(),
+                    type: "POST",
+                    url: $(form).data('action'),
+                    cache: false,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status) {
+                            document.getElementById("rating-form").reset();
+                            $(form).find('.alert-success').text(response.success_message);
+                            $(form).find('.alert-success').removeClass('d-none');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-success').addClass('d-none');
+                            }, 4000);
+                        } else {
+                            $(form).find('.alert-warning').text(response.error_message);
+                            $('.modalResponse .body').text('');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-warning').addClass('d-none');
                             }, 2000);
                         }
                     },

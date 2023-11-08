@@ -16,5 +16,6 @@ Route::group(
         Route::get('/servisi/vidguk/{slug}-{id}', 'ReviewController@showReview')->name('review');
 
         Route::post('/propose', 'FormController@doPropose')->name('propose');
+        Route::post('/review', 'FormController@doReview')->name('review-form');
     }
 );

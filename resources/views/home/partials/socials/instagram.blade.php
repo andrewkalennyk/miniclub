@@ -1,4 +1,4 @@
-<div class="col-md-6 col-sm-12 d-flex align-self-stretch ftco-animate">
+<div class="col-md-6 col-sm-12 d-flex align-self-stretch ftco-animate mb-5">
     <div class="services w-100 text-center">
         <div class="d-flex align-items-center justify-content-center">
             <a href="https://www.instagram.com/miniclubukraine/" target="_blank">
