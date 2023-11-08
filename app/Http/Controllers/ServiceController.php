@@ -26,7 +26,7 @@ class ServiceController extends TreeController
             ->with(['city', 'service_type', 'reviews'])
             ->get();
 
-        $cities = $services->pluck('city', 'city.id');
+        $cities = $services->pluck('city', 'city.id')->sortBy('title');
 
         return view('service.catalog', compact('page','types', 'services', 'cities'));
     }

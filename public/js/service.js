@@ -3,11 +3,13 @@
 let Service = {
 
     activeTab: '',
+    activeCityId: '',
 
     init: function () {
         this.findActiveTab();
         this.showActiveServices();
         this.tabEventChanger();
+        this.tabCityChanger();
     },
 
     findActiveTab: function () {
@@ -16,7 +18,11 @@ let Service = {
 
     showActiveServices:function () {
         $(".service").addClass('d-none');
-        $(".service[data-type='" + this.activeTab + "']").removeClass('d-none');
+        if (this.activeCityId) {
+            $(".service[data-type='" + this.activeTab + "'][data-city='" + this.activeCityId + "']").removeClass('d-none');
+        } else {
+            $(".service[data-type='" + this.activeTab + "']").removeClass('d-none');
+        }
     },
 
     tabEventChanger: function () {
@@ -29,8 +35,13 @@ let Service = {
             Service.findActiveTab();
             Service.showActiveServices();
         })
+    },
+    tabCityChanger: function () {
+        $('select[name="city_filter"]').on('change', function (e) {
+            Service.activeCityId = parseInt($(this).val());
+            Service.showActiveServices();
+        })
     }
-
 
 }
 
