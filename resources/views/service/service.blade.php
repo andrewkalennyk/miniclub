@@ -97,13 +97,18 @@
                                                 <div id="rating"></div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="social_name" class="form-control" placeholder="{{__t('Нік в телеграмі')}}">
+                                                <input type="text"
+                                                       name="social_name" class="form-control" placeholder="{{__t('Ваш Telegram Нік')}}"
+                                                       data-toggle="tooltip"
+                                                       data-placement="top"
+                                                       title="{{__t('Важливо! Необхідно впевнитись, що ви є частиною спільноти')}}"
+                                                >
                                             </div>
                                             <div class="form-group">
                                                 <input type="text" name="name" class="form-control" placeholder='{{__t("Ім'я")}}'>
                                             </div>
                                             <div class="form-group">
-                                                <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="{{__t("Опишіть будь ласка свій досвід відвідування.")}}"></textarea>
+                                                <textarea name="message" cols="30" rows="7" class="form-control" placeholder="{{__t("Опишіть будь ласка свій досвід відвідування.")}}"></textarea>
                                             </div>
                                             <div class="form-group">
                                                 <input type="submit" value="{{__t('Відправити')}}" class="btn btn-primary py-3 px-5">

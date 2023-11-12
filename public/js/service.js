@@ -10,6 +10,7 @@ let Service = {
         this.showActiveServices();
         this.tabEventChanger();
         this.tabCityChanger();
+        this.showServiceForm();
     },
 
     findActiveTab: function () {
@@ -23,6 +24,12 @@ let Service = {
         } else {
             $(".service[data-type='" + this.activeTab + "']").removeClass('d-none');
         }
+    },
+
+    showServiceForm:function () {
+        $('#share-service-btn').on('click', function (e) {
+            $(".share-service-form").removeClass('d-none');
+        });
     },
 
     tabEventChanger: function () {
@@ -42,6 +49,7 @@ let Service = {
             Service.showActiveServices();
         })
     }
+
 
 }
 

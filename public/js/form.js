@@ -5,6 +5,7 @@ let Form = {
     init: function () {
         Form.proposeForm();
         Form.ratingForm();
+        Form.shareServiceForm();
     },
 
     proposeForm: function () {
@@ -77,6 +78,55 @@ let Form = {
 
                             setTimeout(function() {
                                 $(form).find('.alert-success').addClass('d-none');
+                            }, 4000);
+                        } else {
+                            $(form).find('.alert-warning').text(response.error_message);
+                            $('.modalResponse .body').text('');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-warning').addClass('d-none');
+                            }, 2000);
+                        }
+                    },
+                    error: function (error) {
+                        var errors = error.responseJSON.errors;
+                        var errorMessage = '';
+                        $.each(errors, function (key, value) {
+                            errorMessage += value + '<br>';
+                        });
+
+                    }
+                });
+            }
+        });
+    },
+
+    shareServiceForm: function () {
+        $('form[name="share-service-form"]').validate({
+            rules : {
+                social_name : { required : true },
+                title : { required : true },
+                type : { required : true },
+                city : { required : true },
+                message : { required : true },
+            },
+            errorPlacement : function(error, element) {},
+            submitHandler: function(form) {
+                jQuery.ajax({
+                    data: $(form).serializeArray(),
+                    type: "POST",
+                    url: $(form).data('action'),
+                    cache: false,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status) {
+                            document.getElementById("share-service-form").reset();
+                            $(form).find('.alert-success').text(response.success_message);
+                            $(form).find('.alert-success').removeClass('d-none');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-success').addClass('d-none');
+                                $('.share-service-form').addClass('d-none');
                             }, 4000);
                         } else {
                             $(form).find('.alert-warning').text(response.error_message);

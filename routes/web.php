@@ -17,5 +17,6 @@ Route::group(
 
         Route::post('/propose', 'FormController@doPropose')->name('propose');
         Route::post('/review', 'FormController@doReview')->name('review-form');
+        Route::post('/share-service', 'FormController@doShareService')->name('share-service-form');
     }
 );

@@ -70,6 +70,10 @@ class Admin extends AdminBase
                         'title' => 'Відгуки (заявки)',
                         'link'  => '/reviews_apply',
                     ],
+                    [
+                        'title' => 'Новий сервіс (заявки)',
+                        'link'  => '/share_service',
+                    ],
                 ],
             ],
 
