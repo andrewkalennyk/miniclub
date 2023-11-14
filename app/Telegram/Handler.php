@@ -27,8 +27,7 @@ class Handler extends WebhookHandler
         $services = $services->where('service_type_id', $type->id)->limit(5)->get()->map(function ($service) {
             return $service->title .
                 " {$service->mark} &#9733;
-                ({$service->address})" .
-                " <a href='".$service->getUrl()."'>Детальніше</a>";
+                ({$service->address})";
         })->implode(",\n");
 
         $this->reply($services);
