@@ -11,7 +11,7 @@ class Handler extends WebhookHandler
 {
     public function sto($cityTitle): void
     {
-        $services = Service::active()->orderBy('mark');
+        $services = Service::active()->orderBy('mark', 'desc');
         $type = ServiceType::where('type', 'autoservice')->first();
 
         if (!empty($cityTitle)) {
@@ -21,16 +21,14 @@ class Handler extends WebhookHandler
                 exit();
             }
 
-            $services->where('city_id', $city->id);
+            $services->where('city_id', 1);
         }
 
         $services = $services->where('service_type_id', $type->id)->limit(5)->get();
 
-        Log::info($services->toJson());
-
-        $services = $services->map(function ($service) {
+        $services =$services->map(function ($service) {
             return $service->title .
-                " {$service->mark} &#9733;";
+                " {$service->mark} &#9733; <a href='{$service->getUrl()}'>Детальніше</a>";
         })->implode(",\n");
 
         $this->reply($services);
