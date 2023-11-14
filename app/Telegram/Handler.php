@@ -33,4 +33,9 @@ class Handler extends WebhookHandler
 
         $this->reply($services);
     }
+
+    public function hello(): void
+    {
+        $this->reply('aaaa');
+    }
 }
