@@ -12,7 +12,7 @@ class Handler extends WebhookHandler
     public function sto($cityTitle): void
     {
         $services = Service::active()->orderBy('mark');
-        $type = ServiceType::where('type', 'avtoservice')->first();
+        $type = ServiceType::where('type', 'autoservice')->first();
 
         if (!empty($cityTitle)) {
             $city = City::where('title', $cityTitle)->orWhere('title_en', $cityTitle)->first();
