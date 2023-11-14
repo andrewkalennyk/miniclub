@@ -21,7 +21,7 @@ class Handler extends WebhookHandler
                 exit();
             }
 
-            $services->where('city_id', 1);
+            $services->where('city_id', $city->id);
         }
 
         $services = $services->where('service_type_id', $type->id)->limit(5)->get();
@@ -30,8 +30,7 @@ class Handler extends WebhookHandler
 
         $services = $services->map(function ($service) {
             return $service->title .
-                " {$service->mark} &#9733;
-                ({$service->address})";
+                " {$service->mark} &#9733;";
         })->implode(",\n");
 
         $this->reply($services);
