@@ -24,7 +24,11 @@ class Handler extends WebhookHandler
             $services->where('city_id', 1);
         }
 
-        $services = $services->where('service_type_id', $type->id)->limit(5)->get()->map(function ($service) {
+        $services = $services->where('service_type_id', $type->id)->limit(5)->get();
+
+        Log::info($services->toJson());
+
+        $services = $services->map(function ($service) {
             return $service->title .
                 " {$service->mark} &#9733;
                 ({$service->address})";
