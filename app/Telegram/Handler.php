@@ -2,6 +2,7 @@
 namespace App\Telegram;
 
 use App\Models\City;
+use App\Models\LocalClub;
 use App\Models\Service;
 use App\Models\ServiceType;
 use \DefStudio\Telegraph\Handlers\WebhookHandler;
@@ -34,12 +35,21 @@ class Handler extends WebhookHandler
 
         $services = $services->where('service_type_id', $type->id)->get();
 
-        $services =$services->map(function ($service) {
+        $services = $services->map(function ($service) {
             return $service->title .
                 " ({$service->mark} &#9733;) <a href='{$service->getUrl()}'>Детальніше</a>";
         })->implode("\n");
 
         $this->reply($services);
+    }
+
+    public function cl(): void
+    {
+        $clubs = LocalClub::with('city')->active()->get()->map(function ($club) {
+            return $club->city->title . " <a href='{$club->getUrl()}'>Лінк</a>";
+        })->implode("\n");
+
+        $this->reply($clubs);
     }
 
 
