@@ -17,7 +17,15 @@ class Handler extends WebhookHandler
         if (!empty($cityTitle)) {
             $city = City::where('title', $cityTitle)->orWhere('title_en', $cityTitle)->first();
             if (empty($city)) {
-                $this->reply('Нажаль такого міста у нашій базі не існує!');
+                $allServiceCities = Service::with('city')
+                    ->active()
+                    ->get()
+                    ->pluck('city.title')
+                    ->unique()
+                    ->implode(', ');
+
+                $this->reply("Нажаль такого міста у нашій базі не існує! \nЄ сервіси в таких містах: ". $allServiceCities);
+
                 exit();
             }
 
@@ -33,6 +41,8 @@ class Handler extends WebhookHandler
 
         $this->reply($services);
     }
+
+
 
     public function hello(): void
     {
