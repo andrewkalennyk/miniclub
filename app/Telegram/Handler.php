@@ -46,7 +46,8 @@ class Handler extends WebhookHandler
     public function cl(): void
     {
         $clubs = LocalClub::with('city')->active()->get()->map(function ($club) {
-            return $club->city->title . " <a href='{$club->getUrl()}'>Лінк</a>";
+            $link = $club->hasUrl() ? " <a href='{$club->getUrl()}'>Лінк</a>" : '';
+            return $club->city->title . $link;
         })->implode("\n");
 
         $this->reply($clubs);
