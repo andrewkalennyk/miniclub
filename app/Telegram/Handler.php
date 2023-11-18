@@ -12,7 +12,7 @@ use DefStudio\Telegraph\Keyboard\Keyboard;
 
 class Handler extends WebhookHandler
 {
-    public function sto($cityTitle): void
+    /*public function sto($cityTitle): void
     {
         $services = Service::active()->orderBy('mark', 'desc');
         $type = ServiceType::where('type', 'autoservice')->first();
@@ -43,7 +43,7 @@ class Handler extends WebhookHandler
         })->implode("\n");
 
         $this->reply($services);
-    }
+    }*/
 
     public function cl(): void
     {
@@ -65,7 +65,7 @@ class Handler extends WebhookHandler
 
         $buttons = collect([]);
         foreach ($services as $id => $service) {
-            $buttons->push(Button::make($service)->action('sst')->param('id', $id));
+            $buttons->push(Button::make($service)->action('ssc')->param('id', $id));
         }
 
         $buttons = $buttons->chunk(2);
@@ -81,9 +81,49 @@ class Handler extends WebhookHandler
             ->send();
     }
 
-
-    public function hello(): void
+    public function ssc(): void
     {
-        $this->reply('aaaa');
+        $serviceTypeId = $this->data->get('id');
+
+        $services = Service::active()
+            ->with(['city'])
+            ->where('service_type_id', $serviceTypeId)
+            ->get()
+            ->pluck('city.title', 'city.id')
+            ->unique();
+
+        $buttons = collect([]);
+        foreach ($services as $id => $service) {
+            $buttons->push(Button::make($service)->action('sst')->param('params', $serviceTypeId . '-' . $id));
+        }
+
+        $buttons = $buttons->chunk(2);
+
+        $keyboard = Keyboard::make();
+
+        foreach ($buttons as $row) {
+            $keyboard->row($row->toArray());
+        }
+
+        $this->chat->message('Виберіть місто')
+            ->keyboard($keyboard)
+            ->send();
+    }
+
+    public function sst(): void
+    {
+        $params = explode('-', $this->data->get('params'));
+        $services = Service::active()
+            ->with(['city'])
+            ->where('service_type_id', $params[0])
+            ->where('city_id', $params[1])
+            ->get();
+
+        $services = $services->map(function ($service) {
+            return $service->title .
+                " ({$service->mark} &#9733;) <a href='{$service->getUrl()}'>Детальніше</a>";
+        })->implode("\n");
+
+        $this->chat->message($services)->send();
     }
 }
