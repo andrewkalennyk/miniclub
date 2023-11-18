@@ -19,7 +19,7 @@ Artisan::command('inspire', function () {
 })->purpose('Display an inspiring quote');
 
 Artisan::command('register-bot-commands', function () {
-    $telegraphBot = \DefStudio\Telegraph\Models\TelegraphBot::fromId(1);
+    $telegraphBot = \DefStudio\Telegraph\Models\TelegraphBot::fromId(2);
 
     $telegraphBot->registerCommands([
         '/cl' => 'Вивести всі локальні клуби',
