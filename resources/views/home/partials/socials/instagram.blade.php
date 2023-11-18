@@ -8,6 +8,7 @@
         <div class="text w-100">
             <a href="https://www.instagram.com/miniclubukraine/" target="_blank">
                 <h3 class="heading mb-2">Instagram</h3>
+                <p class="text-dark mb-0 btn btn-secondary">{{__t('Підписуйся')}}</p>
                 <p class="text-dark">@miniclubukraine</p>
             </a>
         </div>

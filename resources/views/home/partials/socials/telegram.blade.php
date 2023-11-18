@@ -8,6 +8,7 @@
         <div class="text w-100">
             <a href="https://t.me/miniclubua" target="_blank">
                 <h3 class="heading mb-2">Telegram</h3>
+                <p class="text-dark mb-0 btn btn-primary">{{__t('Приєднуйся')}}</p>
                 <p class="text-dark">@miniclubua</p>
             </a>
         </div>
