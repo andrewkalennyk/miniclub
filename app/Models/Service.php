@@ -82,7 +82,7 @@ class Service extends BaseModel
 
     public function reviews()
     {
-        return $this->hasMany(ServiceReview::class, 'service_id');
+        return $this->hasMany(ServiceReview::class, 'service_id')->orderBy('created_at', 'desc');
     }
 
     public function service_features()
