@@ -31,8 +31,17 @@
                                 </div>
                             </div>
                         </div>
-                        @if($page->getOtherImg('pictures'))
-                            <div class="col-md-6">
+                    </div>
+
+                    {!! $page->comment !!}
+
+                </div> <!-- .col-md-8 -->
+            </div>
+            <div class="row">
+                @if($page->getOtherImg('pictures'))
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
                                 <div id="demo" class="carousel slide" data-ride="carousel">
                                     <!-- Indicators -->
                                     <ul class="carousel-indicators">
@@ -59,13 +68,10 @@
                                     </a>
                                 </div>
                             </div>
-
-                        @endif
+                        </div>
                     </div>
 
-                    {!! $page->comment !!}
-
-                </div> <!-- .col-md-8 -->
+                @endif
             </div>
         </div>
     </section> <!-- .section -->
