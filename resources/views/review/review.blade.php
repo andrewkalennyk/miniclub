@@ -45,7 +45,7 @@
                                     <div class="carousel-inner">
                                         @foreach($page->getOtherImg('pictures') as $picture)
                                             <div class="carousel-item {{$loop->first ? 'active' : ''}}">
-                                                <img src="{{$picture}}" width="100%" height="500">
+                                                <img src="{{$picture}}">
                                             </div>
                                         @endforeach
                                     </div>
