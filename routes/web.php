@@ -20,5 +20,8 @@ Route::group(
         Route::post('/share-service', 'FormController@doShareService')->name('share-service-form');
 
         Route::get('/secret-santa', 'SecretSantaController@showPage')->name('secret-santa');
+        Route::post('/secret-santa-form', 'SecretSantaController@saveApplyForm')->name('secret-santa-form');
+
+        Route::get('/secret-santa-randomize', 'SecretSantaController@doRandomize');
     }
 );

@@ -10,25 +10,24 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-                    <h1 class="text-center mb-4">Правила Таємного Санти</h1>
-                    <p>Ось правила для нашого обміну подарунками Таємного Санти:</p>
+                    <h1 class="text-center mb-4">{{__t('Правила Таємного Санти')}}</h1>
                     <ol>
-                        <li>Кінцева дата подачі заявок - <b>07 грудня 2023 року</b>. Кожен учасник повинен надіслати свою заявку.</li>
-                        <li><b>08 грудня 2023 року</b> кожен учасник отримає на свою електронну пошту інформацію про особу, щасливчика, і для якої вони повинні подарувати подарунок.</li>
-                        <li>Бюджет на подарунок в межах <b>500-1000 гривень</b>. Учасники повинні дотримуватися цього бюджету.</li>
-                        <li>Дата розіграшу - <b>17 грудня 2023 року</b>. Організатори зберуть всі подарунки у багажник тачки і кожен по черзі буде знаходити свій подарунок / Організатори в певний час видадуть подарунок учаснику.</li>
-                        <li>Під час обміну подарунками, кожен учасник повинен спробувати вгадати, хто обрав його для подарунка, основуючись на загадці та власних здогадках..</li>
-                        <li>Після розіграшу, учасники можуть відкрити свою особу та подякувати своєму Таємному Санті, якщо вони того прагнуть.</li>
-                        <li>Учасники повинні дотримуватися етичних норм та подарунків, які не порушують закон або правила гри.</li>
-                        <li>Якщо учасник не може взяти участь у зустрічі для обміну подарунками, він повинен повідомити організаторів заздалегідь. Учасник, який отримав подарунок поштою, також повинен поділитися своїм враженням та фото або відео моменту розпаковки у групі або іншому зручному форматі.</li>
+                        <li>{!! __t("Кінцева дата подачі заявок - <b>07 грудня 2023 року</b>. Кожен учасник повинен надіслати свою заявку.") !!}</li>
+                        <li>{!! __t("<b>08 грудня 2023 року</b> кожен учасник отримає на свою електронну пошту інформацію про особу, щасливчика, і для якої вони повинні подарувати подарунок.") !!}</li>
+                        <li>{!! __t("Бюджет на подарунок в межах <b>500-1000 гривень</b>. Учасники повинні дотримуватися цього бюджету.") !!}</li>
+                        <li>{!! __t("Дата розіграшу - <b>17 грудня 2023 року</b>. Організатори зберуть всі подарунки у багажник тачки і кожен по черзі буде знаходити свій подарунок / Організатори в певний час видадуть подарунок учаснику.") !!}</li>
+                        <li>{{__t('Під час обміну подарунками, кожен учасник повинен спробувати вгадати, хто обрав його для подарунка, основуючись на загадці та власних здогадках.')}}</li>
+                        <li>{{__t('Після розіграшу, учасники можуть відкрити свою особу та подякувати своєму Таємному Санті, якщо вони того прагнуть.')}}</li>
+                        <li>{{__t('Учасники повинні дотримуватися етичних норм та подарунків, які не порушують закон або правила гри.')}}</li>
+                        <li>{{__t('Якщо учасник не може взяти участь у зустрічі для обміну подарунками, він повинен повідомити організаторів заздалегідь. Учасник, який отримав подарунок поштою, також повинен поділитися своїм враженням та фото або відео моменту розпаковки у групі або іншому зручному форматі.')}}</li>
                     </ol>
-                    <p class="mt-4">Якщо у вас є які-небудь питання чи сумніви, не соромтеся звертатися до організатора.</p>
+                    <p class="mt-4">{{__t('Якщо у вас є які-небудь питання чи сумніви, не соромтеся звертатися до організатора.')}}</p>
                     <button class="btn btn-primary" id="agreeBtn">{{__t('Погоджуюсь')}}</button>
                 </div>
             </div>
         </div>
         <div class="container d-none mt-3" id="form-container">
-            <h3>Візьми участь в таємному Санті! Заповни анкету <span class="badge badge-primary">
+            <h3>{{__t('Візьми участь в таємному Санті! Заповни анкету') }} <span class="badge badge-primary">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                          class="bi bi-gift" viewBox="0 0 16 16">
                      <path
@@ -38,44 +37,50 @@
             </h3>
             <div class="card shadow-lg">
                 <div class="card-body">
-                    <form>
+                    <form name="secret-apply-form" action data-action="{{route('secret-santa-form')}}" id="secret-apply-form">
+                        {{csrf_field()}}
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputName">{{__t("Ім'я")}}</label>
+                                <label for="inputName">{{__t("Ім'я*")}}</label>
                                 <input type="text" class="form-control" id="inputName" name="name">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputSocialName">{{__t("Нік в телеграм")}}</label>
+                                <label for="inputSocialName">{{__t("Нік в телеграм*")}}</label>
                                 <input type="text" class="form-control" name="social_name" id="inputSocialName">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputCarNumber">{{__t("Номер Машини")}}</label>
+                                <label for="inputCarNumber">{{__t("Номер Машини*")}}</label>
                                 <input type="text" class="form-control" name="car_number" id="inputCarNumber">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputCarDetails">{{__t("Марка Модель рік випуску")}}</label>
-                                <input type="text" class="form-control" name="car_number" id="inputCarDetails">
+                                <label for="inputCarDetails">{{__t("Марка Модель рік випуску*")}}</label>
+                                <input type="text" class="form-control" name="car_details" id="inputCarDetails">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputEmail">{{__t('Лінк на інсту')}}</label>
-                                <input type="text" class="form-control"  id="inputEmail" name="email">
+                                <label for="inputInsta">{{__t('Лінк на інсту')}}</label>
+                                <input type="text" class="form-control"  id="inputInsta" name="instagram">
                             </div>
                             <div class="form-group col-md-6">
-                                <label for="inputEmail">Email</label>
+                                <label for="inputEmail">Email*</label>
                                 <input type="email" class="form-control" id="inputEmail" name="email">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputNovaPoshta">{{__t('Відділення НП/ Поштомат*')}}</label>
+                                <input type="text" class="form-control"  id="inputNovaPoshta" name="np_address" placeholder="Місто, Номер відділення">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="aboutYou">{{__t('Напишіть щось про себе')}}</label>
-                            <textarea class="form-control" id="aboutYou" rows="3"></textarea>
+                            <textarea class="form-control" id="aboutYou" name="about_description" rows="3"></textarea>
                         </div>
-                        <div class="alert alert-danger d-none"  role="alert">
-                            {{__t('Не тицяй! Це поки макет!')}}
-                        </div>
+                        <div class="alert alert-danger d-none"  role="alert"></div>
+                        <div class="alert alert-success d-none"  role="alert"></div>
                         <button type="submit" class="btn btn-primary" id="secretBtnForm" >{{__t('Відправити')}}</button>
                     </form>
                 </div>
@@ -85,24 +90,7 @@
     </section> <!-- .section -->
 @stop
 
-
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        $('#secretBtnForm').on('click', function (e) {
-            e.preventDefault();
-            $('.alert.alert-danger').removeClass('d-none');
-
-            setTimeout(function() {
-                $('.alert.alert-danger').addClass('d-none');
-            }, 4000);
-        })
-        $('#agreeBtn').on('click', function (e) {
-            e.preventDefault();
-            $(this).hide();
-            $('#form-container').removeClass('d-none');
-            $([document.documentElement, document.body]).animate({
-                scrollTop: $("#form-container").offset().top - $(".ftco_navbar").outerHeight()
-            }, 1000);
-        })
-    })
-</script>
+@section('additional_scripts')
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/secret-santa.js"></script>
+@stop

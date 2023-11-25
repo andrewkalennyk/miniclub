@@ -42,6 +42,22 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Secret Santa',
+                'icon'  => 'gift',
+                'link'  => '/santa_apply_form',
+                'submenu' => [
+                    [
+                        'title' => 'Заявки',
+                        'link'  => '/santa_apply_form',
+                    ],
+                    [
+                        'title' => 'Розподіл',
+                        'link'  => '/santa_apply_relations',
+                    ],
+                ],
+            ],
+
+            [
                 'title' => 'Cервіси',
                 'icon'  => 'car',
                 'link'  => '/proposition',
