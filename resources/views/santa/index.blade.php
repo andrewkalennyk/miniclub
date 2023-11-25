@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('seo_tags')
+    <meta property="og:title" content="Miniclub Secret Santa" />
+@stop
+
 @section('main')
 
     <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('/images/secret-santa.webp');"
