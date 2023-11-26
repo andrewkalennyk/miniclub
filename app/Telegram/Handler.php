@@ -79,7 +79,7 @@ class Handler extends WebhookHandler
 
         $this->chat
             ->message('Виберіть місто')
-            ->keyboard($keyboard)
+            ->keyboard($keyboard->rightToLeft())
             ->send();
     }
 
@@ -87,24 +87,16 @@ class Handler extends WebhookHandler
     {
         $club = LocalClub::with('city')->find($this->data->get('id'));
 
-        $telegramBtn = Button::make('Telegram')->action('cclr')->param('id', $club->id);
-        if ($club->telegram_url) {
-            $telegramBtn = Button::make('Telegram')->url($club->telegram_url);
-        }
-
-        $btns = [
-            $telegramBtn
-        ];
-
-        if ($club->url) {
-            $btns[] = Button::make('Instagram')->url($club->url);
-        }
+        $keyboard = Keyboard::make()
+            ->when(!$club->telegram_url, fn(Keyboard $keyboard) => $keyboard->button('Telegram')->action('cclr')->param('id', $club->id))
+            ->when($club->telegram_url, fn(Keyboard $keyboard) => $keyboard->button('Telegram')->url($club->telegram_url))
+            ->when($club->url, fn(Keyboard $keyboard) => $keyboard->button('Instagram')->url($club->url));
 
         $this->chat->edit($this->messageId)->message('Лінки на ресурси')->send();
 
         $this->chat
             ->edit($this->messageId)
-            ->replaceKeyboard($this->messageId, Keyboard::make()->buttons($btns))
+            ->replaceKeyboard($this->messageId, $keyboard)
             ->send();
     }
 
@@ -113,7 +105,7 @@ class Handler extends WebhookHandler
         $club = LocalClub::with('city')->find($this->data->get('id'));
 
         $this->chat->edit($this->messageId)->message(
-            'Якщо хочеш в чат, напиши будь ласка '. $club->responsible
+            'Якщо хочеш в чат, напиши будь ласка (тут може бути адмін чату)'
         )->send();
     }
 
