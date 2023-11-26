@@ -167,8 +167,9 @@ class Handler extends WebhookHandler
             $keyboard->row($row->toArray());
         }
 
-        $this->chat->message('Виберіть місто')
-            ->keyboard($keyboard)
+        $this->chat->edit($this->messageId)->message('Виберіть місто')->send();
+        $this->chat
+            ->replaceKeyboard($this->messageId, $keyboard)
             ->send();
     }
 
@@ -186,6 +187,8 @@ class Handler extends WebhookHandler
                 " ({$service->mark} &#9733;) <a href='{$service->getUrl()}'>Детальніше</a>";
         })->implode("\n");
 
-        $this->chat->message($services)->send();
+        $this->chat->deleteKeyboard($this->messageId);
+
+        $this->chat->edit($this->messageId)->message($services)->send();
     }
 }
