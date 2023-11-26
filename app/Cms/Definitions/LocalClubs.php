@@ -25,7 +25,8 @@ class LocalClubs extends Resource
                 ->sortable(),
             Image::make('Превью', 'picture'),
             Text::make('Url', 'url')->onlyForm(),
-            /*Text::make('Відповідальний', 'responsible'),*/
+            Text::make('Url Telegram', 'telegram_url')->onlyForm(),
+            Text::make('Відповідальний', 'responsible')->onlyForm(),
             Checkbox::make('Активность', 'is_active')->filter(),
         ];
     }
