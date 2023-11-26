@@ -30,8 +30,7 @@ class SendSecretSanta extends Mailable
     public function build()
     {
         return $this->subject('Таємний Санта: Інформація про Твого "Щасливчика"!')
-            ->view('emails.santa')
-            ->markdown('emails.santa')
+            ->markdown('vendor.mail.santa')
             ->with([
                 'santa' => $this->santa,
                 'santaInfo' => $this->santaInfo,
