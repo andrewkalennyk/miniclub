@@ -88,9 +88,9 @@ class Handler extends WebhookHandler
         $club = LocalClub::with('city')->find($this->data->get('id'));
 
         $keyboard = Keyboard::make()
-            ->when(!$club->telegram_url, fn(Keyboard $keyboard) => $keyboard->button('Telegram')->action('cclr')->param('id', $club->id))
-            ->when($club->telegram_url, fn(Keyboard $keyboard) => $keyboard->button('Telegram')->url($club->telegram_url))
-            ->when($club->url, fn(Keyboard $keyboard) => $keyboard->button('Instagram')->url($club->url));
+            ->when(empty($club->telegram_url), fn(Keyboard $keyboard) => $keyboard->button('Telegram')->action('cclr')->param('id', $club->id))
+            ->when(!empty($club->telegram_url), fn(Keyboard $keyboard) => $keyboard->button('Telegram')->url($club->telegram_url))
+            ->when(!empty($club->url), fn(Keyboard $keyboard) => $keyboard->button('Instagram')->url($club->url));
 
         $this->chat->edit($this->messageId)->message('Лінки на ресурси')->send();
 
