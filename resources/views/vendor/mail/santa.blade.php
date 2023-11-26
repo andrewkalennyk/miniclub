@@ -1,12 +1,12 @@
 @component('mail::message')
 # Привіт {{$santa->name}},
 
-Раді повідомити тобі, що тобі випав  **{{$santaInfo->name}}**  як свого Таємного Санту!
+Раді повідомити, що тобі випав учасник: **{{$santaInfo->name}}** \
 Ось деяка інформація, яка може тобі допомогти підібрати чудовий подарунок для нього/неї:
 
-Нік телеграму: {{$santaInfo->social_name}}
-Номер Машини: {{$santaInfo->car_number}}
-Деталі про машину: {{$santaInfo->car_details}}
+Нік телеграму: {{$santaInfo->social_name}}\
+Номер Машини: {{$santaInfo->car_number}}\
+Деталі про машину: {{$santaInfo->car_details}}\
 Instagram: {{$santaInfo->instagram ?? ''}}
 
 Додаткові Вказівки: {{strip_tags($santaInfo->about_description)}}
