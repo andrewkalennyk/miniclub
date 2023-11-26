@@ -9,6 +9,7 @@ use App\Models\ServiceType;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\Keyboard\Keyboard;
+use http\Url;
 
 class Handler extends WebhookHandler
 {
@@ -45,14 +46,74 @@ class Handler extends WebhookHandler
         $this->reply($services);
     }*/
 
-    public function cl(): void
+   /* public function cl(): void
     {
         $clubs = LocalClub::with('city')->active()->get()->map(function ($club) {
             $link = $club->hasUrl() ? " <a href='{$club->getUrl()}'>Лінк</a>" : '';
             return $club->city->title . $link;
         })->implode("\n");
 
+
+
         $this->reply($clubs);
+    }*/
+
+    public function cl(): void
+    {
+        $clubs = LocalClub::with('city')->active()->get()->pluck('city.title', 'city.id');
+
+        $buttons = collect([]);
+        foreach ($clubs as $id => $club) {
+            $buttons->push(Button::make($club)->action('cll')->param('id', $id));
+        }
+
+        $buttons = $buttons->chunk(2);
+
+        $keyboard = Keyboard::make();
+
+        foreach ($buttons as $row) {
+            $keyboard->row($row->toArray());
+        }
+
+        $this->chat->message('Виберіть місто')
+            ->keyboard($keyboard)
+            ->send();
+    }
+
+    public function cll():void
+    {
+        $club = LocalClub::with('city')->find($this->data->get('id'));
+
+        $telegramBtn = '';
+        if (!$club->telegram_url) {
+            $telegramBtn = Button::make('Telegram')->action('cclr')->param('id', $club->id);
+        } else {
+            $telegramBtn = Button::make('Telegram')->url($club->telegram_url);
+        }
+
+        $instagramBtn = null;
+        if ($club->url) {
+            $instagramBtn = Button::make('Instagram')->url($club->url);
+        }
+
+        $keyboard = Keyboard::make()->buttons([
+            $telegramBtn,
+            $instagramBtn
+        ]);
+
+        $this->chat->message('Лінки на ресурси')
+            ->keyboard($keyboard)
+            ->send();
+
+    }
+
+    public function cclr()
+    {
+        $club = LocalClub::with('city')->find($this->data->get('id'));
+
+        $this->chat->message(
+            'Якщо хочеш в чат, напиши будь ласка '. $club->responsible
+        )->send();
     }
 
     public function ss(): void
