@@ -60,7 +60,7 @@ class Handler extends WebhookHandler
 
     public function cl(): void
     {
-        $clubs = LocalClub::with('city')->active()->get()->pluck('city.title', 'city.id');
+        $clubs = LocalClub::with('city')->active()->get()->pluck('city.title', 'id');
 
         $buttons = collect([]);
         foreach ($clubs as $id => $club) {
