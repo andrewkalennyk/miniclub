@@ -89,7 +89,7 @@ class Handler extends WebhookHandler
             $telegramBtn = Button::make('Telegram')->url($club->telegram_url);
         }
 
-        $instBtn = Button::make('Telegram')->action('ccle');
+        $instBtn = Button::make('Instagram')->action('clle');
         if ($club->url) {
             $instBtn = Button::make('Instagram')->url($club->url);
         }
