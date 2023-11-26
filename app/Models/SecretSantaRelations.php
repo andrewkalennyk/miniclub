@@ -11,4 +11,14 @@ class SecretSantaRelations extends BaseModel
         'social_name_to',
     ];
 
+    public function social_from()
+    {
+        return $this->hasOne(SecretSantaApplyForm::class, 'social_name', 'social_name_from');
+    }
+
+    public function social_to()
+    {
+        return $this->hasOne(SecretSantaApplyForm::class, 'social_name', 'social_name_to');
+    }
+
 }

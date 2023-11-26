@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Cms\Definitions\SantaApplyRelations;
 use App\Http\Requests\SecretSantaRequest;
+use App\Mail\SendSecretSanta;
 use App\Models\SecretSantaApplyForm;
+use App\Models\SecretSantaRelations;
 use App\Services\SecretSanta;
+use Illuminate\Support\Facades\Mail;
 use Vis\Builder\TreeController;
 
 class SecretSantaController extends TreeController
@@ -38,6 +42,19 @@ class SecretSantaController extends TreeController
         $secretSantas = SecretSantaApplyForm::all();
 
         (new SecretSanta($secretSantas))->doMakeRelations();
+
+        echo 'done';
+    }
+
+    public function doSendLetters()
+    {
+       $secretSantasRelations =  SecretSantaRelations::with(['social_from', 'social_to'])->get();
+
+       foreach ($secretSantasRelations as $santasRelation) {
+           Mail::to($santasRelation->social_from->email)->send(new SendSecretSanta($santasRelation->social_to, $santasRelation->social_from));
+       }
+
+
 
         echo 'done';
     }
