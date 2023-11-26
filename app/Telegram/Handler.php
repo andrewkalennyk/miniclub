@@ -89,24 +89,17 @@ class Handler extends WebhookHandler
             $telegramBtn = Button::make('Telegram')->url($club->telegram_url);
         }
 
-        $instBtn = Button::make('Instagram')->action('clle');
+        $btns = [
+            $telegramBtn
+        ];
+
         if ($club->url) {
-            $instBtn = Button::make('Instagram')->url($club->url);
+            $btns[] = Button::make('Instagram')->url($club->url);
         }
 
         $this->chat->message('Лінки на ресурси')
-            ->keyboard(Keyboard::make()->buttons([
-                $telegramBtn,
-                $instBtn
-            ]))
+            ->keyboard(Keyboard::make()->buttons($btns))
             ->send();
-    }
-
-    public function clle():void
-    {
-        $this->chat->message(
-            'Нажаль немає'
-        )->send();
     }
 
     public function cclr()
