@@ -6,10 +6,12 @@ use App\Models\City;
 use App\Models\LocalClub;
 use App\Models\Service;
 use App\Models\ServiceType;
+use DefStudio\Telegraph\Facades\Telegraph;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\Keyboard\Keyboard;
 use http\Url;
+use Illuminate\Support\Facades\Log;
 
 class Handler extends WebhookHandler
 {
@@ -75,7 +77,8 @@ class Handler extends WebhookHandler
             $keyboard->row($row->toArray());
         }
 
-        $this->chat->message('Виберіть місто')
+        $this->chat
+            ->message('Виберіть місто')
             ->keyboard($keyboard)
             ->send();
     }
@@ -97,8 +100,11 @@ class Handler extends WebhookHandler
             $btns[] = Button::make('Instagram')->url($club->url);
         }
 
-        $this->chat->message('Лінки на ресурси')
-            ->keyboard(Keyboard::make()->buttons($btns))
+        $this->chat->edit($this->messageId)->message('Лінки на ресурси')->send();
+
+        $this->chat
+            ->edit($this->messageId)
+            ->replaceKeyboard($this->messageId, Keyboard::make()->buttons($btns))
             ->send();
     }
 
@@ -106,7 +112,7 @@ class Handler extends WebhookHandler
     {
         $club = LocalClub::with('city')->find($this->data->get('id'));
 
-        $this->chat->message(
+        $this->chat->edit($this->messageId)->message(
             'Якщо хочеш в чат, напиши будь ласка '. $club->responsible
         )->send();
     }
