@@ -225,4 +225,11 @@ class Handler extends WebhookHandler
             ]))
             ->send();
     }
+
+    public function mdls()
+    {
+        $this->chat
+            ->photo(public_path('/images/mini_lineup.jpg'))
+            ->send();
+    }
 }
