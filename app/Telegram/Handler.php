@@ -201,8 +201,6 @@ class Handler extends WebhookHandler
         $this->chat->message("{$event->title} - {$event->id} Доданий")->send();
     }
 
-
-
     public function ec(string $number):void //event car
     {
         $str = explode('-', $number);
@@ -215,5 +213,18 @@ class Handler extends WebhookHandler
         $telegramNumberUser->telegram_events()->sync([$eventId]);
 
         $this->chat->message("{$carNumber} Прив'язаний до івенту {$eventId}")->send();
+    }
+
+    public function mnl()
+    {
+        $this->chat
+            ->message('Виберіть місто')
+            ->keyboard(Keyboard::make()->buttons([
+                Button::make('AppStore')->link('https://play.google.com/store/apps/details?id=com.mini.driversguide.row&hl=ru&pli=1'),
+                Button::make('PlayMarket')->action('https://apps.apple.com/gb/app/mini-drivers-guide/id834510424')
+            ]))
+            ->send();
+        //
+        //
     }
 }

@@ -23,7 +23,8 @@ Artisan::command('register-bot-commands', function () {
 
     $telegraphBot->registerCommands([
         '/cl' => 'Вивести всі локальні клуби',
-        '/ss'  => 'Сервіси'
+        '/ss'  => 'Сервіси',
+        '/mnl' => 'Ссилка на Mini Guide'
     ])->send();
 })->purpose('Register new comands for telegram bot');
 
