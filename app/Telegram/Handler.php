@@ -221,10 +221,8 @@ class Handler extends WebhookHandler
             ->message('Виберіть місто')
             ->keyboard(Keyboard::make()->buttons([
                 Button::make('AppStore')->link('https://play.google.com/store/apps/details?id=com.mini.driversguide.row&hl=ru&pli=1'),
-                Button::make('PlayMarket')->action('https://apps.apple.com/gb/app/mini-drivers-guide/id834510424')
+                Button::make('PlayMarket')->link('https://apps.apple.com/gb/app/mini-drivers-guide/id834510424')
             ]))
             ->send();
-        //
-        //
     }
 }
