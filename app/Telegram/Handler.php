@@ -220,8 +220,8 @@ class Handler extends WebhookHandler
         $this->chat
             ->message('Виберіть маркет для скачування')
             ->keyboard(Keyboard::make()->buttons([
-                Button::make('AppStore')->url('https://play.google.com/store/apps/details?id=com.mini.driversguide.row&hl=ru&pli=1'),
-                Button::make('PlayMarket')->url('https://apps.apple.com/gb/app/mini-drivers-guide/id834510424')
+                Button::make('PlayMarket')->url('https://play.google.com/store/apps/details?id=com.mini.driversguide.row&hl=ru&pli=1'),
+                Button::make('AppStore')->url('https://apps.apple.com/gb/app/mini-drivers-guide/id834510424')
             ]))
             ->send();
     }
