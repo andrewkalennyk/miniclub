@@ -2,16 +2,16 @@
 
 namespace App\Telegram;
 
-use App\Models\City;
 use App\Models\LocalClub;
 use App\Models\Service;
-use App\Models\ServiceType;
-use DefStudio\Telegraph\Facades\Telegraph;
+use App\Models\TelegramEvent;
+use App\Models\TelegramNumberUser;
+use Carbon\Carbon;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\Keyboard\Keyboard;
-use http\Url;
-use Illuminate\Support\Facades\Log;
+use DefStudio\Telegraph\Keyboard\ReplyButton;
+use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 
 class Handler extends WebhookHandler
 {
@@ -79,7 +79,7 @@ class Handler extends WebhookHandler
 
         $this->chat
             ->message('Виберіть місто')
-            ->keyboard($keyboard->rightToLeft())
+            ->keyboard($keyboard)
             ->send();
     }
 
@@ -105,7 +105,7 @@ class Handler extends WebhookHandler
         $club = LocalClub::with('city')->find($this->data->get('id'));
 
         $this->chat->edit($this->messageId)->message(
-            'Якщо хочеш в чат, напиши будь ласка (тут може бути адмін чату)'
+            'Якщо хочеш в чат, напиши будь ласка (тут може бути адмін чату)'//$this->responsible
         )->send();
     }
 
@@ -182,5 +182,38 @@ class Handler extends WebhookHandler
         $this->chat->deleteKeyboard($this->messageId);
 
         $this->chat->edit($this->messageId)->message($services)->send();
+    }
+
+    public function ne(string $name):void
+    {
+        $event = TelegramEvent::create(
+            [
+                'title' => $name,
+                'event_at' => Carbon::now()->format('Y-m-d')
+            ]
+        );
+
+        /*$this->chat
+            ->message('Перейти к додавання учасників')
+            ->keyboard(Keyboard::make()->buttons([Button::make($name)->action('ec')->param('id', $event->id)]))
+            ->send();*/
+
+        $this->chat->message("{$event->title} - {$event->id} Доданий")->send();
+    }
+
+
+
+    public function ec(string $number):void //event car
+    {
+        $str = explode('-', $number);
+
+        $carNumber = $str[0];
+        $eventId = $str[1];
+
+        $telegramNumberUser = TelegramNumberUser::firstOrCreate(['number' => $carNumber]);
+
+        $telegramNumberUser->telegram_events()->sync([$eventId]);
+
+        $this->chat->message("{$carNumber} Прив'язаний до івенту {$eventId}")->send();
     }
 }
