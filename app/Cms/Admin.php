@@ -42,6 +42,22 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Гараж',
+                'icon'  => 'car',
+                'link'  => '/',
+                'submenu' => [
+                    [
+                        'title' => 'Група',
+                        'link'  => '/car_group',
+                    ],
+                    [
+                        'title' => 'Модель',
+                        'link'  => '/car_model',
+                    ],
+                ],
+            ],
+
+            [
                 'title' => 'Secret Santa',
                 'icon'  => 'gift',
                 'link'  => '/santa_apply_form',
