@@ -234,9 +234,12 @@ class Handler extends WebhookHandler
 
     public function sc() //santa_count
     {
-        $count = SecretSantaApplyForm::count();
+        $santas = SecretSantaApplyForm::all();
+
+        $list = $santas->pluck('social_name')->implode("\n");
+
         $this->chat
-            ->message("Заявок - {$count}")
+            ->message("Заявок - {$santas->count()}\n{$list}")
             ->send();
     }
 
