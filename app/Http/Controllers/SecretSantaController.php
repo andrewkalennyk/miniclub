@@ -16,7 +16,8 @@ class SecretSantaController extends TreeController
 {
     public function showPage()
     {
-        return view('santa.index');
+        $santas = SecretSantaApplyForm::all();
+        return view('santa.index', compact('santas'));
     }
 
     public function saveApplyForm(SecretSantaRequest $request)

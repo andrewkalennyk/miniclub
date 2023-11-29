@@ -28,6 +28,18 @@
                     <p class="mt-4">{{__t('Якщо у вас є які-небудь питання чи сумніви, не соромтеся звертатися до організатора.')}}</p>
                     <button class="btn btn-primary" id="agreeBtn">{{__t('Погоджуюсь')}}</button>
                 </div>
+                @if($santas->count())
+                    <div class="col-md-2 p-0">
+                        <div class="sidebar-box ftco-animate fadeInUp ftco-animated">
+                            <h3>Санти</h3>
+                            <div class="tagcloud">
+                                @foreach($santas as $santa)
+                                    <a href="javascript:void(0);" class="tag-cloud-link">{{$santa->social_name}}</a>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
         <div class="container d-none mt-3" id="form-container">

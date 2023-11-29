@@ -242,8 +242,7 @@ class Handler extends WebhookHandler
 
     public function ssn($social_name) //secret santa nick
     {
-        $applyForm = SecretSantaApplyForm::where('social_name', '=' , $social_name)
-            ->get();
+        $applyForm = SecretSantaApplyForm::where('social_name', '=' , $social_name)->first();
 
         $message = 'Заявка с таким ніком існує';
 
