@@ -3,6 +3,7 @@
 namespace App\Telegram;
 
 use App\Models\LocalClub;
+use App\Models\SecretSantaApplyForm;
 use App\Models\Service;
 use App\Models\TelegramEvent;
 use App\Models\TelegramNumberUser;
@@ -10,8 +11,6 @@ use Carbon\Carbon;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\Keyboard\Keyboard;
-use DefStudio\Telegraph\Keyboard\ReplyButton;
-use DefStudio\Telegraph\Keyboard\ReplyKeyboard;
 
 class Handler extends WebhookHandler
 {
@@ -230,6 +229,31 @@ class Handler extends WebhookHandler
     {
         $this->chat
             ->photo(public_path('/images/mini_lineup.jpg'))
+            ->send();
+    }
+
+    public function sc() //santa_count
+    {
+        $count = SecretSantaApplyForm::count();
+        $this->chat
+            ->message("Заявок - {$count}")
+            ->send();
+    }
+
+    public function ssn($social_name) //secret santa nick
+    {
+        $applyForm = SecretSantaApplyForm::where('social_name', '=' , $social_name)
+            ->orWhere('social_name', '=', str_replace('@','', $social_name))
+            ->get();
+
+        $message = 'Заявка с таким ніком існує';
+
+        if (!$applyForm) {
+            $message = 'Заявки с таким ніком НЕ існує';
+        }
+
+        $this->chat
+            ->message($message)
             ->send();
     }
 }
