@@ -27,6 +27,7 @@ let Santa = {
             },
             errorPlacement : function(error, element) {},
             submitHandler: function(form) {
+                $('#secretBtnForm').prop('disabled', true);
                 jQuery.ajax({
                     data: $(form).serializeArray(),
                     type: "POST",
@@ -34,6 +35,7 @@ let Santa = {
                     cache: false,
                     dataType: "json",
                     success: function (response) {
+                        $('#secretBtnForm').prop('disabled', false);
                         if (response.status) {
                             document.getElementById("secret-apply-form").reset();
                             $(form).find('.alert-success').text(response.success_message);

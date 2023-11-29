@@ -8,6 +8,7 @@ use App\Mail\SendSecretSanta;
 use App\Models\SecretSantaApplyForm;
 use App\Models\SecretSantaRelations;
 use App\Services\SecretSanta;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Vis\Builder\TreeController;
 
@@ -20,6 +21,7 @@ class SecretSantaController extends TreeController
 
     public function saveApplyForm(SecretSantaRequest $request)
     {
+        Log::info(json_encode($request->all()));
 
         $applyForm = SecretSantaApplyForm::where('social_name', $request->get('social_name'))->first();
 
@@ -29,6 +31,7 @@ class SecretSantaController extends TreeController
                 'error_message' => __t("Заявка с таким аккаунтом вже існує! Не переживайте, ви обов'язково приймете участь! "),
             ];
         }
+
 
         return [
             'status' => (bool)SecretSantaApplyForm::create($request->all()),
