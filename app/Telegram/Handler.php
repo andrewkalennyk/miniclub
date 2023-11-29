@@ -248,7 +248,7 @@ class Handler extends WebhookHandler
 
         $message = 'Заявка с таким ніком існує';
 
-        if (!$applyForm) {
+        if ($applyForm->isEmpty()) {
             $message = 'Заявки с таким ніком НЕ існує';
         }
 
