@@ -2,6 +2,7 @@
 
 namespace App\Telegram;
 
+use App\Models\CarGroup;
 use App\Models\LocalClub;
 use App\Models\SecretSantaApplyForm;
 use App\Models\Service;
@@ -242,6 +243,37 @@ class Handler extends WebhookHandler
 
         $this->chat
             ->message("Заявок - {$santas->count()}\n{$list}")
+            ->send();
+    }
+
+    public function mnls()
+    {
+        $groups = CarGroup::whereHas('car_instructions')->active()->pluck('title','id');
+
+        $buttons = collect([]);
+        foreach ($groups as $id => $group) {
+            $buttons->push(Button::make($group)->action('mnlsg')->param('id', $id));
+        }
+
+        $this->chat->message('Виберіть кузов')
+            ->keyboard(Keyboard::make()->buttons($buttons->toArray())->chunk(3))
+            ->send();
+    }
+
+    public function mnlsg()
+    {
+        $groups = CarGroup::whereHas('car_instructions')
+            ->active()
+            ->get()
+            ->pluck('title','id');
+
+        $buttons = collect([]);
+        foreach ($groups as $id => $group) {
+            $buttons->push(Button::make($group)->action('mnlsg')->param('id', $id));
+        }
+
+        $this->chat->message('Виберіть кузов')
+            ->keyboard(Keyboard::make()->buttons($buttons->toArray())->chunk(3))
             ->send();
     }
 
