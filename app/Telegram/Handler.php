@@ -3,6 +3,7 @@
 namespace App\Telegram;
 
 use App\Models\CarGroup;
+use App\Models\CarInstruction;
 use App\Models\LocalClub;
 use App\Models\SecretSantaApplyForm;
 use App\Models\Service;
@@ -195,11 +196,6 @@ class Handler extends WebhookHandler
             ]
         );
 
-        /*$this->chat
-            ->message('Перейти к додавання учасників')
-            ->keyboard(Keyboard::make()->buttons([Button::make($name)->action('ec')->param('id', $event->id)]))
-            ->send();*/
-
         $this->chat->message("{$event->title} - {$event->id} Доданий")->send();
     }
 
@@ -262,18 +258,21 @@ class Handler extends WebhookHandler
 
     public function mnlsg()
     {
-        $groups = CarGroup::whereHas('car_instructions')
-            ->active()
-            ->get()
-            ->pluck('title','id');
+        $carGroup = CarGroup::find($this->data->get('id'));
+
+        $instructions = CarInstruction::with('car_group')
+            ->where('car_group_id','=', $carGroup->id)
+            ->pluck('title','file');
 
         $buttons = collect([]);
-        foreach ($groups as $id => $group) {
-            $buttons->push(Button::make($group)->action('mnlsg')->param('id', $id));
+        foreach ($instructions as $file => $title) {
+            $buttons->push(Button::make($title)->url(asset($file)));
         }
 
-        $this->chat->message('Виберіть кузов')
-            ->keyboard(Keyboard::make()->buttons($buttons->toArray())->chunk(3))
+        $this->chat->edit($this->messageId)->message('Інструкції для '. $carGroup->title)->send();
+
+        $this->chat
+            ->replaceKeyboard($this->messageId, Keyboard::make()->buttons($buttons->toArray()))
             ->send();
     }
 
