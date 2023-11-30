@@ -8,6 +8,8 @@ use App\Models\Service;
 use App\Models\TelegramEvent;
 use App\Models\TelegramNumberUser;
 use Carbon\Carbon;
+use DefStudio\Telegraph\Enums\ChatActions;
+use DefStudio\Telegraph\Facades\Telegraph;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\Keyboard\Keyboard;
@@ -243,18 +245,17 @@ class Handler extends WebhookHandler
             ->send();
     }
 
-    public function ssn($social_name) //secret santa nick
+
+    public function test()
     {
-        $applyForm = SecretSantaApplyForm::where('social_name', '=' , $social_name)->first();
-
-        $message = 'Заявка с таким ніком існує';
-
-        if ($applyForm->isEmpty()) {
-            $message = 'Заявки с таким ніком НЕ існує';
-        }
-
-        $this->chat
-            ->message($message)
+        $this->chat->action(ChatActions::TYPING)->send();
+        $this->chat->poll("What's your favourite programming language?")
+            ->option('php')
+            ->option('typescript')
+            ->option('rust')
+            ->allowMultipleAnswers()
+            ->validUntil(now()->addMinutes(5))
             ->send();
     }
+
 }

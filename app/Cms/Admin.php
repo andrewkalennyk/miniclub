@@ -56,6 +56,11 @@ class Admin extends AdminBase
                     ],
                 ],
             ],
+            [
+                'title' => 'Інструкції',
+                'icon'  => 'id-card',
+                'link'  => '/car_instructions',
+            ],
 
             [
                 'title' => 'Secret Santa',
