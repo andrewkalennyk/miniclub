@@ -3,9 +3,8 @@
 namespace App\Cms\Definitions;
 
 use App\Models\ClubPromotion;
-use App\Models\LocalClub;
 use Vis\Builder\Services\Actions;
-use Vis\Builder\Fields\{Checkbox, Foreign, Id, Image, Relations\Options, Text};
+use Vis\Builder\Fields\{Checkbox, Froala, Id, Text};
 use Vis\Builder\Definitions\Resource;
 
 class ClubPromotions extends Resource
@@ -20,7 +19,7 @@ class ClubPromotions extends Resource
         return [
             Id::make('#', 'id')->sortable(),
             Text::make('Название', 'title')->language(),
-            Text::make('Умова', 'condition')->language(),
+            Froala::make('Умова', 'condition')->language(),
             Checkbox::make('Активность', 'is_active')->filter(),
         ];
     }
