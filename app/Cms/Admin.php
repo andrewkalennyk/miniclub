@@ -63,6 +63,12 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Акції',
+                'icon'  => 'usd',
+                'link'  => '/club_promotions',
+            ],
+
+            [
                 'title' => 'Secret Santa',
                 'icon'  => 'gift',
                 'link'  => '/santa_apply_form',
