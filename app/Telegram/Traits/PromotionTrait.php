@@ -33,7 +33,6 @@ trait PromotionTrait
         $this->chat->action(ChatActions::TYPING)->send();
         $this->chat->deleteMessage($this->messageId)->send();
 
-        $this->chat->html("<b>{$promotion->getTitle()}</b> Пропонує :")->send();
-        $this->chat->html("{$promotion->getCondition()}")->send();
+        $this->chat->markdown("*{$promotion->getTitle()}* Пропонує :\n\n {$promotion->getCondition()}")->send();
     }
 }
