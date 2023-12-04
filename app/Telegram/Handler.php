@@ -91,7 +91,7 @@ class Handler extends WebhookHandler
         $list = $santas->pluck('social_name')->implode("\n");
         $this->chat->action(ChatActions::TYPING)->send();
         $this->chat
-            ->message("Заявок - {$santas->count()}")
+            ->message("Заявок - {$santas->count()}\n{$list}")
             ->send();
     }
 
