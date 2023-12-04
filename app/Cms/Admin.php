@@ -64,7 +64,7 @@ class Admin extends AdminBase
 
             [
                 'title' => 'Акції',
-                'icon'  => 'usd',
+                'icon'  => 'percent',
                 'link'  => '/club_promotions',
             ],
 
