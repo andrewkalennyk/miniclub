@@ -26,7 +26,8 @@ Artisan::command('register-bot-commands', function () {
         '/ss'  => 'Сервіси',
         '/mnl' => 'Посилання на Mini Guide',
         '/mdls' => 'Фото моделей',
-        '/mnls' => 'Інструкції для Міні'
+        '/mnls' => 'Інструкції для Міні',
+        '/prmt' => 'Плюшки для клуба'
     ])->send();
 })->purpose('Register new comands for telegram bot');
 
