@@ -15,6 +15,6 @@ class Sticker extends BaseModel
 
     public function getPictureUrl(): string
     {
-        return $this->condition ?? '';
+        return !empty($this->picture) ? public_path($this->picture) : '';
     }
 }

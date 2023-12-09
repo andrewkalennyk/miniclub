@@ -8,7 +8,10 @@ use App\Telegram\Traits\EventsTrait;
 use App\Telegram\Traits\ManualsTrait;
 use App\Telegram\Traits\PromotionTrait;
 use App\Telegram\Traits\ServiceTrait;
+use App\Telegram\Traits\StickersTrait;
+use DefStudio\Telegraph\DTO\InlineQueryResultPhoto;
 use DefStudio\Telegraph\Enums\ChatActions;
+use DefStudio\Telegraph\Facades\Telegraph;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
 use DefStudio\Telegraph\Keyboard\Keyboard;
@@ -20,6 +23,7 @@ class Handler extends WebhookHandler
     use EventsTrait;
     use ManualsTrait;
     use PromotionTrait;
+    use StickersTrait;
 
     /*public function sto($cityTitle): void
     {
