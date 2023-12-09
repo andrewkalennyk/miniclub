@@ -60,7 +60,7 @@ trait StickersTrait
             ->get()
             ->pluck('title','id')
             ->map(function (string $group, int $id) {
-                return Button::make($group)->action('stcr')->param('id', $id);
+                return Button::make($group)->action('stcro')->param('id', $id);
             })
             ->toArray();
 

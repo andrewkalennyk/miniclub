@@ -24,10 +24,12 @@ Artisan::command('register-bot-commands', function () {
     $telegraphBot->registerCommands([
         '/cl' => 'Вивести всі локальні клуби',
         '/ss'  => 'Сервіси',
+        '/prmt' => 'Плюшки для клуба',
+        '/strs' => 'наліпки',
         '/mnl' => 'Посилання на Mini Guide',
         '/mdls' => 'Фото моделей',
         '/mnls' => 'Інструкції для Міні',
-        '/prmt' => 'Плюшки для клуба'
+
     ])->send();
 })->purpose('Register new comands for telegram bot');
 
