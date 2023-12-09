@@ -67,6 +67,11 @@ class Admin extends AdminBase
                 'icon'  => 'percent',
                 'link'  => '/club_promotions',
             ],
+            [
+                'title' => 'Наліпки',
+                'icon'  => 'shopping-bag',
+                'link'  => '/stickers',
+            ],
 
             [
                 'title' => 'Secret Santa',
