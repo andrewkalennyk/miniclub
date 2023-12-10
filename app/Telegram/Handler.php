@@ -25,6 +25,11 @@ class Handler extends WebhookHandler
     use PromotionTrait;
     use StickersTrait;
 
+    public function start(): void
+    {
+        $this->chat->message('Привіт, тебе вітає Бот який може допомогти знайти інформацію про міні! Тицяй в меню! Там всі доступні команди!')->send();
+    }
+
     /*public function sto($cityTitle): void
     {
         $services = Service::active()->orderBy('mark', 'desc');
