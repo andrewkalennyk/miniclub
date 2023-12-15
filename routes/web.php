@@ -23,7 +23,7 @@ Route::group(
         Route::post('/secret-santa-form', 'SecretSantaController@saveApplyForm')->name('secret-santa-form');
 
         Route::get('/secret-santa-randomize', 'SecretSantaController@doRandomize');
-        Route::get('/secret-santa-letters', 'SecretSantaController@doSendLetters');
+        /*Route::get('/secret-santa-letters', 'SecretSantaController@doSendLetters');*/
         Route::get('/secret-santa-letter-{id}', 'SecretSantaController@doSendLetter');
     }
 );
