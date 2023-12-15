@@ -66,13 +66,11 @@ class SecretSantaController extends TreeController
     public function doSendLetter($id)
     {
         $secretSantasRelation =  SecretSantaRelations::with(['social_from', 'social_to'])->where('id', $id)->get();
-        dd($secretSantasRelation);
-       /* foreach ($secretSantasRelations as $santasRelation) {
+
+        foreach ($secretSantasRelation as $santasRelation) {
             Mail::to($santasRelation->social_from->email)->send(new SendSecretSanta($santasRelation->social_to, $santasRelation->social_from));
         }
 
-
-
-        echo 'done';*/
+        echo 'done';
     }
 }
