@@ -61,6 +61,15 @@ class SecretSantaController extends TreeController
                 'error_message' => __t("Заявка с таким аккаунтом не існує! "),
             ];
         }
+
+        if (!empty($applyForm->about_description_details)) {
+            return [
+                'status' => false,
+                'error_message' => __t("Вибачте! Ви вже доповнювали дані) Не докучайте повідомленнями Санті! "),
+            ];
+        }
+
+
         $status = $applyForm->updateApplyFormDetails($request);
 
         if ($status) {
