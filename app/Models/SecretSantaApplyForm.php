@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Illuminate\Http\Request;
+
 class SecretSantaApplyForm extends BaseModel
 {
     protected $table = 'secret_santa_apply_form';
@@ -15,12 +17,18 @@ class SecretSantaApplyForm extends BaseModel
         'email',
         'np_address',
         'about_description',
+        'about_description_details',
     ];
 
     public function createApply($data): bool
     {
-        $data['rating'] = $data['ratingRating'];
-
         return (bool) self::create($data);
+    }
+
+    public function updateApplyFormDetails(Request $data): bool
+    {
+        $this->about_description_details = $data->get('about_description_details');
+
+        return $this->save();
     }
 }

@@ -27,6 +27,7 @@ class SantaApplyForm extends Resource
             Text::make("Email", 'email'),
             Text::make("Нова Пошта відділення", 'np_address')->onlyForm(),
             Froala::make("Опис", 'about_description')->onlyForm(),
+            Froala::make("Додатковий опис", 'about_description_details')->onlyForm(),
         ];
     }
 

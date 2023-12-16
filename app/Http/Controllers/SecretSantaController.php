@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Cms\Definitions\SantaApplyRelations;
+use App\Http\Requests\SecretSantaDetailsRequest;
 use App\Http\Requests\SecretSantaRequest;
 use App\Mail\SendSecretSanta;
+use App\Mail\SendSecretSantaDetails;
 use App\Models\SecretSantaApplyForm;
 use App\Models\SecretSantaRelations;
 use App\Services\SecretSanta;
@@ -18,6 +20,12 @@ class SecretSantaController extends TreeController
     {
         $santas = SecretSantaApplyForm::all();
         return view('santa.index', compact('santas'));
+    }
+
+    public function showDetailsPage()
+    {
+        $santas = SecretSantaApplyForm::all();
+        return view('santa.details-index', compact('santas'));
     }
 
     public function saveApplyForm(SecretSantaRequest $request)
@@ -41,6 +49,37 @@ class SecretSantaController extends TreeController
         ];
     }
 
+    public function saveDetailsApplyForm(SecretSantaDetailsRequest $request)
+    {
+        Log::info(json_encode($request->all()));
+
+        $applyForm = SecretSantaApplyForm::where('social_name', $request->get('social_name'))->first();
+
+        if (!$applyForm) {
+            return [
+                'status' => false,
+                'error_message' => __t("Заявка с таким аккаунтом не існує! "),
+            ];
+        }
+        $status = $applyForm->updateApplyFormDetails($request);
+
+        if ($status) {
+            $secretSantaRelation =  SecretSantaRelations::with(['social_from', 'social_to'])
+                ->where('social_name_to', $request->get('social_name'))
+                ->first();
+
+            if ($secretSantaRelation) {
+                Mail::to($secretSantaRelation->social_from->email)->send(new SendSecretSantaDetails($secretSantaRelation->social_to, $secretSantaRelation->social_from));
+            }
+        }
+
+        return [
+            'status' => $status,
+            'success_message' => __t('Дякуємо Що допомогли своєму таємному санті! '),
+            'error_message' => __t('От халепа! Щось пішло не так'),
+        ];
+    }
+
     public function doRandomize()
     {
         $secretSantas = SecretSantaApplyForm::all();
@@ -57,8 +96,6 @@ class SecretSantaController extends TreeController
        foreach ($secretSantasRelations as $santasRelation) {
            Mail::to($santasRelation->social_from->email)->send(new SendSecretSanta($santasRelation->social_to, $santasRelation->social_from));
        }
-
-
 
         echo 'done';
     }
