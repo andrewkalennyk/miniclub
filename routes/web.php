@@ -27,5 +27,6 @@ Route::group(
         Route::get('/secret-santa-randomize', 'SecretSantaController@doRandomize');
         /*Route::get('/secret-santa-letters', 'SecretSantaController@doSendLetters');*/
         Route::get('/secret-santa-letter-{id}', 'SecretSantaController@doSendLetter');
+        Route::get('/secret-santa-letter-details-{id}', 'SecretSantaController@doSendLetterDetails');
     }
 );

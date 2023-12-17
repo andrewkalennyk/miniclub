@@ -119,4 +119,17 @@ class SecretSantaController extends TreeController
 
         echo 'done';
     }
+
+    public function doSendLetterDetails($id)
+    {
+        $secretSantaRelation =  SecretSantaRelations::with(['social_from', 'social_to'])
+            ->where('id', $id)
+            ->first();
+
+        if ($secretSantaRelation) {
+            Mail::to($secretSantaRelation->social_from->email)->send(new SendSecretSantaDetails($secretSantaRelation->social_to, $secretSantaRelation->social_from));
+        }
+
+        echo 'done';
+    }
 }
