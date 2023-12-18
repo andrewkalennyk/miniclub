@@ -69,8 +69,16 @@ class SecretSantaController extends TreeController
             ];
         }
 
-
-        $status = $applyForm->updateApplyFormDetails($request);
+        $status = false;
+        try {
+            $status = $applyForm->updateApplyFormDetails($request);
+        } catch (\Exception $e) {
+            Log::info($e);
+            Log::info('----------------------------------');
+            Log::info($e);
+            Log::info('message not send!');
+            Log::info('----------------------------------');
+        }
 
         if ($status) {
             $secretSantaRelation =  SecretSantaRelations::with(['social_from', 'social_to'])
