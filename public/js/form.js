@@ -184,14 +184,14 @@ let Form = {
 
                             setTimeout(function() {
                                 $(form).find('.alert-success').addClass('d-none');
-                            }, 4000);
+                            }, 8000);
                         } else {
                             $(form).find('.alert-danger').text(response.error_message);
                             $(form).find('.alert-danger').removeClass('d-none');
 
                             setTimeout(function() {
                                 $(form).find('.alert-danger').addClass('d-none');
-                            }, 6000);
+                            }, 8000);
                         }
                     },
                     error: function (error) {

@@ -48,8 +48,6 @@
                 <div class="card-body">
                     <form name="ask-us-anything-form" action data-action="{{route('ask-us-anything-form')}}" id="ask-us-anything-form">
                         {{csrf_field()}}
-                        <div class="alert alert-danger d-none"  role="alert"></div>
-                        <div class="alert alert-success d-none"  role="alert"></div>
                         <div class="form-group">
                             <label for="proposition">{{__t('Пропозиція/Побажання/ Питання?')}}</label>
                             <textarea class="form-control" id="proposition" name="proposition" rows="5"></textarea>
@@ -70,8 +68,9 @@
                                 <input type="text" class="form-control" name="social_name" id="inputSocialName">
                             </div>
                         </div>
-
                         <button type="submit" class="btn btn-primary" id="secretBtnForm" >{{__t('Відправити')}}</button>
+                        <div class="alert alert-danger d-none"  role="alert"></div>
+                        <div class="alert alert-success d-none"  role="alert"></div>
                     </form>
                 </div>
             </div>
