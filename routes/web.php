@@ -28,5 +28,9 @@ Route::group(
         /*Route::get('/secret-santa-letters', 'SecretSantaController@doSendLetters');*/
         Route::get('/secret-santa-letter-{id}', 'SecretSantaController@doSendLetter');
         Route::get('/secret-santa-letter-details-{id}', 'SecretSantaController@doSendLetterDetails');
+
+        Route::get('/ask-us-anything', 'FormController@showAskPage');
+        Route::post('/ask-us-anything-form', 'FormController@doAsk')->name('ask-us-anything-form');
+
     }
 );

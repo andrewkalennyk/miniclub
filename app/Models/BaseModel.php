@@ -28,7 +28,6 @@ class BaseModel extends Model
         \Vis\Builder\Helpers\Traits\SeoTrait,
         \Vis\Builder\Helpers\Traits\ImagesTrait,
         \Vis\Builder\Helpers\Traits\QuickEditTrait,
-        \Venturecraft\Revisionable\RevisionableTrait,
         \Vis\Builder\Helpers\Traits\Rememberable;
 
     protected $revisionFormattedFieldNames = [

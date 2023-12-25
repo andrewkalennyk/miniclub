@@ -6,6 +6,7 @@ let Form = {
         Form.proposeForm();
         Form.ratingForm();
         Form.shareServiceForm();
+        Form.askForm();
     },
 
     proposeForm: function () {
@@ -135,6 +136,62 @@ let Form = {
                             setTimeout(function() {
                                 $(form).find('.alert-warning').addClass('d-none');
                             }, 2000);
+                        }
+                    },
+                    error: function (error) {
+                        var errors = error.responseJSON.errors;
+                        var errorMessage = '';
+                        $.each(errors, function (key, value) {
+                            errorMessage += value + '<br>';
+                        });
+
+                    }
+                });
+            }
+        });
+    },
+
+    askForm: function () {
+        $('#anonymously').change(function(){
+            // Check if the checkbox is checked
+            if(this.checked) {
+                // Get the value of the checkbox
+                $('.inputSocialNameRow').hide();
+            } else {
+                $('.inputSocialNameRow').show();
+            }
+        });
+
+        $('form[name="ask-us-anything-form"]').validate({
+            rules : {
+                proposition : { required : true },
+
+            },
+            errorPlacement : function(error, element) {},
+            submitHandler: function(form) {
+                jQuery.ajax({
+                    data: $(form).serializeArray(),
+                    type: "POST",
+                    url: $(form).data('action'),
+                    cache: false,
+                    dataType: "json",
+                    success: function (response) {
+                        $('#secretBtnForm').prop('disabled', false);
+                        if (response.status) {
+                            document.getElementById("ask-us-anything-form").reset();
+                            $(form).find('.alert-success').text(response.success_message);
+                            $(form).find('.alert-success').removeClass('d-none');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-success').addClass('d-none');
+                            }, 4000);
+                        } else {
+                            $(form).find('.alert-danger').text(response.error_message);
+                            $(form).find('.alert-danger').removeClass('d-none');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-danger').addClass('d-none');
+                            }, 6000);
                         }
                     },
                     error: function (error) {

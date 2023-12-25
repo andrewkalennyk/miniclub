@@ -130,6 +130,11 @@ class Admin extends AdminBase
                 'icon'  => 'question-circle',
                 'link'  => '/faq',
             ],
+            [
+                'title' => 'Деталі Локацій',
+                'icon'  => 'tachometer',
+                'link'  => '/location_details',
+            ],
 
             [
                 'title' => 'Настройки',
