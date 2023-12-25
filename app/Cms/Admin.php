@@ -137,6 +137,12 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Пропозиції',
+                'icon'  => 'question',
+                'link'  => '/ask',
+            ],
+
+            [
                 'title' => 'Настройки',
                 'icon'  => 'cog',
                 'link'  => '/settings_block',
