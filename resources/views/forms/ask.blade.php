@@ -65,8 +65,8 @@
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary" id="secretBtnForm" >{{__t('Відправити')}}</button>
-                        <div class="alert alert-danger d-none"  role="alert"></div>
-                        <div class="alert alert-success d-none"  role="alert"></div>
+                        <div class="alert alert-danger d-none mt-3"  role="alert"></div>
+                        <div class="alert alert-success d-none mt-3"  role="alert"></div>
                     </form>
                 </div>
             </div>
