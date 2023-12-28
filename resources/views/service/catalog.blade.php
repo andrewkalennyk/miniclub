@@ -75,11 +75,11 @@
                                 @endforeach
                             </select>
                         </div>
-                        @if($cities->count())
+                        @if($allCities->count())
                             <div class="form-group">
                                 <select class="form-control" name="city_id">
                                     <option>{{__t('Місто')}}</option>
-                                    @foreach($cities as $city)
+                                    @foreach($allCities as $city)
                                         <option value="{{$city->id}}">{{$city->t('title')}}</option>
                                     @endforeach
                                 </select>

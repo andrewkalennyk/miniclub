@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Service;
 use App\Models\ServiceType;
 use App\Models\Tree;
@@ -28,7 +29,9 @@ class ServiceController extends TreeController
 
         $cities = $services->pluck('city', 'city.id')->sortBy('title');
 
-        return view('service.catalog', compact('page','types', 'services', 'cities'));
+        $allCities = City::all();
+
+        return view('service.catalog', compact('page','types', 'services', 'cities', 'allCities'));
     }
 
     public function showService($slug, $id): View
