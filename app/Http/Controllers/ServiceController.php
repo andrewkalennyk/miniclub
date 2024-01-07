@@ -34,6 +34,18 @@ class ServiceController extends TreeController
         return view('service.catalog', compact('page','types', 'services', 'cities', 'allCities'));
     }
 
+    public function showAddService(): View
+    {
+        $page = $this->node;
+
+        $allCities = City::all();
+
+        $types = ServiceType::active()->get();
+
+        return view('service.add-service', compact('page','allCities', 'types'));
+
+    }
+
     public function showService($slug, $id): View
     {
         $treePage = Tree::slug(Request::segment(count(Request::segments())-1))->active()->first();
