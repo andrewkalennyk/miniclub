@@ -29,7 +29,7 @@ trait ServiceTrait
             $keyboard->row($row->toArray());
         }
 
-        $this->chat->message('Виберіть сервіс')
+        $this->chat->message("Виберіть сервіс")
             ->keyboard($keyboard)
             ->send();
     }
@@ -58,7 +58,7 @@ trait ServiceTrait
             $keyboard->row($row->toArray());
         }
 
-        $this->chat->edit($this->messageId)->message('Виберіть місто')->send();
+        $this->chat->edit($this->messageId)->message("Виберіть місто \nНемає міста? Запропонуйте сервіс тут: \nhttps://www.miniclub.com.ua/servisi/novii-servis")->send();
         $this->chat
             ->replaceKeyboard($this->messageId, $keyboard)
             ->send();
