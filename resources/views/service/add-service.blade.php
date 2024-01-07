@@ -36,12 +36,15 @@
 
             <div class="row justify-content-center share-service-form">
                 <div class="col-md-8 block-9 mb-md-5">
+
                     <form action="#"
                           data-action="{{route('share-service-form')}}"
                           name="share-service-form"
                           id="share-service-form"
-                          class="bg-light p-5 share-service-form">
+                          class="bg-light p-5 share-service-form service-page">
                         {{csrf_field()}}
+                        <div class="alert alert-success d-none" role="alert"></div>
+                        <div class="alert alert-warning d-none" role="alert"></div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="title" placeholder="{{__t('Назва Сервісу')}}">
                         </div>

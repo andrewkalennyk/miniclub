@@ -127,7 +127,9 @@ let Form = {
 
                             setTimeout(function() {
                                 $(form).find('.alert-success').addClass('d-none');
-                                $('.share-service-form').addClass('d-none');
+                                if (!$('.share-service-form').hasClass('service-page')) {
+                                    $('.share-service-form').addClass('d-none');
+                                }
                             }, 4000);
                         } else {
                             $(form).find('.alert-warning').text(response.error_message);
