@@ -102,7 +102,7 @@
                             <textarea name="message" id="" cols="30" rows="7" class="form-control" name="review" placeholder="{{__t('Відгук')}}"></textarea>
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+                            <input type="submit" value="{{__t('Відправити')}}" class="btn btn-primary py-3 px-5">
                         </div>
                         <div class="alert alert-success d-none" role="alert"></div>
                         <div class="alert alert-warning d-none" role="alert"></div>
