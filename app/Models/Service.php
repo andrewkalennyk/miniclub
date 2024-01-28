@@ -150,4 +150,14 @@ class Service extends BaseModel
     {
         return $this->mark ?: 0;
     }
+
+    public function getCoast(): string
+    {
+        if (empty($this->coast)) {
+            return '';
+        }
+
+        return $this->coast == 'left' ? '(Лівий берег)' : '(Правий Берег)';
+
+    }
 }

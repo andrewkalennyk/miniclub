@@ -75,7 +75,7 @@ trait ServiceTrait
 
         $services = $services->map(function ($service) {
             return $service->title .
-                " ({$service->mark} &#9733;) <a href='{$service->getUrl()}'>Детальніше</a>";
+                " {$service->mark} &#9733; {$service->getCoast()} <a href='{$service->getUrl()}'>Детальніше</a>";
         })->implode("\n");
 
         $this->chat->deleteKeyboard($this->messageId);
