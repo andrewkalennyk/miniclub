@@ -51,6 +51,13 @@ class Services extends Resource
                 Text::make('Телефон', 'number')->onlyForm(),
                 Text::make('Контактна людина', 'contact_person')->onlyForm(),
                 Text::make('Маршрут', 'google_url')->onlyForm(),
+                Select::make('Берег', 'coast')->options(
+                    [
+                        null => 'Виберіть берег',
+                        'left' => 'Лівий',
+                        'rigth' => 'Правий',
+                    ]
+                )->onlyForm(),
                 Select::make('Думка експерта', 'expert_decision')->options(
                     [
                         null => 'Виберіть рішення',
