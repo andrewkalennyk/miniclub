@@ -54,6 +54,10 @@ class Admin extends AdminBase
                         'title' => 'Модель',
                         'link'  => '/car_model',
                     ],
+                    [
+                        'title' => 'Тачки клуба',
+                        'link'  => '/club_cars',
+                    ],
                 ],
             ],
             [
@@ -73,7 +77,7 @@ class Admin extends AdminBase
                 'link'  => '/stickers',
             ],
 
-            [
+            /*[
                 'title' => 'Secret Santa',
                 'icon'  => 'gift',
                 'link'  => '/santa_apply_form',
@@ -87,7 +91,7 @@ class Admin extends AdminBase
                         'link'  => '/santa_apply_relations',
                     ],
                 ],
-            ],
+            ],*/
 
             [
                 'title' => 'Cервіси',
