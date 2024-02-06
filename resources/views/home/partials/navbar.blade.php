@@ -1,9 +1,14 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="{{asset('/')}}">
-            <img src="{{asset('/images/mini-logo-header-white.png')}}" width="90" height="90" alt="" id="logo-w">
-            <img src="{{asset('/images/mini-logo-header.png')}}" width="90" height="90" alt="" id="log-d" style="display: none">
-        </a>
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand" href="{{asset('/')}}">
+                <img src="{{asset('/images/mini-logo-header-white.png')}}" width="90" height="90" alt="" id="logo-w">
+                <img src="{{asset('/images/mini-logo-header.png')}}" width="90" height="90" alt="" id="log-d" style="display: none">
+            </a>
+            <a href="https://t.me/mini_club_ua_bot" class="navbar-brand ml-auto">
+                <img src="{{asset('/images/bot-logo.png')}}" width="75" height="75" alt="logo-bot">
+            </a>
+        </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> {{__t('Меню')}}
