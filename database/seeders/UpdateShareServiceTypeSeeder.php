@@ -16,14 +16,12 @@ class UpdateShareServiceTypeSeeder extends Seeder
     public function run()
     {
         $shareServices = ShareService::all();
+        $serviceTypes = ServiceType::whereIn('type', $shareServices->pluck('service_type'))->get()->keyBy('type');
 
         foreach ($shareServices as $shareService) {
-            $serviceType = $shareService->service_type;
-
-            $type = ServiceType::where('type', $serviceType)->first();
-
-            if ($type) {
-                $shareService->service_type_id = $type->id;
+            $serviceType = $serviceTypes[$shareService->service_type] ?? null;
+            if ($serviceType) {
+                $shareService->service_type_id = $serviceType->id;
                 $shareService->save();
             }
         }
