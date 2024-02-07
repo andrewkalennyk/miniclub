@@ -6,7 +6,7 @@
                 <img src="{{asset('/images/mini-logo-header.png')}}" width="90" height="90" alt="" id="log-d" style="display: none">
             </a>
             <a href="https://t.me/mini_club_ua_bot" class="navbar-brand ml-auto" target="_blank">
-                <img class="card-img img-cover rounded-circle" src="{{asset('/images/bot-logo.jpeg')}}" width="75" height="75" alt="logo-bot">
+                <img class="img-cover rounded-circle" src="{{asset('/images/bot-logo.jpeg')}}" width="75" height="75" alt="logo-bot">
             </a>
         </div>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
