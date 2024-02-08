@@ -10,7 +10,7 @@ class ShareService extends BaseModel
         'title',
         'url',
         'google_map',
-        'service_type',
+        'service_type_id',
         'city_id',
         'social_name',
         'rating',
@@ -20,6 +20,11 @@ class ShareService extends BaseModel
     public function city()
     {
         return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function service_type()
+    {
+        return $this->belongsTo(ServiceType::class, 'service_type_id');
     }
 
     public function createApply($data): bool
