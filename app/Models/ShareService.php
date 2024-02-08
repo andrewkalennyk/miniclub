@@ -10,7 +10,7 @@ class ShareService extends BaseModel
         'title',
         'url',
         'google_map',
-        'service_type',
+        'service_type_id',
         'city_id',
         'social_name',
         'rating',

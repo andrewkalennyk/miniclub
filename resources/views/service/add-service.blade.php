@@ -55,10 +55,10 @@
                             <input type="text" class="form-control" name="google_map" placeholder="{{__t('Мітка на карті')}}">
                         </div>
                         <div class="form-group">
-                            <select class="form-control" name="service_type">
+                            <select class="form-control" name="service_type_id">
                                 <option>{{__t('Тип сервісу')}}</option>
                                 @foreach($types as $type)
-                                    <option value="{{$type->type}}">{{$type->t('title')}}</option>
+                                    <option value="{{$type->id}}">{{$type->t('title')}}</option>
                                 @endforeach
                             </select>
                         </div>
