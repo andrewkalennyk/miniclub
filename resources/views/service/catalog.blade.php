@@ -21,16 +21,16 @@
                         @if($cities->count())
                             <li class="nav-item">
                                 <select name="city_filter" class="custom-select" style="color: rgba(0, 0, 0, 0.4) !important;">
-                                    <option selected>{{__t('Місто')}}</option>
+                                    <option value="">{{__t('Місто')}}</option>
                                     @foreach($cities as $city)
-                                        <option value="{{$city->id}}">{{$city->t('title')}}</option>
+                                        <option @if(request()->get('cityId') == $city->id) selected @endif value="{{$city->id}}">{{$city->t('title')}}</option>
                                     @endforeach
                                 </select>
                             </li>
                         @endif
                         @foreach($types as $type)
                             <li class="nav-item">
-                                <a class="nav-link btn @if($loop->first) btn-secondary @endif"  data-type="{{$type->type}}" href="#">{{$type->t('title')}}</a>
+                                <a class="nav-link btn @if(request()->get('type') == $type->type) btn-secondary @endif" data-type="{{$type->type}}" href="#">{{$type->t('title')}}</a>
                             </li>
                         @endforeach
                     </ul>
@@ -117,7 +117,6 @@
 
 @section('additional_scripts')
     <script src="/js/jquery-rates.js"></script>
-
     <script>
         $('document').ready(function () {
             $('#rating').rates({
@@ -125,7 +124,6 @@
             });
         })
     </script>
-
     <script src="/js/jquery.validate.min.js"></script>
     <script src="/js/form.js"></script>
     <script src="/js/service.js"></script>
