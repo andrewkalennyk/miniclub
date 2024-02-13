@@ -1,3 +1,5 @@
+<?php /* @var $type \App\Models\ServiceType */?>
+
 @extends('layouts.default')
 
 @section('main')
@@ -30,7 +32,7 @@
                         @endif
                         @foreach($types as $type)
                             <li class="nav-item">
-                                <a class="nav-link btn @if(request()->get('type') == $type->type) btn-secondary @endif" data-type="{{$type->type}}" href="#">{{$type->t('title')}}</a>
+                                <a class="nav-link btn {{$type->isActiveTabClass($loop->first)}}" data-type="{{$type->type}}" href="#">{{$type->t('title')}}</a>
                             </li>
                         @endforeach
                     </ul>
