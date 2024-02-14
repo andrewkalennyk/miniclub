@@ -36,4 +36,11 @@ class ServiceType extends BaseModel
     protected $table = 'service_types';
     protected $fillable = [];
 
+    public function isActiveTabClass($isFirst = false): string
+    {
+        if (request()->get('type') == $this->type || (!request()->has('type') && $isFirst)) {
+            return 'btn-secondary';
+        }
+        return '';
+    }
 }
