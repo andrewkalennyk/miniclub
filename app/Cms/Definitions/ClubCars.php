@@ -4,7 +4,7 @@ namespace App\Cms\Definitions;
 
 use App\Models\ClubCar;
 use Vis\Builder\Definitions\Resource;
-use Vis\Builder\Fields\{Foreign, Froala, Id, Image, MultiImage, Number, Relations\Options, Text};
+use Vis\Builder\Fields\{Foreign, Froala, Id, Image, MultiImage, Number, Relations\Options, Select, Text};
 use Vis\Builder\Services\Actions;
 
 class ClubCars extends Resource
@@ -20,6 +20,7 @@ class ClubCars extends Resource
             Id::make('#', 'id')->sortable(),
             Text::make('Название', 'title')->language(),
             Froala::make('Опис', 'description')->language()->onlyForm(),
+            Text::make('Url', 'slug'),
             Foreign::make('Модель', 'car_model_id')
                 ->options((new Options('car_model'))->keyField('title'))
                 ->nullable('...')
@@ -32,8 +33,12 @@ class ClubCars extends Resource
                 ->sortable(),
             Number::make('Рік', 'year')->onlyForm(),
             Text::make('Колір', 'color')->onlyForm(),
-            Text::make('Пальне', 'petrol')->onlyForm(),
-            Text::make('Трансмісія', 'transmission')->onlyForm(),
+            Select::make('Пальне', 'petrol')
+                ->options(ClubCar::getFuelTypes())
+                ->onlyForm(),
+            Select::make('Трансмісія', 'transmission')
+                ->options(ClubCar::getTransmissionTypes())
+                ->onlyForm(),
             Image::make('Превью', 'image'),
             Image::make('Фото заднього плану', 'background_image')->onlyForm(),
             MultiImage::make('Картинки доп', 'additional_images')->onlyForm()

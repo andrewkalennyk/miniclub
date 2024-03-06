@@ -28,6 +28,9 @@ class ClubCarsController extends TreeController
         $treePage = Tree::slug(Request::segment(count(Request::segments())-1))->active()->first();
 
         $page = ClubCar::where('title', $title)->active()->firstOrFail();
-        return view('club-cars.partials.detail', compact('page','treePage'));
+
+        $additionalImages = $page->getAddImages();
+
+        return view('club-cars.car', compact('page','treePage', 'additionalImages'));
     }
 }
