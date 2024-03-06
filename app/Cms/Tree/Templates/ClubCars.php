@@ -9,6 +9,6 @@ use Vis\Builder\Definitions\ResourceTree;
 class ClubCars extends Events
 {
     protected $titleDefinition = 'Клубні тачки';
-    public $action = 'ClubCarsController@showCars';
+    public $action = 'ClubCarsController@showPage';
 
 }
