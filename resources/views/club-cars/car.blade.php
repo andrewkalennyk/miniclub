@@ -141,7 +141,7 @@
     <script>
         $(document).ready(function () {
             const paragraphs = document.querySelectorAll('p > img.fr-dib');
-            paragraphs.forEach(function (paragraph) {
+            /*paragraphs.forEach(function (paragraph) {
                 const nextSibling = paragraph.nextSibling;
 
                 if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
@@ -158,7 +158,7 @@
                 paragraph.style.width = 'auto';
                 paragraph.style.height = 'auto';
                 paragraph.style.maxWidth = '50%';
-            });
+            });*/
 
             setInterval(function () {
                 $('#additionalImagesCarousel').carousel('next');
