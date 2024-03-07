@@ -3,7 +3,9 @@
 @extends('layouts.default')
 
 @section('main')
-    <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('{{$page->background_image}}');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2 js-fullheight"
+             style="background-image: url('{{$page->background_image}}'); background-position: center !important;"
+             data-stellar-background-ratio="0.5">
         @include('partials.breadcrumbs')
     </section>
 
