@@ -82,7 +82,7 @@
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         {{__t('Трансмісія')}}
-                                        <span>{{$page->t('transmission')}}</span>
+                                        <span>{{__t($page->transmission)}}</span>
                                     </h3>
                                 </div>
                             </div>
@@ -99,7 +99,7 @@
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         {{__t('Пальне')}}
-                                        <span>{{$page->t('petrol')}}</span>
+                                        <span>{{{__t($page->petrol)}}</span>
                                     </h3>
                                 </div>
                             </div>
