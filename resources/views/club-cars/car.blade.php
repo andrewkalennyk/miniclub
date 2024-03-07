@@ -4,7 +4,7 @@
 
 @section('main')
     <section class="hero-wrap hero-wrap-2 js-fullheight"
-             style="background-image: url('{{$page->background_image}}'); background-position: center !important;"
+             style="background-image: url('{{$page->background_image}}');"
              data-stellar-background-ratio="0.5">
         @include('partials.breadcrumbs')
     </section>
@@ -14,7 +14,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="car-details">
-                        <div class="img rounded" style="background-image: url({{ $page->image }});"></div>
+                        <div class="img rounded" style="background-image: url({{ $page->image }});  background-position: center !important;"></div>
                         <div class="text text-center">
                             <span class="subheading">Mini</span>
                             <h2>{{$page->t('title')}}</h2>
