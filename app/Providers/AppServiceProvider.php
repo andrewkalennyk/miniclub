@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\ClubCar;
 use App\Models\Event;
 use App\Models\Service;
 use App\Models\ServiceReview;
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Event::observe(SlugObserver::class);
         Service::observe(SlugObserver::class);
+        ClubCar::observe(SlugObserver::class);
         ServiceReview::observe(MarkObserver::class);
 
         Paginator::useBootstrap();

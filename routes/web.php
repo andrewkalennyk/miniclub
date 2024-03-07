@@ -13,7 +13,7 @@ Route::group(
 
         Route::get('/servisi/{slug}-{id}', 'ServiceController@showService')->name('service');
 
-        Route::get('/servisi/{slug}-{id}', 'ServiceController@showService')->name('service');
+        Route::get('/klubni-tacki/{title}', 'ClubCarsController@showCarDetail')->name('car-detail');
 
         Route::get('/servisi/vidguk/{slug}-{id}', 'ReviewController@showReview')->name('review');
 

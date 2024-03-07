@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers;
 
 use App\Http\Breadcrumbs;
+use App\Models\ClubCar;
 use App\Models\Event;
 use App\Models\Service;
 use App\Models\ServiceReview;
@@ -24,6 +25,7 @@ class BreadcrumbsComposer
                 $breadcrumbs = new Breadcrumbs($page);
                 break;
             case Service::class:
+            case ClubCar::class:
             case Event::class:
                 $breadcrumbs = new Breadcrumbs($view->getData()['treePage']);
                 $breadcrumbs->add($page->getUrl(), $page->title);
