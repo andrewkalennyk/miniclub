@@ -1,3 +1,5 @@
+<?php /* @var $page \App\Models\ClubCar */?>
+
 @extends('layouts.default')
 
 @section('main')
@@ -23,11 +25,13 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><img src="/images/car-icon.png" style="width: 50px; height: 50px;"></div>
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <img src="/images/car-icon.png" style="width: 50px; height: 50px;">
+                                </div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         {{__t('Модель')}}
-                                        <span>{{$page->car_model->t('title')}}</span>
+                                        <span>{{$page->getModelTitle()}}</span>
                                     </h3>
                                 </div>
                             </div>
@@ -53,11 +57,13 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><img src="/images/car-door.png" style="width: 40px; height: 40px;"></div>
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <img src="/images/car-door.png" style="width: 40px; height: 40px;">
+                                </div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         {{__t('Двері')}}
-                                        <span>{{$page->car_model->door_count}}</span>
+                                        <span>{{$page->getDoorCount()}}</span>
                                     </h3>
                                 </div>
                             </div>
@@ -68,7 +74,9 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><img src="/images/cogs-icon.png" style="width: 55px; height: 55px;"></div>
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <img src="/images/cogs-icon.png" style="width: 55px; height: 55px;">
+                                </div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         {{__t('Трансмісія')}}
@@ -83,7 +91,9 @@
                     <div class="media block-6 services">
                         <div class="media-body py-md-4">
                             <div class="d-flex mb-3 align-items-center">
-                                <div class="icon d-flex align-items-center justify-content-center"><img src="/images/petrol-pump-icon.png" style="width: 45px; height: 45px;"></div>
+                                <div class="icon d-flex align-items-center justify-content-center">
+                                    <img src="/images/petrol-pump-icon.png" style="width: 45px; height: 45px;">
+                                </div>
                                 <div class="text">
                                     <h3 class="heading mb-0 pl-3">
                                         {{__t('Пальне')}}
@@ -116,7 +126,7 @@
                              class="img-fluid mb-4 rounded">
                     </div>
                     <div class="desc">
-                        <h3>{{$page->user_model->social_name}}</h3>
+                        <h3>{{ $page->getUserSocialName() }}</h3>
                     </div>
                 </div>
             </div>

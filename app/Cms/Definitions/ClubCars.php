@@ -4,7 +4,7 @@ namespace App\Cms\Definitions;
 
 use App\Models\ClubCar;
 use Vis\Builder\Definitions\Resource;
-use Vis\Builder\Fields\{Foreign, Froala, Id, Image, MultiImage, Number, Relations\Options, Select, Text};
+use Vis\Builder\Fields\{Checkbox, Foreign, Froala, Id, Image, MultiImage, Number, Relations\Options, Select, Text};
 use Vis\Builder\Services\Actions;
 
 class ClubCars extends Resource
@@ -27,19 +27,20 @@ class ClubCars extends Resource
                 ->default(null)
                 ->sortable(),
             Foreign::make('Нік', 'user_id')
-                ->options((new Options('user_model'))->keyField('social_name'))
+                ->options((new Options('user'))->keyField('social_name'))
                 ->nullable('...')
                 ->default(null)
                 ->sortable(),
             Number::make('Рік', 'year')->onlyForm(),
             Text::make('Колір', 'color')->onlyForm(),
             Select::make('Пальне', 'petrol')
-                ->options(ClubCar::getFuelTypes())
+                ->options(ClubCar::FUEL)
                 ->onlyForm(),
             Select::make('Трансмісія', 'transmission')
-                ->options(ClubCar::getTransmissionTypes())
+                ->options(ClubCar::TRANSMISSION)
                 ->onlyForm(),
             Image::make('Превью', 'image'),
+            Checkbox::make('Активность', 'is_active')->filter(),
             Image::make('Фото заднього плану', 'background_image')->onlyForm(),
             MultiImage::make('Картинки доп', 'additional_images')->onlyForm()
         ];
@@ -47,6 +48,6 @@ class ClubCars extends Resource
 
     public function actions()
     {
-        return Actions::make()->insert()->update()->delete()->clone();
+        return Actions::make()->insert()->update()->delete()->preview()->clone();
     }
 }
