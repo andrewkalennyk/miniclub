@@ -14,7 +14,7 @@
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <div class="car-details">
-                        <div class="img rounded" style="background-image: url({{ $page->image }});  background-position: center !important;"></div>
+                        <div class="img rounded shadow-lg" style="background-image: url({{ $page->image }});"></div>
                         <div class="text text-center">
                             <span class="subheading">Mini</span>
                             <h2>{{$page->t('title')}}</h2>
