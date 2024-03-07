@@ -162,7 +162,7 @@
 
             setInterval(function () {
                 $('#additionalImagesCarousel').carousel('next');
-            }, 3000);
+            }, 5000);
         });
     </script>
 @stop
