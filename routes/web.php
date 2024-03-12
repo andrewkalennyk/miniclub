@@ -10,6 +10,7 @@ Route::group(
     ['prefix' => LaravelLocalization::setLocale()],
     function () {
         Route::get('/podii/{slug}-{id}', 'EventController@showPage')->name('event');
+        Route::get('/shvidki-zustrichi/{slug}-{id}', 'EventController@showFastEvent')->name('fast-event');
 
         Route::get('/servisi/{slug}-{id}', 'ServiceController@showService')->name('service');
 
@@ -20,6 +21,8 @@ Route::group(
         Route::post('/propose', 'FormController@doPropose')->name('propose');
         Route::post('/review', 'FormController@doReview')->name('review-form');
         Route::post('/share-service', 'FormController@doShareService')->name('share-service-form');
+        Route::post('/fast-event', 'FormController@addFastEvent')->name('fast-event-form');
+        Route::post('/fast-event/checkin', 'FormController@addFastEventCheckIn')->name('fast-event-checkin-form');
 
         /*        Route::get('/secret-santa', 'SecretSantaController@showPage')->name('secret-santa');
                 Route::get('/secret-santa-info', 'SecretSantaController@showDetailsPage')->name('secret-santa-info');
@@ -33,6 +36,8 @@ Route::group(
 
         Route::get('/ask-us-anything', 'FormController@showAskPage');
         Route::post('/ask-us-anything-form', 'FormController@doAsk')->name('ask-us-anything-form');
+
+
 
     }
 );

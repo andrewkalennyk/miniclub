@@ -4,6 +4,7 @@ namespace App\Cms\Tree;
 
 use App\Cms\Tree\Templates\ClubCars;
 use App\Cms\Tree\Templates\Events;
+use App\Cms\Tree\Templates\FastEvents;
 use App\Cms\Tree\Templates\NewService;
 use App\Cms\Tree\Templates\Services;
 use App\Cms\Tree\Templates\Node;
@@ -19,6 +20,7 @@ class Tree extends BaseTree
             'events' => Events::class,
             'add-service' => NewService::class,
             'club-cars' => ClubCars::class,
+            'fast-events' => FastEvents::class,
         ];
     }
 }
