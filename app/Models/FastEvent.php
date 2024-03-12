@@ -49,6 +49,7 @@ class FastEvent extends BaseModel
     public function createApply($data): self
     {
         $data['slug'] = Str::slug(request('title'));
+        $data['responsible'] =  str_replace(['https://t.me/','@'], '', $data['responsible']);
 
         return self::create($data);
     }

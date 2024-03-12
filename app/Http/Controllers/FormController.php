@@ -82,7 +82,12 @@ class FormController extends TreeController
     public function addFastEventCheckIn(FastEventCheckinRequest $request)
     {
         $fastEventUser = (new FastEventUser)->createApply($request->all());
-        $users = FastEventUser::where('fast_event_id', $request->get('fast_event_id'))->get();
+        $users = FastEventUser::where('fast_event_id', $request->get('fast_event_id'))
+            ->get()
+            ->map(function ($user) {
+                $user->url = $user->getUrl();
+                return $user;
+        });
 
         return [
             'status' => (bool)$fastEventUser,

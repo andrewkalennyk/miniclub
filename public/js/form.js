@@ -281,6 +281,13 @@ let Form = {
                             $(form).find('.alert-success').text(response.success_message);
                             $(form).find('.alert-success').removeClass('d-none');
 
+                            let usersList = '';
+                            $.each(response.users, function (key, value) {
+                                usersList += '<a href="' + value.url + '" class="tag-cloud-link" style="font-size: 15px;">' + value.user + '</a>';
+                            });
+
+                            $('.tagcloud').html(usersList);
+
                             setTimeout(function() {
                                 $(form).find('.alert-success').addClass('d-none');
                             }, 4000);
