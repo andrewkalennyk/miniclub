@@ -11,7 +11,7 @@ class ReviewUsers extends Resource
 {
     public $model = ReviewUser::class;
     public $title = 'Користувачі для відгуків';
-    protected $orderBy = 'created_at asc';
+    protected $orderBy = 'social_name asc';
     protected $isSortable = true;
 
     public function fields()
