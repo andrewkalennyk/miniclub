@@ -27,7 +27,25 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row justify-content-center" id="sf">
+                <div class="col-md-6 col-xl-6 col-lg-6 col-xs-12">
+                    <div class="alert alert-info text-center" role="alert">
+                        {{__t('Знайшли класне місце для майбутньої застрічі? Поділіться, щоб ми могли зібрати всіх!')}} <br>
+                        <button type="button" class="btn btn-primary" id="event-btn">{{__t('Поділитись')}}</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center event-form d-none">
+                <div class="col-md-8 block-9 mb-md-5">
+                    @include('event.partials.form')
+                </div>
+            </div>
         </div>
     </section>
-
+@stop
+@section('additional_scripts')
+    <script src="/js/event.js"></script>
+    <script src="/js/jquery.validate.min.js"></script>
+    <script src="/js/form.js"></script>
 @stop
