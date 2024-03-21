@@ -21,6 +21,7 @@ Route::group(
         Route::post('/propose', 'FormController@doPropose')->name('propose');
         Route::post('/review', 'FormController@doReview')->name('review-form');
         Route::post('/share-service', 'FormController@doShareService')->name('share-service-form');
+        Route::post('/share-event', 'FormController@doShareEvent')->name('event-form');
         Route::post('/fast-event', 'FormController@addFastEvent')->name('fast-event-form');
         Route::post('/fast-event/checkin', 'FormController@addFastEventCheckIn')->name('fast-event-checkin-form');
 

@@ -9,6 +9,7 @@ let Form = {
         Form.ratingForm();
         Form.shareServiceForm();
         Form.askForm();
+        Form.eventForm();
         Form.fastEventForm();
         Form.checkInForm();
     },
@@ -147,6 +148,59 @@ let Form = {
                     error: function (error) {
                         var errors = error.responseJSON.errors;
                         var errorMessage = '';
+                        $.each(errors, function (key, value) {
+                            errorMessage += value + '<br>';
+                        });
+
+                    }
+                });
+            }
+        });
+    },
+
+    eventForm: function () {
+        $('form[name="event-form"]').validate({
+            rules : {
+                date : { required : true },
+                time : { required : true },
+                description : { required : true },
+                social_name : { required : true },
+                map_point : { required : true },
+            },
+            errorPlacement : function(error, element) {},
+            submitHandler: function(form) {
+                jQuery.ajax({
+                    data: $(form).serializeArray(),
+                    type: "POST",
+                    url: $(form).data('action'),
+                    cache: false,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status) {
+                            document.getElementById("event-form").reset();
+                            $(form).find('.alert-success').text(response.success_message);
+                            $(form).find('.alert-success').removeClass('d-none');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-success').addClass('d-none');
+                                if (!$('.event-form').hasClass('event-page')) {
+                                    $('.event-form').addClass('d-none');
+                                }
+                            }, 4000);
+                        } else {
+                            $(form).find('.alert-warning').text(response.error_message);
+                            $('.modalResponse .body').text('');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-warning').addClass('d-none');
+                            }, 2000);
+                        }
+                    },
+                    error: function (error) {
+                        console.log(this.url);
+                        console.log(this.data);
+                        const errors = error.responseJSON.errors;
+                        let errorMessage = '';
                         $.each(errors, function (key, value) {
                             errorMessage += value + '<br>';
                         });

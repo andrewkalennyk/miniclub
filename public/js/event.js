@@ -4,6 +4,7 @@ let Event = {
 
     init: function () {
         this.showAddFastEvents();
+        this.showEvents();
 
         $("#datepicker").datepicker({
             format: "yyyy-m-d",
@@ -19,7 +20,12 @@ let Event = {
             $(".fast-event-form").removeClass('d-none');
         });
     },
-
+      
+    showEvents:function () {
+      $('#event-btn').on('click', function (e) {
+          $(".event-form").removeClass('d-none');
+      })
+    },
 }
 
 $(document).ready(function () {
