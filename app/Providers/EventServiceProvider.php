@@ -3,7 +3,9 @@
 namespace App\Providers;
 
 use App\Events\EventCreated;
+use App\Events\EventCreatedNotification;
 use App\Mail\SendEventCreatedNotification;
+use App\Mail\SendEventNotification;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -21,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         EventCreated::class => [
             SendEventCreatedNotification::class,
+        ],
+        EventCreatedNotification::class => [
+            SendEventNotification::class,
         ],
     ];
 

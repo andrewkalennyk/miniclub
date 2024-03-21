@@ -31,6 +31,7 @@ class Users extends Resource
                 Text::make('Фамилия', 'last_name')->sortable()->filter(),
                 Text::make('Имя', 'first_name')->sortable()->filter(),
                 Checkbox::make('Активен', 'completed')->hasOne('activation'),
+                Checkbox::make('Відправка інформації про івент на пошту', 'admin_apply_email')->onlyForm(),
                 /*Readonly::make('Дата регистрации', 'created_at')->default(Carbon::now())->sortable(),
                 Readonly::make('Дата последнего входа', 'last_login')->sortable()*/
             ],

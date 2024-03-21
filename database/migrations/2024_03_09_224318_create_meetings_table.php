@@ -13,7 +13,7 @@ class CreateMeetingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('meetings', function (Blueprint $table) {
+        Schema::create('meetings_apply_form', function (Blueprint $table) {
             $table->id();
             $table->date('date');
             $table->time('time');
@@ -31,6 +31,6 @@ class CreateMeetingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('meetings');
+        Schema::dropIfExists('meetings_apply_form');
     }
 }

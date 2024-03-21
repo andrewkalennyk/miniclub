@@ -5,7 +5,7 @@ namespace App\Models;
 
 class Meeting extends BaseModel
 {
-    protected $table = 'meetings';
+    protected $table = 'meetings_apply_form';
 
     protected $fillable = [
         'date',
