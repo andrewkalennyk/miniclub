@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
@@ -36,6 +37,35 @@ Route::group(
 
         Route::get('/ask-us-anything', 'FormController@showAskPage');
         Route::post('/ask-us-anything-form', 'FormController@doAsk')->name('ask-us-anything-form');
+
+        Route::get('/test', function () {
+
+            $telegramBotToken = '7035856860:AAHAq7sH5WaxQDbX2-wthv90j-lQ0Ph513g';
+
+            // API URL для отправки сообщений
+            $apiUrl = "https://api.telegram.org/bot{$telegramBotToken}/sendMessage";
+
+            // Создаём клиент Guzzle
+            $client = new Client();
+
+            try {
+                // Отправляем запрос
+                $response = $client->request('POST', $apiUrl, [
+                    'json' => [
+                        'message_thread_id' => '2',
+                        'chat_id' => '-1001806069709',
+                        'text' => 'This is a test message from the alert system. Do not pay attention on it'
+                    ]
+                ]);
+
+                // Получаем и выводим тело ответа (по желанию)
+                echo $response->getBody();
+            } catch (\GuzzleHttp\Exception\GuzzleException $e) {
+                // Обрабатываем возможные ошибки
+                echo $e->getMessage();
+            }
+
+        });
 
 
 
