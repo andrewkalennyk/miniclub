@@ -24,6 +24,12 @@ class Admin extends AdminBase
             ],
 
             [
+                'title' => 'Швидкі зустрічі',
+                'icon'  => 'calendar',
+                'link'  => '/fast_events',
+            ],
+
+            [
                 'title' => 'Города',
                 'icon'  => 'building',
                 'link'  => '/cities',

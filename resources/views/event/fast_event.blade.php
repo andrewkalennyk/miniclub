@@ -73,6 +73,16 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-12">
                     <div class="ftco-animate fadeInUp ftco-animated">
+                        <h3></h3>
+                        @if(!empty($page->short_description))
+                            {!! $page->short_description !!}
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-12">
+                    <div class="ftco-animate fadeInUp ftco-animated">
                         <h3>{{__t('Cписок участників')}}</h3>
                         @if(!$page->users->count())
                             <p>
