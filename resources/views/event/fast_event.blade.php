@@ -93,7 +93,7 @@
                         <div class="tagcloud">
                             @if($page->users->count())
                                 @foreach($page->users as $user)
-                                    <a href="{{$user->getUrl()}}" class="tag-cloud-link" style="font-size: 15px;">{{$user->user}}</a>
+                                    <a href="{{$user->getUrl()}}" target="_blank" class="tag-cloud-link" style="font-size: 15px;">{{$user->user}}</a>
                                 @endforeach
                             @endif
                         </div>
