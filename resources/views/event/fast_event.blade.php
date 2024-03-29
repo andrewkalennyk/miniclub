@@ -83,7 +83,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-12">
                     <div class="ftco-animate fadeInUp ftco-animated">
-                        <h3>{{__t('Cписок участників')}}</h3>
+                        <h3>{{__t('Cписок участників')}} ({{$page->users->count()}})</h3>
                         @if(!$page->users->count())
                             <p>
                                 {{__t('Наразі учасників немає!')}}
