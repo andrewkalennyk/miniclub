@@ -37,7 +37,12 @@ Route::group(
         Route::get('/ask-us-anything', 'FormController@showAskPage');
         Route::post('/ask-us-anything-form', 'FormController@doAsk')->name('ask-us-anything-form');
 
+        Route::get('/zapit-na-zbir', 'FormController@showDonatePage');
+        Route::post('/zapit-na-zbir-form', 'FormController@doDonateApply')->name('donate-form');
 
 
+        Route::get('/test', function () {
+            (new \App\Models\TelegramCharityBot())->sendMessage(['title' => 'Збір']);
+        });
     }
 );
