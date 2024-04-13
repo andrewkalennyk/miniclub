@@ -9,7 +9,7 @@ class FastEvent extends BaseModel
 {
     protected $table = 'fast_events';
     protected $fillable = [
-        'title','responsible', 'slug','date', 'time'
+        'title','responsible', 'short_description', 'slug','date', 'google_map', 'time'
     ];
 
     use OtherImageTrait;

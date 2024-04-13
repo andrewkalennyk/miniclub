@@ -45,14 +45,14 @@
                         </div>
                         <div class="form-group">
                             <label for="datepicker">{{__t('Дата')}}</label>
-                            <input type="text" class="form-control datepicker" id="datepicker" name="date">
+                            <input type="text" class="form-control datepicker" id="datepicker" autocomplete="off" name="date">
                         </div>
                         <div class="form-group">
                             <input type="text" class="form-control" name="time" placeholder="{{__t('Час')}}">
                         </div>
-                        {{--<div class="form-group">
+                        <div class="form-group">
                             <input type="text" class="form-control" name="google_map" placeholder="{{__t('Мітка на карті')}}">
-                        </div>--}}
+                        </div>
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
@@ -62,6 +62,10 @@
                                    data-placement="top"
                                    title="{{__t('Важливо! ')}}"
                             >
+                        </div>
+                        <div class="form-group">
+                            <label for="short_description">{{__t('Короткий опис')}}</label>
+                            <textarea class="form-control" id="proposition" name="short_description" rows="5"></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="{{__t('Створити')}}" id="fast-event-btn" class="btn btn-primary py-3 px-5">

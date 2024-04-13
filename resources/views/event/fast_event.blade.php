@@ -69,6 +69,25 @@
                         </div>
                     </div>
                 </div>
+                @if($page->google_map)
+                    <div class="col-md d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
+                        <div class="media block-6 services">
+                            <div class="media-body py-md-4">
+                                <div class="d-flex mb-3 align-items-center">
+                                    <div class="icon d-flex align-items-center justify-content-center">
+                                        <span class="flaticon-transportation"></span>
+                                    </div>
+                                    <div class="text">
+                                        <h3 class="heading mb-0 pl-3">
+                                            Прокласти маршрут
+                                            <a href="{{$page->google_map}}" target="_blank">Перейти</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-12">
