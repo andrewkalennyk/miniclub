@@ -4,7 +4,7 @@
 
 @section('main')
     <section class="hero-wrap hero-wrap-2 js-fullheight"
-             style="background-image: url('{{$page->background_image}}');"
+             style="background-image: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%), url('{{$page->background_image}}');"
              data-stellar-background-ratio="0.5">
         @include('partials.breadcrumbs')
     </section>
