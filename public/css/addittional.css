@@ -24,3 +24,9 @@
 .form-group .error {
     border-color: #ce3232;
 }
+
+@media (max-width: 768px) { /* Adjustments for smaller devices */
+    .car-details .img {
+        height: 200px; /* Adjust height as necessary for smaller screens */
+    }
+}

@@ -140,25 +140,6 @@
 @section('additional_scripts')
     <script>
         $(document).ready(function () {
-            const paragraphs = document.querySelectorAll('p > img.fr-dib');
-            /*paragraphs.forEach(function (paragraph) {
-                const nextSibling = paragraph.nextSibling;
-
-                if (nextSibling && nextSibling.nodeType === Node.TEXT_NODE) {
-                    const span = document.createElement('span');
-                    span.innerHTML = nextSibling.nodeValue.trim();
-                    span.style.marginLeft = '20px';
-
-                    paragraph.parentNode.removeChild(nextSibling);
-
-                    paragraph.parentNode.insertBefore(span, paragraph.nextSibling);
-                }
-                paragraph.style.float = 'left';
-                paragraph.style.marginRight = '20px';
-                paragraph.style.width = 'auto';
-                paragraph.style.height = 'auto';
-                paragraph.style.maxWidth = '50%';
-            });*/
 
             setInterval(function () {
                 $('#additionalImagesCarousel').carousel('next');
