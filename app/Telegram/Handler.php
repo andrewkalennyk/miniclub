@@ -3,6 +3,7 @@
 namespace App\Telegram;
 
 use App\Models\SecretSantaApplyForm;
+use App\Telegram\Traits\BirthdayTrait;
 use App\Telegram\Traits\ClubsTrait;
 use App\Telegram\Traits\EventsSchemaTrait;
 use App\Telegram\Traits\EventsTrait;
@@ -24,6 +25,7 @@ class Handler extends WebhookHandler
     use PromotionTrait;
     use StickersTrait;
     use EventsSchemaTrait;
+    use BirthdayTrait;
 
     public function start(): void
     {

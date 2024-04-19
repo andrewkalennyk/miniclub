@@ -12,6 +12,7 @@ class TelegramNumberUser extends BaseModel
         'number',
         'username',
         'chatId',
+        'birth_day',
     ];
 
     public function telegram_events(): BelongsToMany
