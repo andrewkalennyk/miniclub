@@ -30,19 +30,19 @@ class Admin extends AdminBase
             ],
 
             [
-                'title' => 'Города',
+                'title' => 'Міста',
                 'icon'  => 'building',
                 'link'  => '/cities',
             ],
 
             [
-                'title' => 'Локальные клубы',
+                'title' => 'Локальні клуби',
                 'icon'  => 'users',
                 'link'  => '/local_clubs',
             ],
 
             [
-                'title' => 'Предложения',
+                'title' => 'Пропозиції',
                 'icon'  => 'bolt',
                 'link'  => '/proposition',
             ],
@@ -81,6 +81,12 @@ class Admin extends AdminBase
                 'title' => 'Наліпки',
                 'icon'  => 'shopping-bag',
                 'link'  => '/stickers',
+            ],
+
+            [
+                'title' => 'Факти',
+                'icon'  => 'info',
+                'link'  => '/interesting_facts',
             ],
 
             /*[
