@@ -19,7 +19,7 @@ class InterestingFacts extends Resource
     {
         return [
             Id::make('#', 'id')->sortable(),
-            Froala::make('Факт', 'fact')
+            Textarea::make('Факт', 'fact')
                 ->nullable('...')
                 ->default(null),
             Select::make('Тип', 'type')->options(
