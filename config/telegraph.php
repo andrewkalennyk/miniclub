@@ -47,12 +47,12 @@ return [
         /*
          * if enabled, allows callback queries from unregistered chats
          */
-        'allow_callback_queries_from_unknown_chats' => true,
+        'allow_callback_queries_from_unknown_chats' => false,
 
         /*
          * if enabled, allows messages and commands from unregistered chats
          */
-        'allow_messages_from_unknown_chats' => true,
+        'allow_messages_from_unknown_chats' => false,
 
         /*
          * if enabled, store unknown chats as new TelegraphChat models
