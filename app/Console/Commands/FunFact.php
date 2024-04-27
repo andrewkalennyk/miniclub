@@ -6,6 +6,7 @@ use App\Models\InterestingFact;
 use App\Models\MiniClubBot;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 class FunFact extends Command
 {
@@ -41,6 +42,8 @@ class FunFact extends Command
     public function handle()
     {
         $today = Carbon::today();
+
+        Log::info('aaaa');
 
         if (!array_key_exists($today->dayOfWeek, InterestingFact::WEEK_TYPE)) {
             return true;
