@@ -37,7 +37,7 @@ class MiniClubBot
                 'json' => [
                     'chat_id' => '-1001422187907',
                     'parse_mode' => 'HTML',
-                    'text' => $this->formMessage($message)
+                    'text' => $message
                 ]
             ]);
         } catch (GuzzleException $e) {
@@ -57,14 +57,6 @@ class MiniClubBot
     }
 
     protected function formClubMessage(string $message): string
-    {
-        return "
-            🎉 Корисний Факт:  🎉
-🔍  <b> ".$message." </b>
-🌞 Гарного дня!";
-    }
-
-    protected function formbMessage(string $message): string
     {
         return "
             🎉 Корисний Факт:  🎉
