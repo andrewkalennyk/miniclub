@@ -37,6 +37,9 @@ Route::group(
         Route::get('/ask-us-anything', 'FormController@showAskPage');
         Route::post('/ask-us-anything-form', 'FormController@doAsk')->name('ask-us-anything-form');
 
+        Route::get('/bot-push', 'FormController@showBotMessagePage');
+        Route::post('/bot-push-form', 'FormController@doBotMessageApply')->name('send-bot-form');
+
         /*Route::get('/zapit-na-zbir', 'FormController@showDonatePage');
         Route::post('/zapit-na-zbir-form', 'FormController@doDonateApply')->name('donate-form');*/
     }

@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 class MiniClubBot
 {
@@ -27,6 +28,26 @@ class MiniClubBot
         ]);
     }
 
+    public function sendKyivMessage(string $message): bool
+    {
+        $client = new Client();
+
+        try {
+            $client->request('POST', $this->getApiUrl(), [
+                'json' => [
+                    'chat_id' => '-1001422187907',
+                    'parse_mode' => 'HTML',
+                    'text' => $this->formMessage($message)
+                ]
+            ]);
+        } catch (GuzzleException $e) {
+            \Log::info($e->getMessage());
+            return false;
+        }
+
+        return true;
+    }
+
     protected function formMessage(string $message): string
     {
         return "
@@ -36,6 +57,14 @@ class MiniClubBot
     }
 
     protected function formClubMessage(string $message): string
+    {
+        return "
+            🎉 Корисний Факт:  🎉
+🔍  <b> ".$message." </b>
+🌞 Гарного дня!";
+    }
+
+    protected function formbMessage(string $message): string
     {
         return "
             🎉 Корисний Факт:  🎉

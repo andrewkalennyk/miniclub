@@ -12,6 +12,7 @@ let Form = {
         Form.fastEventForm();
         Form.checkInForm();
         Form.donateForm();
+        Form.messageBotForm();
     },
 
     proposeForm: function () {
@@ -373,6 +374,60 @@ let Form = {
 
                         setTimeout(function() {
                             $(form).find('.alert-danger').addClass('d-none');
+                        }, 4000);
+
+                    }
+                });
+            }
+        });
+    },
+
+    messageBotForm: function () {
+        $('form[name="send-bot-form"]').validate({
+            rules : {
+                message : { required : true },
+            },
+            errorPlacement : function(error, element) {},
+            submitHandler: function(form) {
+                jQuery.ajax({
+                    data: $(form).serializeArray(),
+                    type: "POST",
+                    url: $(form).data('action'),
+                    cache: false,
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.status) {
+                            document.getElementById("send-bot-form").reset();
+                            $(form).find('.alert-success').text(response.success_message);
+                            $(form).find('.alert-success').removeClass('d-none');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-success').addClass('d-none');
+                                if (!$('.send-bot-form').hasClass('service-page')) {
+                                    $('.send-bot-form').addClass('d-none');
+                                }
+                            }, 4000);
+                        } else {
+                            $(form).find('.alert-warning').text(response.error_message);
+                            $(form).find('.alert-warning').removeClass('d-none');
+
+                            setTimeout(function() {
+                                $(form).find('.alert-warning').addClass('d-none');
+                            }, 2000);
+                        }
+                    },
+                    error: function (error) {
+                        var errors = error.responseJSON.errors;
+                        var errorMessage = '';
+                        $.each(errors, function (key, value) {
+                            errorMessage += value;
+                        });
+
+                        $(form).find('.alert-warning').text(errorMessage);
+                        $(form).find('.alert-warning').removeClass('d-none');
+
+                        setTimeout(function() {
+                            $(form).find('.alert-warning').addClass('d-none');
                         }, 4000);
 
                     }

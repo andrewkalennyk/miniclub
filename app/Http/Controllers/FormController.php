@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\CreateOrderCartEvent;
 use App\Events\RepeatOrderEvent;
 use App\Http\Requests\AskRequest;
+use App\Http\Requests\BotMessageRequest;
 use App\Http\Requests\DonateRequest;
 use App\Http\Requests\FastEventCheckinRequest;
 use App\Http\Requests\FastEventRequest;
@@ -17,6 +18,7 @@ use App\Models\AskForm;
 use App\Models\DonateForm;
 use App\Models\FastEvent;
 use App\Models\FastEventUser;
+use App\Models\MiniClubBot;
 use App\Models\NpArea;
 use App\Models\NpCity;
 use App\Models\NpStreet;
@@ -79,6 +81,20 @@ class FormController extends TreeController
     {
         return [
             'status' => (new DonateForm())->createApply($request->except('_token')),
+            'success_message' => __t('Дякую друже! Слава Україні'),
+            'error_message' => __t('От халепа! Щось пішло не так'),
+        ];
+    }
+
+    public function showBotMessagePage()
+    {
+        return view('forms.bot-push');
+    }
+
+    public function doBotMessageApply(BotMessageRequest $request)
+    {
+        return [
+            'status' => (new MiniClubBot())->sendKyivMessage($request->get('message')),
             'success_message' => __t('Дякую друже! Слава Україні'),
             'error_message' => __t('От халепа! Щось пішло не так'),
         ];
