@@ -43,7 +43,7 @@
 
     <link rel="stylesheet" href="/css/flaticon.css">
     <link rel="stylesheet" href="/css/icomoon.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.min.css">
     <link rel="stylesheet" href="/css/lang.css">
     <link rel="stylesheet" href="/css/addittional.css">
     @yield('additional_styles')
