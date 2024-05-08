@@ -22,8 +22,10 @@
 
     <meta name="description" content="{{$page->t('seo_description')}}">
 
-    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-          rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"></noscript>
+
     <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="/css/animate.css">
 
