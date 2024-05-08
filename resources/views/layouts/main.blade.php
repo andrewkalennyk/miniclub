@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="[lang]" prefix="og: http://ogp.me/ns#">
 <head>
-    <title>Mini Cooper Club</title>
+
+    <title>@if($page->t('seo_title')) @else Mini Cooper Club @endif</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -18,6 +19,8 @@
     <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
+
+    <meta name="description" content="{{$page->t('seo_description')}}">
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
           rel="stylesheet">

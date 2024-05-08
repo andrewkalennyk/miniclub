@@ -25,8 +25,8 @@ class Node extends ResourceTree
                 Checkbox::make('Показувати у меню' ,'is_show_in_menu'),
             ],
             'SEO' => [
-                Text::make('Seo title', 'seo_title'),
-                Textarea::make('Seo description', 'seo_description')
+                Text::make('Seo title', 'seo_title')->language(),
+                Textarea::make('Seo description', 'seo_description')->language()
             ]
 
         ];
