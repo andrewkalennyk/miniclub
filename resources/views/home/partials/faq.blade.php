@@ -1,5 +1,5 @@
 @if($faqItems->count())
-    <section class="ftco-section ftco-intro faq-block" style="background-image: url(/images/not-normal-mirror.jpeg);">
+    <section class="ftco-section ftco-intro faq-block" style="background-image: url(/images/not-normal-mirror.webp);">
         <div class="overlay"></div>
         <div class="container">
             <div class="row justify-content-end">
