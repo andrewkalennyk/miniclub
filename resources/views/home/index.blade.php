@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('main')
-    <div class="hero-wrap ftco-degree-bg" style="background-image: url('/images/bg_mini.jpg');"
+    <div class="hero-wrap ftco-degree-bg" style="background-image: url('/images/bg_mini.webp');"
          data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">
