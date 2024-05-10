@@ -40,6 +40,8 @@ Route::group(
         Route::get('/bot-push', 'FormController@showBotMessagePage');
         Route::post('/bot-push-form', 'FormController@doBotMessageApply')->name('send-bot-form');
 
+        Route::get('/sitemap', 'SitemapController@generateSitemap');
+
         /*Route::get('/zapit-na-zbir', 'FormController@showDonatePage');
         Route::post('/zapit-na-zbir-form', 'FormController@doDonateApply')->name('donate-form');*/
     }

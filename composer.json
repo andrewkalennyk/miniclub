@@ -12,6 +12,7 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
+        "spatie/laravel-sitemap": "^6.4",
         "vis/artur_image_storage_l5": "^2.0",
         "vis/builder_lara_5": "2.*",
         "vis/translations_l5": "^2.1"
