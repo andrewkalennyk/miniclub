@@ -20,8 +20,8 @@ class MiniClubBot
 
         $client->request('POST', $this->getApiUrl(), [
             'json' => [
-                'message_thread_id' => '65',
-                'chat_id' => '-1002105223469',
+                /*'message_thread_id' => '65',*/
+                'chat_id' => '-1001422187907',
                 'parse_mode' => 'HTML',
                 'text' => $this->formMessage($message)
             ]
