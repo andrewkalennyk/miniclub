@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="[lang]" prefix="og: http://ogp.me/ns#">
 <head>
-    <title>Mini Cooper Club</title>
+    <title>@if($page->t('seo_title')) {{$page->t('seo_title')}}  @else Mini Cooper Club @endif</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,6 +10,8 @@
     <meta content='width' name='MobileOptimized'/>
     <meta content='yes' name='apple-mobile-web-app-capable'/>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
+
+    <meta name="description" content="{{!empty($page) ? $page->t('seo_description') : ''}}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
