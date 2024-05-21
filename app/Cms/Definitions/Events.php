@@ -11,7 +11,7 @@ class Events extends Resource
 {
     public $model = Event::class;
     public $title = 'События';
-    protected $orderBy = 'created_at asc';
+    protected $orderBy = 'event_date desc';
     protected $isSortable = true;
 
     public function fields()

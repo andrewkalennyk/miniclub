@@ -11,7 +11,7 @@ class ReviewsApply extends Resource
 {
     public $model = Review::class;
     public $title = 'Відгуки до сервісів';
-    protected $orderBy = 'created_at asc';
+    protected $orderBy = 'created_at desc';
     protected $isSortable = true;
 
     public function fields()
