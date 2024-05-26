@@ -1,2 +1,3 @@
 User-agent: *
+Disallow: /*?
 Sitemap: https://www.miniclub.com.ua/sitemap.xml
