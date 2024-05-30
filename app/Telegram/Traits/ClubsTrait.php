@@ -49,7 +49,7 @@ trait ClubsTrait
         //$club = LocalClub::with('city')->find($this->data->get('id'));
 
         $this->chat->edit($this->messageId)->message(
-            'Якщо хочеш в чат, напиши будь ласка (тут може бути адмін чату)'//$this->responsible
+            'Якщо хочеш в чат, напиши будь ласка в загальному чаті'//$this->responsible
         )->send();
     }
 }
