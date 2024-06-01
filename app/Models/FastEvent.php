@@ -26,6 +26,11 @@ class FastEvent extends BaseModel
         return date('d', $date).'.'.date('m', $date).'.'.date('Y', $date);
     }
 
+    public function getTitleDate()
+    {
+        return $this->title . ' ' . $this->getDate();
+    }
+
     public static function scopeSlug($query, string $slug)
     {
         return $query->where('slug', $slug);

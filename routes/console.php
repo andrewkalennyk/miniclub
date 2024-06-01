@@ -24,6 +24,7 @@ Artisan::command('register-bot-commands', function () {
     $telegraphBot->registerCommands([
         '/cl' => 'Вивести всі локальні клуби',
         '/ss'  => 'Сервіси',
+        '/sz'  => 'Зустрічі',
         '/prmt' => 'Плюшки для клуба',
         '/bd' => 'День Народження',
         '/strs' => 'наліпки',
