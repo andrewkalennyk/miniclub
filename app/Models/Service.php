@@ -148,7 +148,10 @@ class Service extends BaseModel
 
     public function getSeoTitleAttribute()
     {
-        return $this->t('title') . ' - ' . $this->service_type->t('title') . ', ' . $this->city->t('title');
+        return $this->t('title') . ' - ' .
+            $this->service_type->t('title') .
+            ', ' . $this->city->t('title') .
+            '| Mini Club Україна';
     }
 
     public function getMark()
