@@ -151,7 +151,13 @@ class Service extends BaseModel
         return $this->t('title') . ' - ' .
             $this->service_type->t('title') .
             ', ' . $this->city->t('title') .
-            '| Mini Club Україна';
+            ' | Mini Club Україна';
+    }
+
+    public function getSeoDescriptionAttribute()
+    {
+        return $this->t('title') . ' - '. __t('ваш спеціалізований сервіс для Mini Cooper') .
+            ' - '. $this->city->t('title') . '. '. __t('Рекомендований одноклубниками за якість, професіоналізм.');
     }
 
     public function getMark()
