@@ -19,12 +19,12 @@ class ServiceReviews extends Resource
         return [
             Id::make('#', 'id')->sortable(),
             Foreign::make('Користувач', 'review_user_id')
-                ->options((new Options('review_user'))->keyField('social_name'))
+                ->options((new Options('review_user'))->keyField('social_name')->orderBy('social_name'))
                 ->nullable('...')
                 ->default(null)
                 ->filter(),
             Foreign::make('Сервіс', 'service_id')
-                ->options((new Options('service'))->keyField('title'))
+                ->options((new Options('service'))->keyField('title')->orderBy('title','asc'))
                 ->nullable('...')
                 ->default(null)
                 ->filter(),

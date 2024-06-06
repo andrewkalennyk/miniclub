@@ -20,7 +20,7 @@ class Services extends Resource
 {
     public $model = Service::class;
     public $title = 'Сервіси';
-    protected $orderBy = 'created_at asc';
+    protected $orderBy = 'title asc';
     protected $isSortable = true;
 
     public function fields()
