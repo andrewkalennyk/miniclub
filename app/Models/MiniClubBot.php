@@ -4,6 +4,7 @@ namespace App\Models;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
+use Illuminate\Support\Collection;
 
 class MiniClubBot
 {
@@ -24,6 +25,20 @@ class MiniClubBot
                 'chat_id' => '-1001422187907',
                 'parse_mode' => 'HTML',
                 'text' => $this->formMessage($message)
+            ]
+        ]);
+    }
+
+    public function sendBithdayMessage(Collection $users)
+    {
+        $client = new Client();
+
+        $client->request('POST', $this->getApiUrl(), [
+            'json' => [
+                'message_thread_id' => '65',
+                'chat_id' => '2105223469',
+                'parse_mode' => 'HTML',
+                'text' => $this->formBirthDayMessage($users)
             ]
         ]);
     }
@@ -56,11 +71,17 @@ class MiniClubBot
 🌞 Гарного дня!";
     }
 
-    protected function formClubMessage(string $message): string
+    protected function formBirthDayMessage(Collection $users): string
     {
+        $birthdays =  '';
+
+        foreach ($users as $user) {
+            $birthdays .= $user->getBirthDayUserName() . '\n';
+        }
+
         return "
-            🎉 Корисний Факт:  🎉
-🔍  <b> ".$message." </b>
+            🎉 Майбутні Іменнинники:  🎉
+". $birthdays ."
 🌞 Гарного дня!";
     }
 

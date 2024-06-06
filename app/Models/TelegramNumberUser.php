@@ -19,4 +19,14 @@ class TelegramNumberUser extends BaseModel
     {
         return $this->belongsToMany(TelegramEvent::class);
     }
+
+    public function getUserName(): string
+    {
+        return '@' . $this->username;
+    }
+
+    public function getBirthDayUserName(): string
+    {
+        return $this->getUserName() . "(". $this->birth_day .")";
+    }
 }
