@@ -90,14 +90,14 @@ class ServiceReview extends BaseModel
 
     public function isHugeComment(): bool
     {
-        var_dump(strlen($this->comment));
-        return strlen($this->comment) > 400;
+
+        return strlen($this->comment) > 500;
     }
 
     public function getComment(): string
     {
         if ($this->isHugeComment()) {
-            return mb_substr($this->comment, 0, 354 - 3) . '...';
+            return mb_substr($this->comment, 0, 500 - 3) . '...';
         }
 
         return $this->comment;
