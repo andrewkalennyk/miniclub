@@ -46,6 +46,9 @@
     <link rel="stylesheet" href="/css/style.min.css">
     <link rel="stylesheet" href="/css/lang.css">
     <link rel="stylesheet" href="/css/addittional.css">
+
+    <link rel="canonical" href="{{ $page->getUrl() }}" />
+
     @yield('additional_styles')
     @yield('seo_tags')
 

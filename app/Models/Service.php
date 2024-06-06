@@ -146,6 +146,11 @@ class Service extends BaseModel
         };
     }
 
+    public function getSeoTitleAttribute()
+    {
+        return $this->t('title') . ' - ' . $this->service_type->t('title') . ', ' . $this->city->t('title');
+    }
+
     public function getMark()
     {
         return $this->mark ?: 0;
