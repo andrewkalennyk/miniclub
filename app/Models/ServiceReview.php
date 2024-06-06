@@ -90,6 +90,7 @@ class ServiceReview extends BaseModel
 
     public function isHugeComment(): bool
     {
+        var_dump(strlen($this->comment));
         return strlen($this->comment) > 400;
     }
 
