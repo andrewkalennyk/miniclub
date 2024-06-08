@@ -32,10 +32,10 @@ trait ClubsTrait
         $club = LocalClub::with('city')->find($this->data->get('id'));
 
         $keyboard = Keyboard::make()
-            ->when(empty($club->telegram_url), fn(Keyboard $keyboard) => $keyboard->button('Telegram')->action('cclr')->param('id', $club->id))
-            ->when(!empty($club->telegram_url), fn(Keyboard $keyboard) => $keyboard->button('Telegram')->url($club->telegram_url))
-            ->when(!empty($club->url), fn(Keyboard $keyboard) => $keyboard->button('Instagram')->url($club->url))
-            ->when(true, fn(Keyboard $keyboard) => $keyboard->button('Назад')->action('clb'));
+            ->when(empty($club->telegram_url), fn(Keyboard $keyboard) => $keyboard->button('📲 Telegram')->action('cclr')->param('id', $club->id))
+            ->when(!empty($club->telegram_url), fn(Keyboard $keyboard) => $keyboard->button('📲 Telegram')->url($club->telegram_url))
+            ->when(!empty($club->url), fn(Keyboard $keyboard) => $keyboard->button('📸 Instagram')->url($club->url))
+            ->when(true, fn(Keyboard $keyboard) => $keyboard->button('🔙 Назад')->action('clb'));
 
         $this->chat->edit($this->messageId)->message('Лінки на ресурси')->send();
 
