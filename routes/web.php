@@ -42,6 +42,8 @@ Route::group(
 
         Route::get('/sitemap', 'SitemapController@generateSitemap');
 
+        Route::get('/parse', 'ParseController@parseVin');
+
         /*Route::get('/zapit-na-zbir', 'FormController@showDonatePage');
         Route::post('/zapit-na-zbir-form', 'FormController@doDonateApply')->name('donate-form');*/
     }

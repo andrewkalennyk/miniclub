@@ -11,6 +11,7 @@ use App\Telegram\Traits\ManualsTrait;
 use App\Telegram\Traits\PromotionTrait;
 use App\Telegram\Traits\ServiceTrait;
 use App\Telegram\Traits\StickersTrait;
+use App\Telegram\Traits\VinTrait;
 use DefStudio\Telegraph\Enums\ChatActions;
 use DefStudio\Telegraph\Handlers\WebhookHandler;
 use DefStudio\Telegraph\Keyboard\Button;
@@ -26,6 +27,7 @@ class Handler extends WebhookHandler
     use StickersTrait;
     use EventsSchemaTrait;
     use BirthdayTrait;
+    use VinTrait;
 
     public function start(): void
     {
