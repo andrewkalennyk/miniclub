@@ -16,7 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command(FunFact::class)->daily()->at('06:30');
+        /*$schedule->command(FunFact::class)->daily()->at('06:30');*/
 
     }
 
