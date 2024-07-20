@@ -72,15 +72,12 @@ trait ServiceTrait
             ->with(['city'])
             ->where('service_type_id', $params[0])
             ->where('city_id', $params[1])
+            ->whereNotNull('site_url')
             ->orderBy('mark', 'DESC')
             ->get()
             ->map(function ($service) {
-                if ($service->site_ur) {
-                    return $service->title .
-                        " {$service->mark} &#9733; {$service->getCoast()} <a href='{$service->site_url}'>Детальніше</a>";
-                }
-
-                return '';
+                return $service->title .
+                    " {$service->mark} &#9733; {$service->getCoast()} <a href='{$service->site_url}'>Детальніше</a>";
             })->implode("\n");
 
         $this->chat->deleteKeyboard($this->messageId);
