@@ -33,9 +33,9 @@
 
     @include('home.partials.events.events')
 
-    @includeWhen($services->count(), 'home.partials.services')
+   {{-- @includeWhen($services->count(), 'home.partials.services')
 
-    @include('home.partials.faq')
+    @include('home.partials.faq')--}}
 
     @include('home.partials.counter')
 
