@@ -67,6 +67,7 @@ trait ServiceTrait
     public function sst(): void
     {
         $params = explode('-', $this->data->get('params'));
+
         $services = Service::active()
             ->with(['city'])
             ->where('service_type_id', $params[0])
@@ -74,8 +75,12 @@ trait ServiceTrait
             ->orderBy('mark', 'DESC')
             ->get()
             ->map(function ($service) {
-                return $service->title .
-                    " {$service->mark} &#9733; {$service->getCoast()} <a href='{$service->site_url}'>Детальніше</a>";
+                if ($service->site_ur) {
+                    return $service->title .
+                        " {$service->mark} &#9733; {$service->getCoast()} <a href='{$service->site_url}'>Детальніше</a>";
+                }
+
+                return '';
             })->implode("\n");
 
         $this->chat->deleteKeyboard($this->messageId);
