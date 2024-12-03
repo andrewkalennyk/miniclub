@@ -24,10 +24,10 @@ Route::group(
         Route::post('/fast-event', 'FormController@addFastEvent')->name('fast-event-form');
         Route::post('/fast-event/checkin', 'FormController@addFastEventCheckIn')->name('fast-event-checkin-form');
 
-        /*        Route::get('/secret-santa', 'SecretSantaController@showPage')->name('secret-santa');
-                Route::get('/secret-santa-info', 'SecretSantaController@showDetailsPage')->name('secret-santa-info');
-                Route::post('/secret-santa-form', 'SecretSantaController@saveApplyForm')->name('secret-santa-form');
-                Route::post('/secret-santa-details-form', 'SecretSantaController@saveDetailsApplyForm')->name('secresanta-details-form');
+         Route::get('/secret-santa', 'SecretSantaController@showPage')->name('secret-santa');
+         Route::get('/secret-santa-info', 'SecretSantaController@showDetailsPage')->name('secret-santa-info');
+         Route::post('/secret-santa-form', 'SecretSantaController@saveApplyForm')->name('secret-santa-form');
+         Route::post('/secret-santa-details-form', 'SecretSantaController@saveDetailsApplyForm')->name('secresanta-details-form');
         /*
                 Route::get('/secret-santa-randomize', 'SecretSantaController@doRandomize');
                 Route::get('/secret-santa-letters', 'SecretSantaController@doSendLetters');
