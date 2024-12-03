@@ -105,6 +105,12 @@ use Vis\Builder\Tree as TreeBuilder;
  */
 class Tree extends TreeBuilder
 {
+
+    protected $fillable = [
+        'seo_title',
+        'seo_description'
+    ];
+
     public static function getFirstDepthNodes()
     {
         return self::where('depth', '1')->get();

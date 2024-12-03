@@ -9,6 +9,7 @@ use App\Mail\SendSecretSanta;
 use App\Mail\SendSecretSantaDetails;
 use App\Models\SecretSantaApplyForm;
 use App\Models\SecretSantaRelations;
+use App\Models\Tree;
 use App\Services\SecretSanta;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
@@ -18,8 +19,13 @@ class SecretSantaController extends TreeController
 {
     public function showPage()
     {
+        $page = new Tree([
+            'seo_title' => 'Таємний Санта Міні клуба',
+            'seo_description' => 'Приймай участь у таємному санті міні клуба! Переходь!',
+        ]);
+
         $santas = SecretSantaApplyForm::all();
-        return view('santa.index', compact('santas'));
+        return view('santa.index', compact('santas', 'page'));
     }
 
     public function showDetailsPage()
