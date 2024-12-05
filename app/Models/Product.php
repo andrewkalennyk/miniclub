@@ -15,11 +15,11 @@ class Product extends BaseModel
 
     public function getPictureUrl(): string
     {
-        return !empty($this->picture) ? public_path($this->picture) : '';
+        return !empty($this->picture) ? asset($this->picture) : '';
     }
 
     public function getPrice(): string
     {
-        return !empty($this->price) ? $this->price . __t('грн') : '';
+        return !empty($this->price) ? $this->price  : '';
     }
 }
