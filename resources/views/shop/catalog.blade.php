@@ -16,14 +16,14 @@
     <section class="ftco-section bg-light pt-3">
         <div class="container">
             <div class="row">
-                @foreach($stickers as $sticker)
+                @foreach($products as $product)
                     @include('shop.partials.item')
                 @endforeach
             </div>
             <div class="row mt-5">
                 <div class="col text-center">
                     <div class="block-27">
-                        {{ $stickers->links() }}
+                        {{ $products->links() }}
                     </div>
                 </div>
             </div>
