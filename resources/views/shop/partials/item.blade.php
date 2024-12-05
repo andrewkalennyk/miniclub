@@ -4,7 +4,7 @@
              style="height: 200px; overflow: hidden;
              ">
             <img src="{{$product->getPictureUrl()}}"
-                 class="w-100 h-100"
+                 class="w-100"
                  style="object-fit: contain;"
                  alt="{{$product->t('title')}}">
         </div>
