@@ -78,9 +78,9 @@ class Admin extends AdminBase
                 'link'  => '/club_promotions',
             ],
             [
-                'title' => 'Наліпки',
+                'title' => 'Мерч',
                 'icon'  => 'shopping-bag',
-                'link'  => '/stickers',
+                'link'  => '/products',
             ],
 
             [

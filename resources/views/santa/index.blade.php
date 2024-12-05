@@ -57,22 +57,20 @@
                     <form name="secret-apply-form" action data-action="{{route('secret-santa-form')}}" id="secret-apply-form">
                         {{csrf_field()}}
                         <div class="form-row">
+                            <div class="alert alert-danger d-none"  role="alert"></div>
+                            <div class="alert alert-success d-none"  role="alert"></div>
                             <div class="form-group col-md-6">
                                 <label for="inputName">{{__t("Ім'я*")}}</label>
                                 <input type="text" class="form-control" id="inputName" name="name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputSocialName">{{__t("Нік в телеграм*")}}</label>
-                                <input type="text" class="form-control" name="social_name" id="inputSocialName">
+                                <input type="text" class="form-control" placeholder="@mini" name="social_name" id="inputSocialName">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="inputCarNumber">{{__t("Номер Машини*")}}</label>
-                                <input type="text" class="form-control" name="car_number" id="inputCarNumber">
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="inputCarDetails">{{__t("Марка Модель рік випуску*")}}</label>
+                                <label for="inputCarDetails">{{__t("Марка Модель рік випуску вашої тачки*")}}</label>
                                 <input type="text" class="form-control" name="car_details" id="inputCarDetails">
                             </div>
                         </div>
@@ -92,8 +90,16 @@
                                 <input type="text" class="form-control"  id="inputNovaPoshta" name="np_address" placeholder="Місто, Номер відділення">
                             </div>
                         </div>
+                        <div class="form-row form-check">
+                            <div class="form-group col-md-6">
+                                <input class="form-check-input" type="checkbox" value="" id="is_with_pet">
+                                <label class="form-check-label" for="is_with_pet">
+                                    Чи є домашній улюбленець?
+                                </label>
+                            </div>
+                        </div>
                         <div class="form-group">
-                            <label for="aboutYou">{{__t('Напишіть щось про себе')}}</label>
+                            <label for="aboutYou">{{__t('Напишіть щось про себе або про бажаний подарунок*')}}</label>
                             <textarea class="form-control" id="aboutYou" name="about_description" rows="3"></textarea>
                         </div>
                         <div class="alert alert-danger d-none"  role="alert"></div>

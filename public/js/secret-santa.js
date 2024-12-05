@@ -25,6 +25,7 @@ let Santa = {
                 car_details : { required : true },
                 email : { required : true , email: true},
                 np_address : { required : true },
+                about_description : { required : true },
             },
             errorPlacement : function(error, element) {},
             submitHandler: function(form) {
