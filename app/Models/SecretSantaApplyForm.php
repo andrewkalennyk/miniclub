@@ -18,6 +18,7 @@ class SecretSantaApplyForm extends BaseModel
         'np_address',
         'about_description',
         'about_description_details',
+        'is_with_pet',
     ];
 
     public function createApply($data): bool

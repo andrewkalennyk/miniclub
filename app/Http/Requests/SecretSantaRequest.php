@@ -26,10 +26,10 @@ class SecretSantaRequest extends FormRequest
         return [
             'name' => 'required',
             'social_name' => 'required',
-            'car_number' => 'required',
             'car_details' => 'required',
             'email' => 'required|email',
             'np_address' => 'required',
+            'about_description' => 'required',
         ];
     }
 }

@@ -21,7 +21,6 @@ let Santa = {
             rules : {
                 name : { required : true },
                 social_name : { required : true },
-                car_number : { required : true },
                 car_details : { required : true },
                 email : { required : true , email: true},
                 np_address : { required : true },
