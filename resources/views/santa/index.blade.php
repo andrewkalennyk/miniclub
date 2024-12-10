@@ -92,7 +92,7 @@
                         </div>
                         <div class="form-row form-check">
                             <div class="form-group col-md-6">
-                                <input class="form-check-input" type="checkbox" value="" id="is_with_pet">
+                                <input class="form-check-input" type="checkbox" value="" name="is_with_pet" id="is_with_pet">
                                 <label class="form-check-label" for="is_with_pet">
                                     Чи є домашній улюбленець?
                                 </label>
