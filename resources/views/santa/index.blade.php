@@ -90,12 +90,15 @@
                                 <input type="text" class="form-control"  id="inputNovaPoshta" name="np_address" placeholder="Місто, Номер відділення">
                             </div>
                         </div>
-                        <div class="form-row form-check">
+                        <div class="form-row">
                             <div class="form-group col-md-6">
-                                <input class="form-check-input" type="checkbox" value="" name="is_with_pet" id="is_with_pet">
-                                <label class="form-check-label" for="is_with_pet">
-                                    Чи є домашній улюбленець?
-                                </label>
+                                <div class="form-check">
+                                    <input type="hidden" name="is_with_pet" value="0">
+                                    <input class="form-check-input" type="checkbox" value="1" name="is_with_pet" id="is_with_pet">
+                                    <label class="form-check-label" for="is_with_pet">
+                                        Чи є домашній улюбленець?
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
