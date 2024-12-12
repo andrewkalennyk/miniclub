@@ -89,7 +89,7 @@ class Admin extends AdminBase
                 'link'  => '/interesting_facts',
             ],
 
-            /*[
+            [
                 'title' => 'Secret Santa',
                 'icon'  => 'gift',
                 'link'  => '/santa_apply_form',
@@ -103,7 +103,7 @@ class Admin extends AdminBase
                         'link'  => '/santa_apply_relations',
                     ],
                 ],
-            ],*/
+            ],
 
             [
                 'title' => 'Cервіси',

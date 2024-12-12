@@ -35,7 +35,7 @@
                             <h3>Санти</h3>
                             <div class="tagcloud">
                                 @foreach($santas as $santa)
-                                    <a href="javascript:void(0);" class="tag-cloud-link">{{$santa->social_name}}</a>
+                                    <a href="https://t.me/{{str_replace('@', '', $santa->social_name)}}" target="_blank" class="tag-cloud-link">{{$santa->social_name}}</a>
                                 @endforeach
                             </div>
                         </div>
