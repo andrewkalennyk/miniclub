@@ -21,7 +21,6 @@ class SantaApplyForm extends Resource
             Id::make('#', 'id')->sortable(),
             Text::make("Ім'я", 'name'),
             Text::make("Нік", 'social_name'),
-            Text::make("Номер машини", 'car_number'),
             Text::make("Деталі машини", 'car_details'),
             Text::make("Інста", 'instagram')->onlyForm(),
             Text::make("Email", 'email'),
