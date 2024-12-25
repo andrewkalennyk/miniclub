@@ -28,11 +28,11 @@ Route::group(
          Route::get('/secret-santa-info', 'SecretSantaController@showDetailsPage')->name('secret-santa-info');
          Route::post('/secret-santa-form', 'SecretSantaController@saveApplyForm')->name('secret-santa-form');
          Route::post('/secret-santa-details-form', 'SecretSantaController@saveDetailsApplyForm')->name('secret-santa-details-form');
-        /*
-                Route::get('/secret-santa-randomize', 'SecretSantaController@doRandomize');
-                Route::get('/secret-santa-letters', 'SecretSantaController@doSendLetters');
-                Route::get('/secret-santa-letter-{id}', 'SecretSantaController@doSendLetter');
-                Route::get('/secret-santa-letter-details-{id}', 'SecretSantaController@doSendLetterDetails');*/
+
+        Route::get('/secret-santa-randomize', 'SecretSantaController@doRandomize');
+        Route::get('/secret-santa-letters', 'SecretSantaController@doSendLetters');
+        Route::get('/secret-santa-letter-{id}', 'SecretSantaController@doSendLetter');
+        Route::get('/secret-santa-letter-details-{id}', 'SecretSantaController@doSendLetterDetails');
 
         Route::get('/ask-us-anything', 'FormController@showAskPage');
         Route::post('/ask-us-anything-form', 'FormController@doAsk')->name('ask-us-anything-form');
