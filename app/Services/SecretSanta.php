@@ -37,7 +37,6 @@ class SecretSanta
         $santaFrom = $this->getSantaFrom();
         $santaTo = $this->getSantaTo($santaFrom);
 
-
         $relation = [
             'social_name_from' => $santaFrom->social_name,
             'social_name_to' => $santaTo->social_name

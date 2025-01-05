@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Cms\Definitions\SantaApplyRelations;
 use App\Http\Requests\SecretSantaDetailsRequest;
 use App\Http\Requests\SecretSantaRequest;
 use App\Mail\SendSecretSanta;
@@ -11,6 +10,7 @@ use App\Models\SecretSantaApplyForm;
 use App\Models\SecretSantaRelations;
 use App\Models\Tree;
 use App\Services\SecretSanta;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Vis\Builder\TreeController;
@@ -112,6 +112,23 @@ class SecretSantaController extends TreeController
         echo 'done';
     }
 
+    public function doRandomizeFrom(Request $request)
+    {
+        $idFrom = $request->get('id');
+
+        if (empty($idFrom)) {
+            return 'noId';
+        }
+
+        $secretSantas = SecretSantaApplyForm::orderBy('id')->where('id', '>=', $idFrom)->get();
+
+        echo $secretSantas->pluck('social_name')->implode(',');
+
+        (new SecretSanta($secretSantas))->doMakeRelations();
+
+        echo 'done';
+    }
+
     public function doSendLetters()
     {
        $secretSantasRelations =  SecretSantaRelations::with(['social_from', 'social_to'])->get();
@@ -119,6 +136,26 @@ class SecretSantaController extends TreeController
        foreach ($secretSantasRelations as $santasRelation) {
            Mail::to($santasRelation->social_from->email)->send(new SendSecretSanta($santasRelation->social_to, $santasRelation->social_from));
        }
+
+        echo 'done';
+    }
+
+    public function doSendLettersFrom(Request $request)
+    {
+        $idFrom = $request->get('id');
+
+        if (empty($idFrom)) {
+            return 'noId';
+        }
+
+        $secretSantasRelations =  SecretSantaRelations::with(['social_from', 'social_to'])
+            ->orderBy('id')
+            ->where('id', '>=', $idFrom)
+            ->get();
+
+        foreach ($secretSantasRelations as $santasRelation) {
+            Mail::to($santasRelation->social_from->email)->send(new SendSecretSanta($santasRelation->social_to, $santasRelation->social_from));
+        }
 
         echo 'done';
     }
